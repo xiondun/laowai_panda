@@ -11,8 +11,7 @@ import os
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-SYS_ADMINS = ['2596746097@qq.com','357772807@qq.com']
-
+SYS_ADMINS = ['2596746097@qq.com', '357772807@qq.com']
 
 EMAIL_HOST = 'smtp.laowaipanda.com'
 EMAIL_PORT = 80
@@ -21,23 +20,20 @@ EMAIL_HOST_PASSWORD = 'Maro2020'
 EMAIL_USE_TLS = False
 DEFAULT_FROM_EMAIL = 'info@laowaipanda.com'
 
-
-
 DATABASES = {
-         'default': {
-                  'ENGINE': 'django.db.backends.mysql',
-                 'NAME': 'laowai_panda_db_laowai_panda',
-                 'USER': 'root',
-                 'PASSWORD': '123456',
-                 'HOST': 'localhost',
-                 'PORT': '3306',
-                 'OPTIONS': {
-                         'charset': 'utf8mb4',
-                         'use_unicode': True,
-                 },
-         },
- }
-
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'laowai_panda_db_laowai_panda',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+            'use_unicode': True,
+        },
+    },
+}
 
 FACEBOOK_CLIENT_ID = '3059550770728200'
 FACEBOOK_CLIENT_SECRET = '6c604fec7b4f730e07024abf9bad5012'
@@ -53,4 +49,3 @@ CLIENT_ID = 'com.Laowaipanda'
 
 JET_MODULE_YANDEX_METRIKA_CLIENT_ID = 'd7a39dcbd86d4bbfb581f2dae047493a'
 JET_MODULE_YANDEX_METRIKA_CLIENT_SECRET = '81317acb98c04a66a54cbbd26ebac6e6'
-
