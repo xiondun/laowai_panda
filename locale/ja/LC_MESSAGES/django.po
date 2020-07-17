@@ -1,0 +1,531 @@
+# This file is distributed under the same license as the Django package.
+# 
+# Translators:
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Shinya Okano <tokibito@gmail.com>, 2013-2014
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-02 15:47+0200\n"
+"PO-Revision-Date: 2017-09-19 16:40+0000\n"
+"Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
+"Language-Team: Japanese (http://www.transifex.com/django/django/language/"
+"ja/)\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\accounts\serializers.py:21
+msgid "Name can't be number"
+msgstr "名前は数字にできません"
+
+#: .\accounts\views.py:87
+msgid "Signup Succsesfuly"
+msgstr "サインアップ成功"
+
+#: .\accounts\views.py:102
+msgid "Email already verified"
+msgstr "メールは確認済みです"
+
+#: .\accounts\views.py:109
+msgid "Verification e-mail sent"
+msgstr "送信された確認メール"
+
+#: .\accounts\views.py:111
+msgid "Email doesn't exist."
+msgstr "メールが存在しません。"
+
+#: .\accounts\views.py:130
+msgid "Please enter the correct email and password."
+msgstr "正しいメールアドレスとパスワードを入力してください。"
+
+#: .\accounts\views.py:139
+msgid "Please verify your email."
+msgstr "メールを確認してください。"
+
+#: .\accounts\views.py:164
+msgid "Social type not supported"
+msgstr "ソーシャルタイプはサポートされていません"
+
+#: .\accounts\views.py:191
+msgid "Social Auth Failed"
+msgstr "ソーシャル認証に失敗しました"
+
+#: .\accounts\views.py:211 .\accounts\views.py:348 .\connect\views.py:150
+#: .\connect\views.py:170
+msgid "User doesn't exist"
+msgstr "ユーザーは存在しません"
+
+#: .\accounts\views.py:214
+msgid "Check your {} to reset the password"
+msgstr "{}を確認してパスワードをリセットしてください"
+
+#: .\accounts\views.py:233 .\accounts\views.py:284
+msgid "Too much trials, please generate new code."
+msgstr "試行回数が多すぎます。新しいコードを生成してください。"
+
+#: .\accounts\views.py:239
+msgid "Correct code"
+msgstr "正しいコード"
+
+#: .\accounts\views.py:242 .\accounts\views.py:294
+msgid "Wrong code"
+msgstr "不正なコード"
+
+#: .\accounts\views.py:246 .\accounts\views.py:298
+msgid "Wrong email"
+msgstr "間違ったメール"
+
+#: .\accounts\views.py:266
+msgid "Wrong password"
+msgstr "間違ったパスワード"
+
+#: .\accounts\views.py:292
+msgid "password reseted successfuly"
+msgstr "パスワードが正常にリセットされました"
+
+#: .\accounts\views.py:366 .\connect\views.py:202 .\connect\views.py:228
+#: .\connect\views.py:255 .\connect\views.py:274 .\connect\views.py:306
+#: .\revyoume_club\views.py:105
+msgid "This field is required."
+msgstr "この項目は必須です。"
+
+#: .\accounts\views.py:372
+msgid "User removed from your block list successfully."
+msgstr "ユーザーがブロックリストから正常に削除されました。"
+
+#: .\accounts\views.py:379
+msgid "User added to your block list successfully."
+msgstr "ユーザーがブロックリストに正常に追加されました。"
+
+#: .\accounts\views.py:382 .\accounts\views.py:415
+msgid "User does not exist."
+msgstr "ユーザーは存在しません。"
+
+#: .\accounts\views.py:395
+msgid "Can't follow/unfollow yourself."
+msgstr "自分をフォロー/フォロー解除できません。"
+
+#: .\accounts\views.py:401
+msgid "User removed from your follow list successfully."
+msgstr "ユーザーがフォローリストから正常に削除されました。"
+
+#: .\accounts\views.py:404
+msgid "Can't follow this user regarding the blocking."
+msgstr "ブロックに関してこのユーザーをフォローできません。"
+
+#: .\accounts\views.py:410
+msgid "User added to your follow list successfully."
+msgstr "ユーザーがフォローリストに正常に追加されました。"
+
+#: .\connect\models.py:56
+msgid "Order Number"
+msgstr "注文番号"
+
+#: .\connect\views.py:89
+msgid " is required"
+msgstr "必要とされている"
+
+#: .\connect\views.py:209
+msgid "Question removed from your favourite list successfully."
+msgstr "お気に入りのリストから質問が正常に削除されました。"
+
+#: .\connect\views.py:215
+msgid "Question added to your favourite list successfully."
+msgstr "質問がお気に入りリストに追加されました。"
+
+#: .\connect\views.py:218 .\connect\views.py:245 .\connect\views.py:264
+#: .\connect\views.py:320 .\connect\views.py:376
+msgid "Question does not exist."
+msgstr "質問は存在しません。"
+
+#: .\connect\views.py:235 .\revyoume_club\views.py:111
+msgid "Unlike successfully."
+msgstr "うまくいきません。"
+
+#: .\connect\views.py:241 .\revyoume_club\views.py:114
+msgid "Like successfully."
+msgstr "成功したように。"
+
+#: .\connect\views.py:261
+msgid "notify successfully."
+msgstr "正常に通知します。"
+
+#: .\connect\views.py:281
+msgid "Unuseful successfully."
+msgstr "使用できませんでした。"
+
+#: .\connect\views.py:292
+msgid "Useful successfully."
+msgstr "成功した。"
+
+#: .\connect\views.py:296
+msgid "QuestionReply does not exist."
+msgstr "QuestionReplyは存在しません。"
+
+#: .\connect\views.py:311
+msgid "Question report is cancelled."
+msgstr "質問報告はキャンセルされます。"
+
+# Quick GoogleTranslate by Kelwa
+#: .\connect\views.py:317
+msgid "Your report is submitted successfully."
+msgstr "レポートが正常に送信されました。"
+
+#: .\connect\views.py:340
+msgid "Question doesn't exist"
+msgstr "質問は存在しません"
+
+#: .\connect\views.py:427
+msgid "Reply removed successfully."
+msgstr "返信を削除しました。"
+
+#: .\laowai_panda\dashboard.py:20
+msgid "Quick links"
+msgstr "クイックリンク"
+
+#: .\laowai_panda\dashboard.py:26
+msgid "Return to site"
+msgstr "サイトに戻る"
+
+#: .\laowai_panda\dashboard.py:27
+msgid "Change password"
+msgstr "パスワードを変更する"
+
+#: .\laowai_panda\dashboard.py:29
+msgid "Log out"
+msgstr "ログアウト"
+
+#: .\laowai_panda\dashboard.py:37
+msgid "Applications"
+msgstr "用途"
+
+#: .\laowai_panda\dashboard.py:45
+msgid "Administration"
+msgstr "行政"
+
+#: .\laowai_panda\dashboard.py:53
+msgid "Recent Actions"
+msgstr "最近の行動"
+
+#: .\laowai_panda\dashboard.py:61
+msgid "Latest Django News"
+msgstr "最新のDjangoニュース"
+
+#: .\laowai_panda\dashboard.py:70
+msgid "Support"
+msgstr "サポート"
+
+#: .\laowai_panda\dashboard.py:73
+msgid "Django documentation"
+msgstr "Djangoのドキュメント"
+
+#: .\laowai_panda\dashboard.py:78
+msgid "Django \"django-users\" mailing list"
+msgstr "Django \"django-users\"メーリングリスト"
+
+#: .\laowai_panda\dashboard.py:83
+msgid "Django irc channel"
+msgstr "Django IRCチャネル"
+
+#: .\laowai_panda\settings\base.py:170
+msgid "Arabic"
+msgstr "アラビア語"
+
+#: .\laowai_panda\settings\base.py:171
+msgid "German"
+msgstr "ドイツ人"
+
+#: .\laowai_panda\settings\base.py:172
+msgid "English"
+msgstr "英語"
+
+#: .\laowai_panda\settings\base.py:173
+msgid "Spanish"
+msgstr "スペイン語"
+
+#: .\laowai_panda\settings\base.py:174
+msgid "Persian"
+msgstr "ペルシア語"
+
+#: .\laowai_panda\settings\base.py:175
+msgid "French"
+msgstr "フランス語"
+
+#: .\laowai_panda\settings\base.py:176
+msgid "Hindi"
+msgstr "ヒンディー語"
+
+#: .\laowai_panda\settings\base.py:177
+msgid "Indonesian"
+msgstr "インドネシア語"
+
+#: .\laowai_panda\settings\base.py:178
+msgid "Italian"
+msgstr "イタリア語"
+
+#: .\laowai_panda\settings\base.py:179
+msgid "Japanese"
+msgstr "日本人"
+
+#: .\laowai_panda\settings\base.py:180
+msgid "Korean"
+msgstr "韓国語"
+
+#: .\laowai_panda\settings\base.py:181
+msgid "Malaysian"
+msgstr "マレーシア人"
+
+#: .\laowai_panda\settings\base.py:182
+msgid "Portuguese"
+msgstr "ポルトガル語"
+
+#: .\laowai_panda\settings\base.py:183
+msgid "Russian"
+msgstr "ロシア"
+
+#: .\laowai_panda\settings\base.py:184
+msgid "Thai"
+msgstr "タイ人"
+
+#: .\laowai_panda\settings\base.py:185
+msgid "Turkish"
+msgstr "トルコ人"
+
+#: .\laowai_panda\settings\base.py:186
+msgid "Urdu"
+msgstr "ウルドゥー語"
+
+#: .\laowai_panda\settings\base.py:187
+msgid "vietnam"
+msgstr "ベトナム"
+
+#: .\laowai_panda\settings\base.py:188
+msgid "Simplified Chinese"
+msgstr "簡体字中国語"
+
+#: .\laowai_panda\settings\base.py:189
+msgid "Traditional Chinese"
+msgstr "繁体字中国語"
+
+#: .\laowai_panda\yandex_metrika.py:116
+msgid "Revoke access"
+msgstr "アクセス権を取り消す"
+
+#: .\laowai_panda\yandex_metrika.py:121
+msgid "Grant access"
+msgstr "アクセス許可"
+
+#: .\laowai_panda\yandex_metrika.py:131
+msgid "Access"
+msgstr "アクセス"
+
+#: .\laowai_panda\yandex_metrika.py:132
+msgid "Counter"
+msgstr "カウンター"
+
+#: .\laowai_panda\yandex_metrika.py:133
+msgid "Statistics period"
+msgstr "統計期間"
+
+#: .\laowai_panda\yandex_metrika.py:134
+msgid "Today"
+msgstr "今日"
+
+#: .\laowai_panda\yandex_metrika.py:135
+msgid "Last week"
+msgstr "先週"
+
+#: .\laowai_panda\yandex_metrika.py:136
+msgid "Last month"
+msgstr "先月"
+
+#: .\laowai_panda\yandex_metrika.py:137
+msgid "Last quarter"
+msgstr "前四半期"
+
+#: .\laowai_panda\yandex_metrika.py:138
+msgid "Last year"
+msgstr "昨年"
+
+#: .\laowai_panda\yandex_metrika.py:148
+msgid "none"
+msgstr "なし"
+
+#: .\laowai_panda\yandex_metrika.py:151
+msgid "grant access first"
+msgstr "最初にアクセスを許可"
+
+#: .\laowai_panda\yandex_metrika.py:151
+msgid "counters loading failed"
+msgstr "カウンタの読み込みに失敗しました"
+
+#: .\laowai_panda\yandex_metrika.py:156
+msgid "Show"
+msgstr "公演"
+
+#: .\laowai_panda\yandex_metrika.py:157 .\laowai_panda\yandex_metrika.py:304
+msgid "visitors"
+msgstr "訪問者"
+
+#: .\laowai_panda\yandex_metrika.py:158 .\laowai_panda\yandex_metrika.py:305
+msgid "visits"
+msgstr "訪問"
+
+#: .\laowai_panda\yandex_metrika.py:159 .\laowai_panda\yandex_metrika.py:306
+msgid "views"
+msgstr "景色"
+
+#: .\laowai_panda\yandex_metrika.py:161 .\laowai_panda\yandex_metrika.py:169
+msgid "Group"
+msgstr "グループ"
+
+#: .\laowai_panda\yandex_metrika.py:162 .\laowai_panda\yandex_metrika.py:170
+msgid "By day"
+msgstr "日ごとに"
+
+#: .\laowai_panda\yandex_metrika.py:163 .\laowai_panda\yandex_metrika.py:171
+msgid "By week"
+msgstr "週ごと"
+
+#: .\laowai_panda\yandex_metrika.py:164 .\laowai_panda\yandex_metrika.py:172
+msgid "By month"
+msgstr "月ごと"
+
+#: .\laowai_panda\yandex_metrika.py:232
+#, python-format
+msgid ""
+"Please <a href=\"%s\">attach Yandex account and choose Yandex Metrika "
+"counter</a> to start using widget"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:235
+#, python-format
+msgid ""
+"Please <a href=\"%s\">select Yandex Metrika counter</a> to start using widget"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:249 .\laowai_panda\yandex_metrika.py:265
+msgid "API request failed."
+msgstr "APIリクエストが失敗しました。"
+
+#: .\laowai_panda\yandex_metrika.py:251 .\laowai_panda\yandex_metrika.py:267
+#, python-format
+msgid " Try to <a href=\"%s\">revoke and grant access</a> again"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:289
+msgid "Yandex Metrika visitors totals"
+msgstr "Yandex Metrikaの訪問者の合計"
+
+#: .\laowai_panda\yandex_metrika.py:308 .\laowai_panda\yandex_metrika.py:360
+#: .\laowai_panda\yandex_metrika.py:410
+msgid "Bad server response"
+msgstr "不正なサーバー応答"
+
+#: .\laowai_panda\yandex_metrika.py:318
+msgid "Yandex Metrika visitors chart"
+msgstr "Yandex Metrikaビジターチャート"
+
+#: .\laowai_panda\yandex_metrika.py:370
+msgid "Yandex Metrika period visitors"
+msgstr "Yandex Metrika時代の訪問者"
+
+#: .\notification\funcs.py:16
+msgid "user has no pushy token"
+msgstr "ユーザーにはプッシュトークンがありません"
+
+#: .\notification\models.py:33
+msgid "No action"
+msgstr "何もしない"
+
+#: .\notification\models.py:34
+msgid "Question liked"
+msgstr "質問が気に入りました"
+
+#: .\notification\models.py:35
+msgid "Question shared"
+msgstr "質問を共有しました"
+
+#: .\notification\models.py:36
+msgid "Got a comment"
+msgstr "コメントを得た"
+
+#: .\notification\models.py:37
+msgid "New comment on followed question"
+msgstr "フォローされている質問への新しいコメント"
+
+#: .\notification\models.py:38
+msgid "Useful comment"
+msgstr "便利なコメント"
+
+#: .\notification\models.py:39
+msgid "Got followed"
+msgstr "フォローしました"
+
+#: .\notification\models.py:40
+msgid "Question favourite"
+msgstr "お気に入りの質問"
+
+#: .\notification\models.py:41
+msgid "Followed user added new question"
+msgstr "フォロー中のユーザーが新しい質問を追加しました"
+
+#: .\notification\models.py:42
+msgid "Got a reply to your comment"
+msgstr "コメントへの返信を得た"
+
+#: .\notification\models.py:62
+msgid "Created"
+msgstr "作成した"
+
+#: .\notification\models.py:63
+msgid "Passed to pushy"
+msgstr "強引に渡される"
+
+#: .\notification\models.py:64
+msgid "Delivered"
+msgstr "お届け"
+
+#: .\notification\models.py:65
+msgid "Faild as user hasn't notification token"
+msgstr "ユーザーが通知トークンを持っていないため失敗しました"
+
+#: .\notification\models.py:66
+msgid "Pushy Faild"
+msgstr "強引な失敗"
+
+#: .\notification\models.py:67
+msgid "Unknown Error"
+msgstr "不明なエラー"
+
+#: .\notification\models.py:68
+msgid "Template action not exist please add one"
+msgstr "テンプレートアクションが存在しません。追加してください"
+
+#: .\notification\views.py:39 .\notification\views.py:41
+msgid "Notification updated successfully."
+msgstr "通知を更新しました。"
+
+#: .\notification\views.py:47 .\notification\views.py:60
+msgid "pushy_token is required."
+msgstr "pushy_tokenは必須です。"
+
+#: .\notification\views.py:54
+msgid "Pushy Token added successfully."
+msgstr "Pushyトークンが正常に追加されました。"
+
+#: .\notification\views.py:65 .\notification\views.py:67
+msgid "Pushy Token loged out successfully."
+msgstr "Pushyトークンが正常にログアウトしました。"
+
+#: .\revyoume_club\views.py:85
+msgid " channel_id is required"
+msgstr "チャンネルIDは必須です"
+
+#: .\revyoume_club\views.py:117
+msgid "Post does not exist."
+msgstr "投稿は存在しません。"

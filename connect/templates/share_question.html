@@ -1,0 +1,317 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{% static 'landing/img/fav.png' %}">
+    <!-- Author Meta -->
+    <meta name="author" content="codepixer">
+    <!-- Meta Description -->
+    <meta name="description" content="{{question.text}}">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- <meta property="og:image" content="" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="500" /> -->
+    <!-- Site Title -->
+    <title>Laowai Panda</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto:400,400i,500" rel="stylesheet">
+    <!--
+			CSS
+			============================================= -->
+    <link rel="stylesheet" href="{% static 'landing/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/style.css' %}">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(56830834, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/56830834" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+
+    <main id="site-wrapper">
+        <div class="scroll-to-top">
+            <a href="#home"> <i class="fas fa-angle-double-up"></i> </a>
+        </div>
+        <!-- start header Area -->
+        <header id="header">
+            <nav class="navbar navbar-expand-lg navbar fixed-top ">
+                <div class="container">
+                    <a class="navbar-brand" href="/">
+                        <img src="{% static 'landing/img/logo.png' %}" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="fas fa-bars"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#download">Download</a>
+                            </li>
+                    </div>
+                </div>
+            </nav>
+
+            {% if question %}
+            <!-- HTML5 VIDEO TAG -->
+            <section class="posts my-5">
+                <div class="container">
+                    <div class="post-box p-4">
+                        <div class="post-header d-flex align-items-center">
+                            <div>
+                                <span class="commenter-pic">
+                                    {% if reply.user.photo %}
+                                    <img src="{{reply.user.photo.url}}" class="img-fluid">
+                                    {% else %}
+                                    <img src="/static/landing/img/logo.png" class="img-fluid">
+                                    {% endif %}
+                                </span>
+                            </div>
+                            <div class="post-title">
+                                {% if question.owner.name %}
+                                <div> {{question.owner.name}} </div>
+                                {% else %}
+                                <div> {{question.owner.username}} </div>
+                                {% endif %}
+                                <span>Published {{question.created}}</span></br>
+                                <span>{{question.category.name}}</span>
+                            </div>
+                        </div>
+                        <h2 class="main-title font-weight-bold mt-3">
+                            <span> {{question.text}}</span>
+                        </h2>
+                        {% for image in question.images.all %}
+                        <a href="{{image.image.url}}">
+                            <img src="{{ image.image.url }}" class="img-fluid video-img" alt="">
+                        </a>
+                        {% endfor %}
+                        <div class="post-sharable">
+                            <div class="d-flex justify-content-end">
+                                <div class="post-likes">
+                                    <span class="mr-1 font-weight-bold"> ({{question.likes}})</span>
+                                    <i class="far fa-thumbs-up"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="comments">
+                                <div class="comments-details">
+                                    {% if question.replies.all|length > 0 %}
+                                    {% if question.replies.all|length == 1 %}
+                                    <span class="total-comments comments-sort">{{question.replies.all|length}}
+                                        Comment</span>
+                                    {% else %}
+                                    <span class="total-comments comments-sort">{{question.replies.all|length}}
+                                        Comments</span>
+                                    {% endif %}
+                                    {% endif %}
+                                </div>
+                                {% for reply in replies %}
+                                <div class="comment-box">
+                                    <span class="commenter-pic">
+                                        {% if reply.user.photo %}
+                                        <img src="{{reply.user.photo.url}}" class="img-fluid">
+                                        {% else %}
+                                        <img src="/static/landing/img/logo.png" class="img-fluid">
+                                        {% endif %}
+                                    </span>
+                                    <span class="commenter-name">
+                                        {% if reply.user.name %}
+                                        <span>{{reply.user.name}}</span>
+                                        {% else %}
+                                        <span>{{reply.user.username}}</span>
+                                        {% endif %}
+                                        <span class="comment-time">{{ reply.modified|naturaltime }}</span>
+                                    </span>
+                                    <div class="d-flex comment-txt more">{{ reply.reply }}</div>
+                                    
+                                    {% if reply.comment_image %}
+                                        </br>
+                                        <div class="comment-txt more">
+                                            <a href="{{reply.comment_image.url}}">
+                                                <img src="{{reply.comment_image.url}}" style="max-width: 60%;" class="img-fluid">
+                                            </a>
+                                        </div>
+                                    {% endif %}
+
+                                    <div class="post-sharable mt-1 my-1">
+                                        <div class="d-flex justify-content-end">
+                                            <div class="post-likes">
+                                                <span class="mr-1 font-weight-bold">
+                                                    ({{reply.useful_by_users.all|length}})</span>
+                                                <i class="fas fa-lightbulb"></i>
+                                            </div>
+                                        </div>
+                                        {% if reply.replies.all|length > 0 %}
+                                        {% if reply.replies.all|length == 1 %}
+                                        <button data-toggle="collapse" data-target="#demo{{forloop.counter0}}"
+                                            class="total-comments comments-sort"
+                                            style="text-decoration: underline;">{{reply.replies.all|length}}
+                                            Reply</button>
+                                        {% else %}
+                                        <button data-toggle="collapse" data-target="#demo{{forloop.counter0}}"
+                                            class="total-comments comments-sort"
+                                            style="text-decoration: underline;">{{reply.replies.all|length}}
+                                            Replies</button>
+                                        {% endif %}
+                                        {% endif %}
+                                    </div>
+                                    <div id="demo{{forloop.counter0}}" class="collapse">
+                                        {% for inner_reply in reply.replies.all %}
+                                        <div class="col-12 justify-content-end">
+                                            <div class="col-12">
+                                                <span class="commenter-pic">
+                                                    {% if inner_reply.user.photo %}
+                                                    <img src="{{inner_reply.user.photo.url}}" class="img-fluid">
+                                                    {% else %}
+                                                    <img src="/static/landing/img/logo.png" class="img-fluid">
+                                                    {% endif %}
+                                                </span>
+                                                <span class="commenter-name">
+                                                    {% if inner_reply.user.name %}
+                                                    <span>{{inner_reply.user.name}}</span>
+                                                    {% else %}
+                                                    <span>{{inner_reply.user.username}}</span>
+                                                    {% endif %}
+                                                    <span
+                                                        class="comment-time">{{ inner_reply.modified|naturaltime }}</span>
+                                                </span>
+                                                <div class="comment-txt more">{{ inner_reply.reply }}</div>
+                                                {% if inner_reply.comment_image %}
+                                                    </br>
+                                                    <div class="comment-txt more">
+                                                        <a href="{{inner_reply.comment_image.url}}">
+                                                            <img src="{{inner_reply.comment_image.url}}" style="max-width: 60%;" class="img-fluid">
+                                                        </a>
+                                                    </div>
+                                                {% endif %}
+                                                <div class="post-sharable">
+                                                    <div class="d-flex justify-content-end">
+                                                        <div class="post-likes">
+                                                            <span class="mr-1 font-weight-bold">
+                                                                ({{inner_reply.useful_by_users.all|length}})</span>
+                                                            <i class="fas fa-lightbulb"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% else %}
+            <section class="posts my-5">
+                <div class="post-title">
+                    <div class="col-lg-6 col-md-6 d-flex align-items-center">
+                        <div class="header-description">
+                            </br>
+                            </br>
+                            </br>
+                            </br>
+                            <h5> Question does not exist. Perhaps it was deleted by another user</h5>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% endif %}
+        </header>
+        <!-- end header Area -->
+
+    </main>
+    <!-- Start Footer Area -->
+    <footer class="footer-area pb-3 mt-5 pt-5" id="site-footer">
+        <div class="container">
+            <div class="row">
+            </div>
+            <div class="row align-items-center">
+                <p class="footer-text mt-5 col-lg-6 col-md-12 text-center">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | Laowai Panda
+                    <br> Powered by <i class="fa fa-heart-o" aria-hidden="true"></i> <a href=""
+                        target="_blank">MaroGlobal</a>
+                        <br> Contact us: <a href=""target="_blank">info@laowaipanda.com</a>
+                        <br> 浙ICP备<a href=""target="_blank"> 20001177 </a>号
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+                <div class="col-lg-6 col-md-6 social-link">
+                    <div class="download-button d-flex flex-row justify-content-end">
+                        <div class="buttons gray flex-row d-flex">
+                            <i class="fa fa-apple" aria-hidden="true"></i>
+                            <div class="desc">
+                                <a href="#">
+                                    <p>
+                                        <span>Available</span> <br>
+                                        For IOS
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="buttons gray flex-row d-flex">
+                            <i class="fa fa-android" aria-hidden="true"></i>
+                            <div class="desc">
+                                <a href="https://play.google.com/store/apps/details?id=com.LaowaiPanda">
+                                    <p>
+                                        <span>Available</span> <br>
+                                        For Android
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Area -->
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/video.popup.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'landing/js/tilt.jquery.min.js' %}"></script>
+    <script src="{% static 'landing/js/main.js' %}"></script>
+
+</body>
+
+</html>

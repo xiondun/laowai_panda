@@ -1,0 +1,531 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-02 15:47+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\accounts\serializers.py:21
+msgid "Name can't be number"
+msgstr "Nama tidak boleh nombor"
+
+#: .\accounts\views.py:87
+msgid "Signup Succsesfuly"
+msgstr "Masuk Succsesfuly"
+
+#: .\accounts\views.py:102
+msgid "Email already verified"
+msgstr "E-mel sudah disahkan"
+
+#: .\accounts\views.py:109
+msgid "Verification e-mail sent"
+msgstr "E-mel pengesahan dihantar"
+
+#: .\accounts\views.py:111
+msgid "Email doesn't exist."
+msgstr "E-mel tidak wujud."
+
+#: .\accounts\views.py:130
+msgid "Please enter the correct email and password."
+msgstr "Sila masukkan e-mel dan kata laluan yang betul."
+
+#: .\accounts\views.py:139
+msgid "Please verify your email."
+msgstr "Sila sahkan e-mel anda."
+
+#: .\accounts\views.py:164
+msgid "Social type not supported"
+msgstr "Jenis sosial tidak disokong"
+
+#: .\accounts\views.py:191
+msgid "Social Auth Failed"
+msgstr "Pengarang Sosial Gagal"
+
+#: .\accounts\views.py:211 .\accounts\views.py:348 .\connect\views.py:150
+#: .\connect\views.py:170
+msgid "User doesn't exist"
+msgstr "Pengguna tidak wujud"
+
+#: .\accounts\views.py:214
+msgid "Check your {} to reset the password"
+msgstr "Semak {} anda untuk menetapkan semula kata laluan"
+
+#: .\accounts\views.py:233 .\accounts\views.py:284
+msgid "Too much trials, please generate new code."
+msgstr "Terlalu banyak ujian, sila buat kod baru."
+
+#: .\accounts\views.py:239
+msgid "Correct code"
+msgstr "Kod yang betul"
+
+#: .\accounts\views.py:242 .\accounts\views.py:294
+msgid "Wrong code"
+msgstr "Kod salah"
+
+#: .\accounts\views.py:246 .\accounts\views.py:298
+msgid "Wrong email"
+msgstr "E-mel yang salah"
+
+#: .\accounts\views.py:266
+msgid "Wrong password"
+msgstr "Salah kata laluan"
+
+#: .\accounts\views.py:292
+msgid "password reseted successfuly"
+msgstr "kata laluan berjaya dikembalikan"
+
+#: .\accounts\views.py:366 .\connect\views.py:202 .\connect\views.py:228
+#: .\connect\views.py:255 .\connect\views.py:274 .\connect\views.py:306
+#: .\revyoume_club\views.py:105
+msgid "This field is required."
+msgstr "Bidang ini diperlukan."
+
+#: .\accounts\views.py:372
+msgid "User removed from your block list successfully."
+msgstr "Pengguna dikeluarkan dari senarai blok anda dengan jayanya."
+
+#: .\accounts\views.py:379
+msgid "User added to your block list successfully."
+msgstr "Pengguna ditambahkan ke senarai blok anda berjaya."
+
+#: .\accounts\views.py:382 .\accounts\views.py:415
+msgid "User does not exist."
+msgstr "Pengguna tidak wujud."
+
+#: .\accounts\views.py:395
+msgid "Can't follow/unfollow yourself."
+msgstr "Tidak boleh ikut / ikuti diri anda sendiri."
+
+#: .\accounts\views.py:401
+msgid "User removed from your follow list successfully."
+msgstr "Pengguna dibuang dari senarai ikuti dengan jayanya."
+
+#: .\accounts\views.py:404
+msgid "Can't follow this user regarding the blocking."
+msgstr "Tidak dapat mengikuti pengguna ini mengenai penyekatan."
+
+#: .\accounts\views.py:410
+msgid "User added to your follow list successfully."
+msgstr "Pengguna ditambahkan ke senarai berikut dengan berjaya."
+
+#: .\connect\models.py:56
+msgid "Order Number"
+msgstr "Nombor Pesanan"
+
+#: .\connect\views.py:89
+msgid " is required"
+msgstr "adalah diperlukan"
+
+#: .\connect\views.py:209
+msgid "Question removed from your favourite list successfully."
+msgstr "Soalan dikeluarkan dari senarai kegemaran anda berjaya."
+
+#: .\connect\views.py:215
+msgid "Question added to your favourite list successfully."
+msgstr "Soalan ditambah dengan senarai kegemaran anda."
+
+#: .\connect\views.py:218 .\connect\views.py:245 .\connect\views.py:264
+#: .\connect\views.py:320 .\connect\views.py:376
+msgid "Question does not exist."
+msgstr "Soalan tidak wujud."
+
+#: .\connect\views.py:235 .\revyoume_club\views.py:111
+msgid "Unlike successfully."
+msgstr "Tidak seperti berjaya."
+
+#: .\connect\views.py:241 .\revyoume_club\views.py:114
+msgid "Like successfully."
+msgstr "Seperti berjaya."
+
+#: .\connect\views.py:261
+msgid "notify successfully."
+msgstr "memberitahu dengan jayanya."
+
+#: .\connect\views.py:281
+msgid "Unuseful successfully."
+msgstr "Tidak berjaya berjaya."
+
+#: .\connect\views.py:292
+msgid "Useful successfully."
+msgstr "Berjaya berjaya."
+
+#: .\connect\views.py:296
+msgid "QuestionReply does not exist."
+msgstr "QuestionReply tidak wujud."
+
+#: .\connect\views.py:311
+msgid "Question report is cancelled."
+msgstr "Laporan soalan dibatalkan."
+
+# Quick GoogleTranslate by Kelwa
+#: .\connect\views.py:317
+msgid "Your report is submitted successfully."
+msgstr "Laporan anda diserahkan dengan jayanya."
+
+#: .\connect\views.py:340
+msgid "Question doesn't exist"
+msgstr "Soalan tidak wujud"
+
+#: .\connect\views.py:427
+msgid "Reply removed successfully."
+msgstr "Balas dihapuskan dengan jayanya."
+
+#: .\laowai_panda\dashboard.py:20
+msgid "Quick links"
+msgstr "Pautan Pantas"
+
+#: .\laowai_panda\dashboard.py:26
+msgid "Return to site"
+msgstr "Kembali ke laman web"
+
+#: .\laowai_panda\dashboard.py:27
+msgid "Change password"
+msgstr "Tukar kata laluan"
+
+#: .\laowai_panda\dashboard.py:29
+msgid "Log out"
+msgstr "Log keluar"
+
+#: .\laowai_panda\dashboard.py:37
+msgid "Applications"
+msgstr "Permohonan"
+
+#: .\laowai_panda\dashboard.py:45
+msgid "Administration"
+msgstr "Pentadbiran"
+
+#: .\laowai_panda\dashboard.py:53
+msgid "Recent Actions"
+msgstr "Tindakan Terkini"
+
+#: .\laowai_panda\dashboard.py:61
+msgid "Latest Django News"
+msgstr "Berita Django terkini"
+
+#: .\laowai_panda\dashboard.py:70
+msgid "Support"
+msgstr "Sokongan"
+
+#: .\laowai_panda\dashboard.py:73
+msgid "Django documentation"
+msgstr "Dokumentasi Django"
+
+#: .\laowai_panda\dashboard.py:78
+msgid "Django \"django-users\" mailing list"
+msgstr "Django \"django-users\" mailing list"
+
+#: .\laowai_panda\dashboard.py:83
+msgid "Django irc channel"
+msgstr "Saluran Django irc"
+
+#: .\laowai_panda\settings\base.py:170
+msgid "Arabic"
+msgstr "Bahasa Arab"
+
+#: .\laowai_panda\settings\base.py:171
+msgid "German"
+msgstr "Jerman"
+
+#: .\laowai_panda\settings\base.py:172
+msgid "English"
+msgstr "Bahasa Inggeris"
+
+#: .\laowai_panda\settings\base.py:173
+msgid "Spanish"
+msgstr "Sepanyol"
+
+#: .\laowai_panda\settings\base.py:174
+msgid "Persian"
+msgstr "Parsi"
+
+#: .\laowai_panda\settings\base.py:175
+msgid "French"
+msgstr "Perancis"
+
+#: .\laowai_panda\settings\base.py:176
+msgid "Hindi"
+msgstr "Hindi"
+
+#: .\laowai_panda\settings\base.py:177
+msgid "Indonesian"
+msgstr "Bahasa Indonesia"
+
+#: .\laowai_panda\settings\base.py:178
+msgid "Italian"
+msgstr "Itali"
+
+#: .\laowai_panda\settings\base.py:179
+msgid "Japanese"
+msgstr "Jepun"
+
+#: .\laowai_panda\settings\base.py:180
+msgid "Korean"
+msgstr "Korea"
+
+#: .\laowai_panda\settings\base.py:181
+msgid "Malaysian"
+msgstr "Malay"
+
+#: .\laowai_panda\settings\base.py:182
+msgid "Portuguese"
+msgstr "Portugis"
+
+#: .\laowai_panda\settings\base.py:183
+msgid "Russian"
+msgstr "Rusia"
+
+#: .\laowai_panda\settings\base.py:184
+msgid "Thai"
+msgstr "Thai"
+
+#: .\laowai_panda\settings\base.py:185
+msgid "Turkish"
+msgstr "Turki"
+
+#: .\laowai_panda\settings\base.py:186
+msgid "Urdu"
+msgstr "Urdu"
+
+#: .\laowai_panda\settings\base.py:187
+msgid "vietnam"
+msgstr "Vietnam"
+
+#: .\laowai_panda\settings\base.py:188
+msgid "Simplified Chinese"
+msgstr "Bahasa Cina Ringkas"
+
+#: .\laowai_panda\settings\base.py:189
+msgid "Traditional Chinese"
+msgstr "Cina Tradisional"
+
+#: .\laowai_panda\yandex_metrika.py:116
+msgid "Revoke access"
+msgstr "Batalkan akses"
+
+#: .\laowai_panda\yandex_metrika.py:121
+msgid "Grant access"
+msgstr "Geran akses"
+
+#: .\laowai_panda\yandex_metrika.py:131
+msgid "Access"
+msgstr "Akses"
+
+#: .\laowai_panda\yandex_metrika.py:132
+msgid "Counter"
+msgstr "Kaunter"
+
+#: .\laowai_panda\yandex_metrika.py:133
+msgid "Statistics period"
+msgstr "Tempoh statistik"
+
+#: .\laowai_panda\yandex_metrika.py:134
+msgid "Today"
+msgstr "Hari ini"
+
+#: .\laowai_panda\yandex_metrika.py:135
+msgid "Last week"
+msgstr "Minggu lepas"
+
+#: .\laowai_panda\yandex_metrika.py:136
+msgid "Last month"
+msgstr "Bulan lepas"
+
+#: .\laowai_panda\yandex_metrika.py:137
+msgid "Last quarter"
+msgstr "Suku akhir"
+
+#: .\laowai_panda\yandex_metrika.py:138
+msgid "Last year"
+msgstr "Tahun lepas"
+
+#: .\laowai_panda\yandex_metrika.py:148
+msgid "none"
+msgstr "tiada"
+
+#: .\laowai_panda\yandex_metrika.py:151
+msgid "grant access first"
+msgstr "memberikan akses terlebih dahulu"
+
+#: .\laowai_panda\yandex_metrika.py:151
+msgid "counters loading failed"
+msgstr "pengambilan kaunter gagal"
+
+#: .\laowai_panda\yandex_metrika.py:156
+msgid "Show"
+msgstr "Tunjukkan"
+
+#: .\laowai_panda\yandex_metrika.py:157 .\laowai_panda\yandex_metrika.py:304
+msgid "visitors"
+msgstr "pelawat"
+
+#: .\laowai_panda\yandex_metrika.py:158 .\laowai_panda\yandex_metrika.py:305
+msgid "visits"
+msgstr "lawatan"
+
+#: .\laowai_panda\yandex_metrika.py:159 .\laowai_panda\yandex_metrika.py:306
+msgid "views"
+msgstr "pandangan"
+
+#: .\laowai_panda\yandex_metrika.py:161 .\laowai_panda\yandex_metrika.py:169
+msgid "Group"
+msgstr "Kumpulan"
+
+#: .\laowai_panda\yandex_metrika.py:162 .\laowai_panda\yandex_metrika.py:170
+msgid "By day"
+msgstr "Pada siang hari"
+
+#: .\laowai_panda\yandex_metrika.py:163 .\laowai_panda\yandex_metrika.py:171
+msgid "By week"
+msgstr "Menjelang minggu"
+
+#: .\laowai_panda\yandex_metrika.py:164 .\laowai_panda\yandex_metrika.py:172
+msgid "By month"
+msgstr "Menjelang bulan"
+
+#: .\laowai_panda\yandex_metrika.py:232
+#, python-format
+msgid ""
+"Please <a href=\"%s\">attach Yandex account and choose Yandex Metrika "
+"counter</a> to start using widget"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:235
+#, python-format
+msgid ""
+"Please <a href=\"%s\">select Yandex Metrika counter</a> to start using widget"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:249 .\laowai_panda\yandex_metrika.py:265
+msgid "API request failed."
+msgstr "Permintaan API gagal."
+
+#: .\laowai_panda\yandex_metrika.py:251 .\laowai_panda\yandex_metrika.py:267
+#, python-format
+msgid " Try to <a href=\"%s\">revoke and grant access</a> again"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:289
+msgid "Yandex Metrika visitors totals"
+msgstr "Jumlah pengunjung Yandex Metrika"
+
+#: .\laowai_panda\yandex_metrika.py:308 .\laowai_panda\yandex_metrika.py:360
+#: .\laowai_panda\yandex_metrika.py:410
+msgid "Bad server response"
+msgstr "Sambutan pelayan yang buruk"
+
+#: .\laowai_panda\yandex_metrika.py:318
+msgid "Yandex Metrika visitors chart"
+msgstr "Carta pelawat Yandex Metrika"
+
+#: .\laowai_panda\yandex_metrika.py:370
+msgid "Yandex Metrika period visitors"
+msgstr "Pelawat zaman Yandex Metrika"
+
+#: .\notification\funcs.py:16
+msgid "user has no pushy token"
+msgstr "pengguna tidak mempunyai tanda tolakan"
+
+#: .\notification\models.py:33
+msgid "No action"
+msgstr "Tiada tindakan"
+
+#: .\notification\models.py:34
+msgid "Question liked"
+msgstr "Soalan suka"
+
+#: .\notification\models.py:35
+msgid "Question shared"
+msgstr "Soalan dikongsi"
+
+#: .\notification\models.py:36
+msgid "Got a comment"
+msgstr "Ada komen"
+
+#: .\notification\models.py:37
+msgid "New comment on followed question"
+msgstr "Ulasan baru mengenai soalan yang diikuti"
+
+#: .\notification\models.py:38
+msgid "Useful comment"
+msgstr "Komen berguna"
+
+#: .\notification\models.py:39
+msgid "Got followed"
+msgstr "Ada yang mengikuti"
+
+#: .\notification\models.py:40
+msgid "Question favourite"
+msgstr "Soalan kegemaran"
+
+#: .\notification\models.py:41
+msgid "Followed user added new question"
+msgstr "Pengguna diikuti menambah soalan baru"
+
+#: .\notification\models.py:42
+msgid "Got a reply to your comment"
+msgstr "Mendapat jawapan kepada komen anda"
+
+#: .\notification\models.py:62
+msgid "Created"
+msgstr "Dibuat"
+
+#: .\notification\models.py:63
+msgid "Passed to pushy"
+msgstr "Lulus untuk memaksa"
+
+#: .\notification\models.py:64
+msgid "Delivered"
+msgstr "Dihantar"
+
+#: .\notification\models.py:65
+msgid "Faild as user hasn't notification token"
+msgstr "Faild sebagai pengguna tidak mempunyai notifikasi pemberitahuan"
+
+#: .\notification\models.py:66
+msgid "Pushy Faild"
+msgstr "Pushy Faild"
+
+#: .\notification\models.py:67
+msgid "Unknown Error"
+msgstr "Ralat tidak diketahui"
+
+#: .\notification\models.py:68
+msgid "Template action not exist please add one"
+msgstr "Tindakan templat tidak wujud sila tambah satu"
+
+#: .\notification\views.py:39 .\notification\views.py:41
+msgid "Notification updated successfully."
+msgstr "Pemberitahuan dikemas kini dengan jayanya."
+
+#: .\notification\views.py:47 .\notification\views.py:60
+msgid "pushy_token is required."
+msgstr "pushy_token diperlukan."
+
+#: .\notification\views.py:54
+msgid "Pushy Token added successfully."
+msgstr "Pushy Token ditambah dengan berjaya."
+
+#: .\notification\views.py:65 .\notification\views.py:67
+msgid "Pushy Token loged out successfully."
+msgstr "Pushy Token berjaya dilakar."
+
+#: .\revyoume_club\views.py:85
+msgid " channel_id is required"
+msgstr "ID saluran diperlukan"
+
+#: .\revyoume_club\views.py:117
+msgid "Post does not exist."
+msgstr "Siaran tidak wujud."

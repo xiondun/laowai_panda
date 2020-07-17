@@ -1,0 +1,531 @@
+# This file is distributed under the same license as the Django package.
+# 
+# Translators:
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Ronald White <ouyanghongyu@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-02 15:47+0200\n"
+"PO-Revision-Date: 2017-09-19 16:40+0000\n"
+"Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/django/django/"
+"language/zh_CN/)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\accounts\serializers.py:21
+msgid "Name can't be number"
+msgstr "名称不能是数字"
+
+#: .\accounts\views.py:87
+msgid "Signup Succsesfuly"
+msgstr "注册成功"
+
+#: .\accounts\views.py:102
+msgid "Email already verified"
+msgstr "电子邮件已验证"
+
+#: .\accounts\views.py:109
+msgid "Verification e-mail sent"
+msgstr "验证邮件已发送"
+
+#: .\accounts\views.py:111
+msgid "Email doesn't exist."
+msgstr "电子邮件不存在。"
+
+#: .\accounts\views.py:130
+msgid "Please enter the correct email and password."
+msgstr "请输入正确的电子邮件和密码。"
+
+#: .\accounts\views.py:139
+msgid "Please verify your email."
+msgstr "请验证您的电子邮件。"
+
+#: .\accounts\views.py:164
+msgid "Social type not supported"
+msgstr "不支持社交类型"
+
+#: .\accounts\views.py:191
+msgid "Social Auth Failed"
+msgstr "社交身份验证失败"
+
+#: .\accounts\views.py:211 .\accounts\views.py:348 .\connect\views.py:150
+#: .\connect\views.py:170
+msgid "User doesn't exist"
+msgstr "用户不存在"
+
+#: .\accounts\views.py:214
+msgid "Check your {} to reset the password"
+msgstr "检查您的{}以重设密码"
+
+#: .\accounts\views.py:233 .\accounts\views.py:284
+msgid "Too much trials, please generate new code."
+msgstr "试用过多，请生成新代码。"
+
+#: .\accounts\views.py:239
+msgid "Correct code"
+msgstr "正确的代码"
+
+#: .\accounts\views.py:242 .\accounts\views.py:294
+msgid "Wrong code"
+msgstr "错误的代码"
+
+#: .\accounts\views.py:246 .\accounts\views.py:298
+msgid "Wrong email"
+msgstr "错误的电子邮件"
+
+#: .\accounts\views.py:266
+msgid "Wrong password"
+msgstr "密码错误"
+
+#: .\accounts\views.py:292
+msgid "password reseted successfuly"
+msgstr "密码重置成功"
+
+#: .\accounts\views.py:366 .\connect\views.py:202 .\connect\views.py:228
+#: .\connect\views.py:255 .\connect\views.py:274 .\connect\views.py:306
+#: .\revyoume_club\views.py:105
+msgid "This field is required."
+msgstr "这是必填栏。"
+
+#: .\accounts\views.py:372
+msgid "User removed from your block list successfully."
+msgstr "用户已成功从阻止列表中删除。"
+
+#: .\accounts\views.py:379
+msgid "User added to your block list successfully."
+msgstr "用户已成功添加到您的阻止列表。"
+
+#: .\accounts\views.py:382 .\accounts\views.py:415
+msgid "User does not exist."
+msgstr "用户不存在。"
+
+#: .\accounts\views.py:395
+msgid "Can't follow/unfollow yourself."
+msgstr "无法关注/取消关注自己。"
+
+#: .\accounts\views.py:401
+msgid "User removed from your follow list successfully."
+msgstr "用户已成功从您的关注列表中删除。"
+
+#: .\accounts\views.py:404
+msgid "Can't follow this user regarding the blocking."
+msgstr "无法关注此用户的屏蔽情况。"
+
+#: .\accounts\views.py:410
+msgid "User added to your follow list successfully."
+msgstr "用户已成功添加到您的关注列表。"
+
+#: .\connect\models.py:56
+msgid "Order Number"
+msgstr "订单号"
+
+#: .\connect\views.py:89
+msgid " is required"
+msgstr "是必须的"
+
+#: .\connect\views.py:209
+msgid "Question removed from your favourite list successfully."
+msgstr "问题已成功从您的收藏夹列表中删除。"
+
+#: .\connect\views.py:215
+msgid "Question added to your favourite list successfully."
+msgstr "问题已成功添加到您的收藏夹列表中。"
+
+#: .\connect\views.py:218 .\connect\views.py:245 .\connect\views.py:264
+#: .\connect\views.py:320 .\connect\views.py:376
+msgid "Question does not exist."
+msgstr "问题不存在。"
+
+#: .\connect\views.py:235 .\revyoume_club\views.py:111
+msgid "Unlike successfully."
+msgstr "不像成功。"
+
+#: .\connect\views.py:241 .\revyoume_club\views.py:114
+msgid "Like successfully."
+msgstr "喜欢成功。"
+
+#: .\connect\views.py:261
+msgid "notify successfully."
+msgstr "通知成功。"
+
+#: .\connect\views.py:281
+msgid "Unuseful successfully."
+msgstr "没用成功。"
+
+#: .\connect\views.py:292
+msgid "Useful successfully."
+msgstr "有用的成功。"
+
+#: .\connect\views.py:296
+msgid "QuestionReply does not exist."
+msgstr "QuestionReply不存在。"
+
+#: .\connect\views.py:311
+msgid "Question report is cancelled."
+msgstr "问题报告被取消。"
+
+# Quick GoogleTranslate by Kelwa
+#: .\connect\views.py:317
+msgid "Your report is submitted successfully."
+msgstr "您的报告已成功提交。"
+
+#: .\connect\views.py:340
+msgid "Question doesn't exist"
+msgstr "问题不存在"
+
+#: .\connect\views.py:427
+msgid "Reply removed successfully."
+msgstr "回复已成功删除。"
+
+#: .\laowai_panda\dashboard.py:20
+msgid "Quick links"
+msgstr "快速链接"
+
+#: .\laowai_panda\dashboard.py:26
+msgid "Return to site"
+msgstr "返回现场"
+
+#: .\laowai_panda\dashboard.py:27
+msgid "Change password"
+msgstr "更改密码"
+
+#: .\laowai_panda\dashboard.py:29
+msgid "Log out"
+msgstr "登出"
+
+#: .\laowai_panda\dashboard.py:37
+msgid "Applications"
+msgstr "应用领域"
+
+#: .\laowai_panda\dashboard.py:45
+msgid "Administration"
+msgstr "管理"
+
+#: .\laowai_panda\dashboard.py:53
+msgid "Recent Actions"
+msgstr "最近动作"
+
+#: .\laowai_panda\dashboard.py:61
+msgid "Latest Django News"
+msgstr "最新的Django新闻"
+
+#: .\laowai_panda\dashboard.py:70
+msgid "Support"
+msgstr "支持"
+
+#: .\laowai_panda\dashboard.py:73
+msgid "Django documentation"
+msgstr "Django文档"
+
+#: .\laowai_panda\dashboard.py:78
+msgid "Django \"django-users\" mailing list"
+msgstr "Django“ django-users”邮件列表"
+
+#: .\laowai_panda\dashboard.py:83
+msgid "Django irc channel"
+msgstr "Django irc频道"
+
+#: .\laowai_panda\settings\base.py:170
+msgid "Arabic"
+msgstr "阿拉伯"
+
+#: .\laowai_panda\settings\base.py:171
+msgid "German"
+msgstr "德语"
+
+#: .\laowai_panda\settings\base.py:172
+msgid "English"
+msgstr "英语"
+
+#: .\laowai_panda\settings\base.py:173
+msgid "Spanish"
+msgstr "西班牙文"
+
+#: .\laowai_panda\settings\base.py:174
+msgid "Persian"
+msgstr "波斯语"
+
+#: .\laowai_panda\settings\base.py:175
+msgid "French"
+msgstr "法文"
+
+#: .\laowai_panda\settings\base.py:176
+msgid "Hindi"
+msgstr "印地语"
+
+#: .\laowai_panda\settings\base.py:177
+msgid "Indonesian"
+msgstr "印度尼西亚"
+
+#: .\laowai_panda\settings\base.py:178
+msgid "Italian"
+msgstr "义大利文"
+
+#: .\laowai_panda\settings\base.py:179
+msgid "Japanese"
+msgstr "日本"
+
+#: .\laowai_panda\settings\base.py:180
+msgid "Korean"
+msgstr "韩语"
+
+#: .\laowai_panda\settings\base.py:181
+msgid "Malaysian"
+msgstr "马来西亚人"
+
+#: .\laowai_panda\settings\base.py:182
+msgid "Portuguese"
+msgstr "葡萄牙语"
+
+#: .\laowai_panda\settings\base.py:183
+msgid "Russian"
+msgstr "俄语"
+
+#: .\laowai_panda\settings\base.py:184
+msgid "Thai"
+msgstr "泰国"
+
+#: .\laowai_panda\settings\base.py:185
+msgid "Turkish"
+msgstr "土耳其"
+
+#: .\laowai_panda\settings\base.py:186
+msgid "Urdu"
+msgstr "乌尔都语"
+
+#: .\laowai_panda\settings\base.py:187
+msgid "vietnam"
+msgstr "越南语"
+
+#: .\laowai_panda\settings\base.py:188
+msgid "Simplified Chinese"
+msgstr "简体中文"
+
+#: .\laowai_panda\settings\base.py:189
+msgid "Traditional Chinese"
+msgstr "繁体中文"
+
+#: .\laowai_panda\yandex_metrika.py:116
+msgid "Revoke access"
+msgstr "撤消访问权限"
+
+#: .\laowai_panda\yandex_metrika.py:121
+msgid "Grant access"
+msgstr "授予访问权限"
+
+#: .\laowai_panda\yandex_metrika.py:131
+msgid "Access"
+msgstr "访问"
+
+#: .\laowai_panda\yandex_metrika.py:132
+msgid "Counter"
+msgstr "计数器"
+
+#: .\laowai_panda\yandex_metrika.py:133
+msgid "Statistics period"
+msgstr "统计期间"
+
+#: .\laowai_panda\yandex_metrika.py:134
+msgid "Today"
+msgstr "今天"
+
+#: .\laowai_panda\yandex_metrika.py:135
+msgid "Last week"
+msgstr "上个星期"
+
+#: .\laowai_panda\yandex_metrika.py:136
+msgid "Last month"
+msgstr "上个月"
+
+#: .\laowai_panda\yandex_metrika.py:137
+msgid "Last quarter"
+msgstr "上个季度"
+
+#: .\laowai_panda\yandex_metrika.py:138
+msgid "Last year"
+msgstr "去年"
+
+#: .\laowai_panda\yandex_metrika.py:148
+msgid "none"
+msgstr "无"
+
+#: .\laowai_panda\yandex_metrika.py:151
+msgid "grant access first"
+msgstr "首先授予访问权限"
+
+#: .\laowai_panda\yandex_metrika.py:151
+msgid "counters loading failed"
+msgstr "计数器加载失败"
+
+#: .\laowai_panda\yandex_metrika.py:156
+msgid "Show"
+msgstr "显示"
+
+#: .\laowai_panda\yandex_metrika.py:157 .\laowai_panda\yandex_metrika.py:304
+msgid "visitors"
+msgstr "访客"
+
+#: .\laowai_panda\yandex_metrika.py:158 .\laowai_panda\yandex_metrika.py:305
+msgid "visits"
+msgstr "造访"
+
+#: .\laowai_panda\yandex_metrika.py:159 .\laowai_panda\yandex_metrika.py:306
+msgid "views"
+msgstr "意见"
+
+#: .\laowai_panda\yandex_metrika.py:161 .\laowai_panda\yandex_metrika.py:169
+msgid "Group"
+msgstr "组"
+
+#: .\laowai_panda\yandex_metrika.py:162 .\laowai_panda\yandex_metrika.py:170
+msgid "By day"
+msgstr "按天"
+
+#: .\laowai_panda\yandex_metrika.py:163 .\laowai_panda\yandex_metrika.py:171
+msgid "By week"
+msgstr "按周"
+
+#: .\laowai_panda\yandex_metrika.py:164 .\laowai_panda\yandex_metrika.py:172
+msgid "By month"
+msgstr "按月"
+
+#: .\laowai_panda\yandex_metrika.py:232
+#, python-format
+msgid ""
+"Please <a href=\"%s\">attach Yandex account and choose Yandex Metrika "
+"counter</a> to start using widget"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:235
+#, python-format
+msgid ""
+"Please <a href=\"%s\">select Yandex Metrika counter</a> to start using widget"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:249 .\laowai_panda\yandex_metrika.py:265
+msgid "API request failed."
+msgstr "API请求失败。"
+
+#: .\laowai_panda\yandex_metrika.py:251 .\laowai_panda\yandex_metrika.py:267
+#, python-format
+msgid " Try to <a href=\"%s\">revoke and grant access</a> again"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:289
+msgid "Yandex Metrika visitors totals"
+msgstr "Yandex Metrika游客总计"
+
+#: .\laowai_panda\yandex_metrika.py:308 .\laowai_panda\yandex_metrika.py:360
+#: .\laowai_panda\yandex_metrika.py:410
+msgid "Bad server response"
+msgstr "服务器响应错误"
+
+#: .\laowai_panda\yandex_metrika.py:318
+msgid "Yandex Metrika visitors chart"
+msgstr "Yandex Metrika游客图表"
+
+#: .\laowai_panda\yandex_metrika.py:370
+msgid "Yandex Metrika period visitors"
+msgstr "Yandex Metrika时期的访客"
+
+#: .\notification\funcs.py:16
+msgid "user has no pushy token"
+msgstr "用户没有强制令牌"
+
+#: .\notification\models.py:33
+msgid "No action"
+msgstr "没有行动"
+
+#: .\notification\models.py:34
+msgid "Question liked"
+msgstr "问题喜欢"
+
+#: .\notification\models.py:35
+msgid "Question shared"
+msgstr "问题共享"
+
+#: .\notification\models.py:36
+msgid "Got a comment"
+msgstr "有评论"
+
+#: .\notification\models.py:37
+msgid "New comment on followed question"
+msgstr "关于后续问题的新评论"
+
+#: .\notification\models.py:38
+msgid "Useful comment"
+msgstr "有用的评论"
+
+#: .\notification\models.py:39
+msgid "Got followed"
+msgstr "得到了跟随"
+
+#: .\notification\models.py:40
+msgid "Question favourite"
+msgstr "最喜欢的问题"
+
+#: .\notification\models.py:41
+msgid "Followed user added new question"
+msgstr "关注的用户添加了新问题"
+
+#: .\notification\models.py:42
+msgid "Got a reply to your comment"
+msgstr "得到了您的评论回复"
+
+#: .\notification\models.py:62
+msgid "Created"
+msgstr "已建立"
+
+#: .\notification\models.py:63
+msgid "Passed to pushy"
+msgstr "传递给急躁"
+
+#: .\notification\models.py:64
+msgid "Delivered"
+msgstr "已交付"
+
+#: .\notification\models.py:65
+msgid "Faild as user hasn't notification token"
+msgstr "由于用户没有通知令牌而失败"
+
+#: .\notification\models.py:66
+msgid "Pushy Faild"
+msgstr "推送失败"
+
+#: .\notification\models.py:67
+msgid "Unknown Error"
+msgstr "未知错误"
+
+#: .\notification\models.py:68
+msgid "Template action not exist please add one"
+msgstr "模板操作不存在，请添加一个"
+
+#: .\notification\views.py:39 .\notification\views.py:41
+msgid "Notification updated successfully."
+msgstr "通知已成功更新。"
+
+#: .\notification\views.py:47 .\notification\views.py:60
+msgid "pushy_token is required."
+msgstr "pushy_token是必需的。"
+
+#: .\notification\views.py:54
+msgid "Pushy Token added successfully."
+msgstr "Pushy令牌已成功添加。"
+
+#: .\notification\views.py:65 .\notification\views.py:67
+msgid "Pushy Token loged out successfully."
+msgstr "Pushy Token已成功注销。"
+
+#: .\revyoume_club\views.py:85
+msgid " channel_id is required"
+msgstr "需要频道编号"
+
+#: .\revyoume_club\views.py:117
+msgid "Post does not exist."
+msgstr "帖子不存在。"

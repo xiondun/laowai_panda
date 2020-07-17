@@ -1,0 +1,15 @@
+*, html {
+    box-sizing: border-box;
+    outline: none !important;
+  }
+  
+  body {
+    box-sizing: border-box;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  a {
+    text-decoration: none !important;
+    transition: all .35s ease-in-out;
+  }

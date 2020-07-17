@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    {% if post.media %}
+    <meta property="og:image" content="{{post.media.url}}" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="500" />
+    {% endif %}
+    <!-- Site Title -->
+    <title>Laowai Panda</title>
+    <style>
+        .iframe-container {
+            overflow: hidden;
+        }
+        .iframe-container iframe {
+            border: 0;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    {% if post.type == post.TXT_VIDEO %}
+    {% if post.media %}
+    <video width="700" height="400" controls>
+        <source src="{{post.media.url}}" type="video/mp4">
+    </video>
+    {% else %}
+    <div class="iframe-container">
+        <iframe class="yoku-video" src='{{post.get_youko_link}}' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    {% endif %}
+    {% endif %}
+</body>
+
+</html>

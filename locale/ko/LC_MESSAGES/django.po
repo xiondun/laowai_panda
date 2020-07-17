@@ -1,0 +1,532 @@
+# This file is distributed under the same license as the Django package.
+# 
+# Translators:
+# Jiyoon, Ha <cryptography@konkuk.ac.kr>, 2016
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Le Tartuffe <magno79@gmail.com>, 2014
+# Chr0m3 <chr0m3.kr@gmail.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-02 15:47+0200\n"
+"PO-Revision-Date: 2017-09-19 16:40+0000\n"
+"Last-Translator: Jiyoon, Ha <cryptography@konkuk.ac.kr>\n"
+"Language-Team: Korean (http://www.transifex.com/django/django/language/ko/)\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\accounts\serializers.py:21
+msgid "Name can't be number"
+msgstr "이름은 숫자가 될 수 없습니다"
+
+#: .\accounts\views.py:87
+msgid "Signup Succsesfuly"
+msgstr "가입 성공"
+
+#: .\accounts\views.py:102
+msgid "Email already verified"
+msgstr "이미 확인 된 이메일"
+
+#: .\accounts\views.py:109
+msgid "Verification e-mail sent"
+msgstr "확인 이메일 발송"
+
+#: .\accounts\views.py:111
+msgid "Email doesn't exist."
+msgstr "이메일이 존재하지 않습니다."
+
+#: .\accounts\views.py:130
+msgid "Please enter the correct email and password."
+msgstr "올바른 이메일과 비밀번호를 입력하십시오."
+
+#: .\accounts\views.py:139
+msgid "Please verify your email."
+msgstr "이메일을 확인하십시오."
+
+#: .\accounts\views.py:164
+msgid "Social type not supported"
+msgstr "지원되지 않는 소셜 유형"
+
+#: .\accounts\views.py:191
+msgid "Social Auth Failed"
+msgstr "소셜 인증 실패"
+
+#: .\accounts\views.py:211 .\accounts\views.py:348 .\connect\views.py:150
+#: .\connect\views.py:170
+msgid "User doesn't exist"
+msgstr "존재하지 않는 사용자"
+
+#: .\accounts\views.py:214
+msgid "Check your {} to reset the password"
+msgstr "비밀번호를 재설정하려면 {}을 확인하십시오."
+
+#: .\accounts\views.py:233 .\accounts\views.py:284
+msgid "Too much trials, please generate new code."
+msgstr "시험판이 너무 많으면 새 코드를 생성하십시오."
+
+#: .\accounts\views.py:239
+msgid "Correct code"
+msgstr "올바른 코드"
+
+#: .\accounts\views.py:242 .\accounts\views.py:294
+msgid "Wrong code"
+msgstr "잘못된 코드"
+
+#: .\accounts\views.py:246 .\accounts\views.py:298
+msgid "Wrong email"
+msgstr "잘못된 이메일"
+
+#: .\accounts\views.py:266
+msgid "Wrong password"
+msgstr "잘못된 비밀번호"
+
+#: .\accounts\views.py:292
+msgid "password reseted successfuly"
+msgstr "비밀번호 재설정 성공"
+
+#: .\accounts\views.py:366 .\connect\views.py:202 .\connect\views.py:228
+#: .\connect\views.py:255 .\connect\views.py:274 .\connect\views.py:306
+#: .\revyoume_club\views.py:105
+msgid "This field is required."
+msgstr "이 필드는 필수입니다."
+
+#: .\accounts\views.py:372
+msgid "User removed from your block list successfully."
+msgstr "차단 목록에서 사용자가 성공적으로 제거되었습니다."
+
+#: .\accounts\views.py:379
+msgid "User added to your block list successfully."
+msgstr "사용자가 차단 목록에 추가되었습니다."
+
+#: .\accounts\views.py:382 .\accounts\views.py:415
+msgid "User does not exist."
+msgstr "사용자가 존재하지 않습니다."
+
+#: .\accounts\views.py:395
+msgid "Can't follow/unfollow yourself."
+msgstr "자신을 팔로우 / 언 팔로우 할 수 없습니다."
+
+#: .\accounts\views.py:401
+msgid "User removed from your follow list successfully."
+msgstr "사용자가 팔로우 목록에서 성공적으로 제거되었습니다."
+
+#: .\accounts\views.py:404
+msgid "Can't follow this user regarding the blocking."
+msgstr "차단과 관련하여이 사용자를 팔로우 할 수 없습니다."
+
+#: .\accounts\views.py:410
+msgid "User added to your follow list successfully."
+msgstr "사용자가 팔로우 목록에 추가되었습니다."
+
+#: .\connect\models.py:56
+msgid "Order Number"
+msgstr "주문 번호"
+
+#: .\connect\views.py:89
+msgid " is required"
+msgstr "필요하다"
+
+#: .\connect\views.py:209
+msgid "Question removed from your favourite list successfully."
+msgstr "즐겨 찾기 목록에서 질문이 성공적으로 제거되었습니다."
+
+#: .\connect\views.py:215
+msgid "Question added to your favourite list successfully."
+msgstr "질문이 즐겨 찾기 목록에 추가되었습니다."
+
+#: .\connect\views.py:218 .\connect\views.py:245 .\connect\views.py:264
+#: .\connect\views.py:320 .\connect\views.py:376
+msgid "Question does not exist."
+msgstr "질문이 없습니다."
+
+#: .\connect\views.py:235 .\revyoume_club\views.py:111
+msgid "Unlike successfully."
+msgstr "성공적으로 달리."
+
+#: .\connect\views.py:241 .\revyoume_club\views.py:114
+msgid "Like successfully."
+msgstr "성공적으로."
+
+#: .\connect\views.py:261
+msgid "notify successfully."
+msgstr "성공적으로 알립니다."
+
+#: .\connect\views.py:281
+msgid "Unuseful successfully."
+msgstr "유용하지 않습니다."
+
+#: .\connect\views.py:292
+msgid "Useful successfully."
+msgstr "유용합니다."
+
+#: .\connect\views.py:296
+msgid "QuestionReply does not exist."
+msgstr "질문 답장이 없습니다."
+
+#: .\connect\views.py:311
+msgid "Question report is cancelled."
+msgstr "질문 보고서가 취소되었습니다."
+
+# Quick GoogleTranslate by Kelwa
+#: .\connect\views.py:317
+msgid "Your report is submitted successfully."
+msgstr "보고서가 성공적으로 제출되었습니다."
+
+#: .\connect\views.py:340
+msgid "Question doesn't exist"
+msgstr "질문이 존재하지 않습니다"
+
+#: .\connect\views.py:427
+msgid "Reply removed successfully."
+msgstr "답장이 성공적으로 제거되었습니다."
+
+#: .\laowai_panda\dashboard.py:20
+msgid "Quick links"
+msgstr "빠른 링크"
+
+#: .\laowai_panda\dashboard.py:26
+msgid "Return to site"
+msgstr "사이트로 돌아 가기"
+
+#: .\laowai_panda\dashboard.py:27
+msgid "Change password"
+msgstr "비밀번호 변경"
+
+#: .\laowai_panda\dashboard.py:29
+msgid "Log out"
+msgstr "로그 아웃"
+
+#: .\laowai_panda\dashboard.py:37
+msgid "Applications"
+msgstr "응용"
+
+#: .\laowai_panda\dashboard.py:45
+msgid "Administration"
+msgstr "관리"
+
+#: .\laowai_panda\dashboard.py:53
+msgid "Recent Actions"
+msgstr "최근 조치"
+
+#: .\laowai_panda\dashboard.py:61
+msgid "Latest Django News"
+msgstr "최신 장고 뉴스"
+
+#: .\laowai_panda\dashboard.py:70
+msgid "Support"
+msgstr "지원하다"
+
+#: .\laowai_panda\dashboard.py:73
+msgid "Django documentation"
+msgstr "장고 문서"
+
+#: .\laowai_panda\dashboard.py:78
+msgid "Django \"django-users\" mailing list"
+msgstr "장고 \"장고 사용자\"메일 링리스트"
+
+#: .\laowai_panda\dashboard.py:83
+msgid "Django irc channel"
+msgstr "장고 IRC 채널"
+
+#: .\laowai_panda\settings\base.py:170
+msgid "Arabic"
+msgstr "아라비아 말"
+
+#: .\laowai_panda\settings\base.py:171
+msgid "German"
+msgstr "독일 사람"
+
+#: .\laowai_panda\settings\base.py:172
+msgid "English"
+msgstr "영어"
+
+#: .\laowai_panda\settings\base.py:173
+msgid "Spanish"
+msgstr "스페인의"
+
+#: .\laowai_panda\settings\base.py:174
+msgid "Persian"
+msgstr "페르시아 인"
+
+#: .\laowai_panda\settings\base.py:175
+msgid "French"
+msgstr "프랑스 국민"
+
+#: .\laowai_panda\settings\base.py:176
+msgid "Hindi"
+msgstr "힌디 어"
+
+#: .\laowai_panda\settings\base.py:177
+msgid "Indonesian"
+msgstr "인도네시아 인"
+
+#: .\laowai_panda\settings\base.py:178
+msgid "Italian"
+msgstr "이탈리아 사람"
+
+#: .\laowai_panda\settings\base.py:179
+msgid "Japanese"
+msgstr "일본어"
+
+#: .\laowai_panda\settings\base.py:180
+msgid "Korean"
+msgstr "한국어"
+
+#: .\laowai_panda\settings\base.py:181
+msgid "Malaysian"
+msgstr "말레이시아"
+
+#: .\laowai_panda\settings\base.py:182
+msgid "Portuguese"
+msgstr "포르투갈 인"
+
+#: .\laowai_panda\settings\base.py:183
+msgid "Russian"
+msgstr "러시아인"
+
+#: .\laowai_panda\settings\base.py:184
+msgid "Thai"
+msgstr "타이"
+
+#: .\laowai_panda\settings\base.py:185
+msgid "Turkish"
+msgstr "터키어"
+
+#: .\laowai_panda\settings\base.py:186
+msgid "Urdu"
+msgstr "우르두어"
+
+#: .\laowai_panda\settings\base.py:187
+msgid "vietnam"
+msgstr "베트남"
+
+#: .\laowai_panda\settings\base.py:188
+msgid "Simplified Chinese"
+msgstr "중국어 간체"
+
+#: .\laowai_panda\settings\base.py:189
+msgid "Traditional Chinese"
+msgstr "중국어 번체"
+
+#: .\laowai_panda\yandex_metrika.py:116
+msgid "Revoke access"
+msgstr "액세스 권한을 취소"
+
+#: .\laowai_panda\yandex_metrika.py:121
+msgid "Grant access"
+msgstr "액세스 권한 부여"
+
+#: .\laowai_panda\yandex_metrika.py:131
+msgid "Access"
+msgstr "접속하다"
+
+#: .\laowai_panda\yandex_metrika.py:132
+msgid "Counter"
+msgstr "카운터"
+
+#: .\laowai_panda\yandex_metrika.py:133
+msgid "Statistics period"
+msgstr "통계 기간"
+
+#: .\laowai_panda\yandex_metrika.py:134
+msgid "Today"
+msgstr "오늘"
+
+#: .\laowai_panda\yandex_metrika.py:135
+msgid "Last week"
+msgstr "지난주"
+
+#: .\laowai_panda\yandex_metrika.py:136
+msgid "Last month"
+msgstr "지난 달"
+
+#: .\laowai_panda\yandex_metrika.py:137
+msgid "Last quarter"
+msgstr "마지막 분기"
+
+#: .\laowai_panda\yandex_metrika.py:138
+msgid "Last year"
+msgstr "작년"
+
+#: .\laowai_panda\yandex_metrika.py:148
+msgid "none"
+msgstr "아무것도"
+
+#: .\laowai_panda\yandex_metrika.py:151
+msgid "grant access first"
+msgstr "액세스 권한을 먼저 부여"
+
+#: .\laowai_panda\yandex_metrika.py:151
+msgid "counters loading failed"
+msgstr "카운터 로딩 실패"
+
+#: .\laowai_panda\yandex_metrika.py:156
+msgid "Show"
+msgstr "보여 주다"
+
+#: .\laowai_panda\yandex_metrika.py:157 .\laowai_panda\yandex_metrika.py:304
+msgid "visitors"
+msgstr "방문자"
+
+#: .\laowai_panda\yandex_metrika.py:158 .\laowai_panda\yandex_metrika.py:305
+msgid "visits"
+msgstr "방문"
+
+#: .\laowai_panda\yandex_metrika.py:159 .\laowai_panda\yandex_metrika.py:306
+msgid "views"
+msgstr "견해"
+
+#: .\laowai_panda\yandex_metrika.py:161 .\laowai_panda\yandex_metrika.py:169
+msgid "Group"
+msgstr "그룹"
+
+#: .\laowai_panda\yandex_metrika.py:162 .\laowai_panda\yandex_metrika.py:170
+msgid "By day"
+msgstr "일별"
+
+#: .\laowai_panda\yandex_metrika.py:163 .\laowai_panda\yandex_metrika.py:171
+msgid "By week"
+msgstr "주별"
+
+#: .\laowai_panda\yandex_metrika.py:164 .\laowai_panda\yandex_metrika.py:172
+msgid "By month"
+msgstr "월별"
+
+#: .\laowai_panda\yandex_metrika.py:232
+#, python-format
+msgid ""
+"Please <a href=\"%s\">attach Yandex account and choose Yandex Metrika "
+"counter</a> to start using widget"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:235
+#, python-format
+msgid ""
+"Please <a href=\"%s\">select Yandex Metrika counter</a> to start using widget"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:249 .\laowai_panda\yandex_metrika.py:265
+msgid "API request failed."
+msgstr "API 요청이 실패했습니다."
+
+#: .\laowai_panda\yandex_metrika.py:251 .\laowai_panda\yandex_metrika.py:267
+#, python-format
+msgid " Try to <a href=\"%s\">revoke and grant access</a> again"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:289
+msgid "Yandex Metrika visitors totals"
+msgstr "Yandex Metrika 총 방문자 수"
+
+#: .\laowai_panda\yandex_metrika.py:308 .\laowai_panda\yandex_metrika.py:360
+#: .\laowai_panda\yandex_metrika.py:410
+msgid "Bad server response"
+msgstr "잘못된 서버 응답"
+
+#: .\laowai_panda\yandex_metrika.py:318
+msgid "Yandex Metrika visitors chart"
+msgstr "Yandex Metrika 방문자 차트"
+
+#: .\laowai_panda\yandex_metrika.py:370
+msgid "Yandex Metrika period visitors"
+msgstr "Yandex Metrika 기간 방문자"
+
+#: .\notification\funcs.py:16
+msgid "user has no pushy token"
+msgstr "푸시 토큰이없는 사용자"
+
+#: .\notification\models.py:33
+msgid "No action"
+msgstr "조치 없음"
+
+#: .\notification\models.py:34
+msgid "Question liked"
+msgstr "질문이 좋아함"
+
+#: .\notification\models.py:35
+msgid "Question shared"
+msgstr "질문 공유"
+
+#: .\notification\models.py:36
+msgid "Got a comment"
+msgstr "의견이 있습니다"
+
+#: .\notification\models.py:37
+msgid "New comment on followed question"
+msgstr "다음 질문에 대한 새로운 의견"
+
+#: .\notification\models.py:38
+msgid "Useful comment"
+msgstr "유용한 의견"
+
+#: .\notification\models.py:39
+msgid "Got followed"
+msgstr "후속 조치를 받았습니다"
+
+#: .\notification\models.py:40
+msgid "Question favourite"
+msgstr "좋아하는 질문"
+
+#: .\notification\models.py:41
+msgid "Followed user added new question"
+msgstr "팔로우 된 사용자가 새로운 질문을 추가 함"
+
+#: .\notification\models.py:42
+msgid "Got a reply to your comment"
+msgstr "댓글에 답글이 있습니다"
+
+#: .\notification\models.py:62
+msgid "Created"
+msgstr "만들어진"
+
+#: .\notification\models.py:63
+msgid "Passed to pushy"
+msgstr "푸쉬에 전달"
+
+#: .\notification\models.py:64
+msgid "Delivered"
+msgstr "배송"
+
+#: .\notification\models.py:65
+msgid "Faild as user hasn't notification token"
+msgstr "사용자가 토큰을 통지하지 않아 실패"
+
+#: .\notification\models.py:66
+msgid "Pushy Faild"
+msgstr "푸쉬 실패"
+
+#: .\notification\models.py:67
+msgid "Unknown Error"
+msgstr "알수없는 오류"
+
+#: .\notification\models.py:68
+msgid "Template action not exist please add one"
+msgstr "존재하지 않는 템플릿 작업"
+
+#: .\notification\views.py:39 .\notification\views.py:41
+msgid "Notification updated successfully."
+msgstr "알림이 성공적으로 업데이트되었습니다."
+
+#: .\notification\views.py:47 .\notification\views.py:60
+msgid "pushy_token is required."
+msgstr "pushy_token이 필요합니다."
+
+#: .\notification\views.py:54
+msgid "Pushy Token added successfully."
+msgstr "푸시 토큰이 성공적으로 추가되었습니다."
+
+#: .\notification\views.py:65 .\notification\views.py:67
+msgid "Pushy Token loged out successfully."
+msgstr "푸시 토큰이 로그 아웃되었습니다."
+
+#: .\revyoume_club\views.py:85
+msgid " channel_id is required"
+msgstr "채널 ID가 필요합니다"
+
+#: .\revyoume_club\views.py:117
+msgid "Post does not exist."
+msgstr "게시물이 없습니다."

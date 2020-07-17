@@ -1,0 +1,515 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-02 15:47+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\accounts\serializers.py:21
+msgid "Name can't be number"
+msgstr "Tên không thể là số"
+
+#: .\accounts\views.py:87
+msgid "Signup Succsesfuly"
+msgstr "Đăng ký thành công"
+
+#: .\accounts\views.py:102
+msgid "Email already verified"
+msgstr "Email đã được xác minh"
+
+#: .\accounts\views.py:109
+msgid "Verification e-mail sent"
+msgstr "Gửi email xác minh"
+
+#: .\accounts\views.py:111
+msgid "Email doesn't exist."
+msgstr "Email không tồn tại."
+
+#: .\accounts\views.py:130
+msgid "Please enter the correct email and password."
+msgstr "Vui lòng nhập email và mật khẩu chính xác."
+
+#: .\accounts\views.py:139
+msgid "Please verify your email."
+msgstr "Vui lòng xác minh email của bạn."
+
+#: .\accounts\views.py:164
+msgid "Social type not supported"
+msgstr "Loại hình xã hội không được hỗ trợ"
+
+#: .\accounts\views.py:191
+msgid "Social Auth Failed"
+msgstr "Xác thực xã hội không thành công"
+
+#: .\accounts\views.py:211 .\accounts\views.py:348 .\connect\views.py:150
+#: .\connect\views.py:170
+msgid "User doesn't exist"
+msgstr "Người dùng không tồn tại"
+
+#: .\accounts\views.py:214
+msgid "Check your {} to reset the password"
+msgstr "SKiểm tra {} của bạn để đặt lại mật khẩu"
+
+#: .\accounts\views.py:233 .\accounts\views.py:284
+msgid "Too much trials, please generate new code."
+msgstr "Quá nhiều thử nghiệm, vui lòng tạo mã mới."
+
+#: .\accounts\views.py:239
+msgid "Correct code"
+msgstr "Mã chính xác"
+
+#: .\accounts\views.py:242 .\accounts\views.py:294
+msgid "Wrong code"
+msgstr "Sai mã"
+
+#: .\accounts\views.py:246 .\accounts\views.py:298
+msgid "Wrong email"
+msgstr "Email sai"
+
+#: .\accounts\views.py:266
+msgid "Wrong password"
+msgstr "Sai mật khẩu"
+
+#: .\accounts\views.py:292
+msgid "password reseted successfuly"
+msgstr "mật khẩu được đặt lại thành công"
+
+#: .\accounts\views.py:366 .\connect\views.py:202 .\connect\views.py:228
+#: .\connect\views.py:255 .\connect\views.py:274 .\connect\views.py:306
+#: .\revyoume_club\views.py:105
+msgid "This field is required."
+msgstr "Lĩnh vực này là bắt buộc."
+
+#: .\accounts\views.py:372
+msgid "User removed from your block list successfully."
+msgstr "Người dùng đã xóa khỏi danh sách chặn của bạn thành công."
+
+#: .\accounts\views.py:379
+msgid "User added to your block list successfully."
+msgstr "Người dùng đã thêm vào danh sách chặn của bạn thành công."
+
+#: .\accounts\views.py:382 .\accounts\views.py:415
+msgid "User does not exist."
+msgstr "Người dùng không tồn tại."
+
+#: .\accounts\views.py:395
+msgid "Can't follow/unfollow yourself."
+msgstr "Không thể theo dõi / hủy theo dõi chính mình."
+
+#: .\accounts\views.py:401
+msgid "User removed from your follow list successfully."
+msgstr "Người dùng đã xóa khỏi danh sách theo dõi của bạn thành công."
+
+#: .\accounts\views.py:404
+msgid "Can't follow this user regarding the blocking."
+msgstr "Không thể theo dõi người dùng này về việc chặn."
+
+#: .\accounts\views.py:410
+msgid "User added to your follow list successfully."
+msgstr "Người dùng đã thêm vào danh sách theo dõi của bạn thành công."
+
+#: .\connect\models.py:56
+msgid "Order Number"
+msgstr "Số thứ tự"
+
+#: .\connect\views.py:89
+msgid " is required"
+msgstr "bắt buộc"
+
+#: .\connect\views.py:209
+msgid "Question removed from your favourite list successfully."
+msgstr "Câu hỏi được xóa khỏi danh sách yêu thích của bạn thành công."
+
+#: .\connect\views.py:215
+msgid "Question added to your favourite list successfully."
+msgstr "Câu hỏi được thêm vào danh sách yêu thích của bạn thành công."
+
+#: .\connect\views.py:218 .\connect\views.py:245 .\connect\views.py:264
+#: .\connect\views.py:320 .\connect\views.py:376
+msgid "Question does not exist."
+msgstr "Câu hỏi không tồn tại."
+
+#: .\connect\views.py:235 .\revyoume_club\views.py:111
+msgid "Unlike successfully."
+msgstr "Không giống như thành công."
+
+#: .\connect\views.py:241 .\revyoume_club\views.py:114
+msgid "Like successfully."
+msgstr "Thích thành công."
+
+#: .\connect\views.py:261
+msgid "notify successfully."
+msgstr "thông báo thành công."
+
+#: .\connect\views.py:281
+msgid "Unuseful successfully."
+msgstr "Không thành công."
+
+#: .\connect\views.py:292
+msgid "Useful successfully."
+msgstr "Hữu ích thành công."
+
+#: .\connect\views.py:296
+msgid "QuestionReply does not exist."
+msgstr "Câu hỏi không tồn tại."
+
+#: .\connect\views.py:311
+msgid "Question report is cancelled."
+msgstr "Báo cáo câu hỏi bị hủy bỏ."
+
+# Quick GoogleTranslate by Kelwa
+#: .\connect\views.py:317
+msgid "Your report is submitted successfully."
+msgstr "Báo cáo của bạn được gửi thành công."
+
+#: .\connect\views.py:340
+msgid "Question doesn't exist"
+msgstr "Câu hỏi không tồn tại"
+
+#: .\connect\views.py:427
+msgid "Reply removed successfully."
+msgstr "Trả lời xóa thành công."
+
+#: .\laowai_panda\dashboard.py:20
+msgid "Quick links"
+msgstr "Đường dẫn nhanh"
+
+#: .\laowai_panda\dashboard.py:26
+msgid "Return to site"
+msgstr "Quay trở lại trang web"
+
+#: .\laowai_panda\dashboard.py:27
+msgid "Change password"
+msgstr "Đổi mật khẩu"
+
+#: .\laowai_panda\dashboard.py:29
+msgid "Log out"
+msgstr "Đăng xuất"
+
+#: .\laowai_panda\dashboard.py:37
+msgid "Applications"
+msgstr "Các ứng dụng"
+
+#: .\laowai_panda\dashboard.py:45
+msgid "Administration"
+msgstr "Quản trị"
+
+#: .\laowai_panda\dashboard.py:53
+msgid "Recent Actions"
+msgstr "Hành động gần đây"
+
+#: .\laowai_panda\dashboard.py:61
+msgid "Latest Django News"
+msgstr "Tin tức Django mới nhất"
+
+#: .\laowai_panda\dashboard.py:70
+msgid "Support"
+msgstr "Ủng hộ"
+
+#: .\laowai_panda\dashboard.py:73
+msgid "Django documentation"
+msgstr "Tài liệu Django"
+
+#: .\laowai_panda\dashboard.py:78
+msgid "Django \"django-users\" mailing list"
+msgstr "Danh sách gửi thư của Django \"django-users\""
+
+#: .\laowai_panda\dashboard.py:83
+msgid "Django irc channel"
+msgstr "Kênh irc Django"
+
+#: .\laowai_panda\settings\base.py:170
+msgid "Arabic"
+msgstr "tiếng Ả Rập"
+
+#: .\laowai_panda\settings\base.py:171
+msgid "German"
+msgstr "tiếng Đức"
+
+#: .\laowai_panda\settings\base.py:172
+msgid "English"
+msgstr "Tiếng Anh"
+
+#: .\laowai_panda\settings\base.py:173
+msgid "Spanish"
+msgstr "người Tây Ban Nha"
+
+#: .\laowai_panda\settings\base.py:174
+msgid "Persian"
+msgstr "Ba Tư"
+
+#: .\laowai_panda\settings\base.py:175
+msgid "French"
+msgstr "người Pháp"
+
+#: .\laowai_panda\settings\base.py:176
+msgid "Hindi"
+msgstr "Tiếng Hindi"
+
+#: .\laowai_panda\settings\base.py:177
+msgid "Indonesian"
+msgstr "Tiếng Indonesia"
+
+#: .\laowai_panda\settings\base.py:178
+msgid "Italian"
+msgstr "người Ý"
+
+#: .\laowai_panda\settings\base.py:179
+msgid "Japanese"
+msgstr "tiếng Nhật"
+
+#: .\laowai_panda\settings\base.py:180
+msgid "Korean"
+msgstr "Hàn Quốc"
+
+#: .\laowai_panda\settings\base.py:181
+#, fuzzy
+#| msgid "Malaysia"
+msgid "Malaysian"
+msgstr "Mã Lai"
+
+#: .\laowai_panda\settings\base.py:182
+msgid "Portuguese"
+msgstr "Bồ Đào Nha"
+
+#: .\laowai_panda\settings\base.py:183
+msgid "Russian"
+msgstr "tiếng Nga"
+
+#: .\laowai_panda\settings\base.py:184
+msgid "Thai"
+msgstr "Thái lan"
+
+#: .\laowai_panda\settings\base.py:185
+msgid "Turkish"
+msgstr "Thổ Nhĩ Kỳ"
+
+#: .\laowai_panda\settings\base.py:186
+msgid "Urdu"
+msgstr "Tiếng Urdu"
+
+#: .\laowai_panda\settings\base.py:187
+msgid "vietnam"
+msgstr "Việt Nam"
+
+#: .\laowai_panda\settings\base.py:188
+msgid "Simplified Chinese"
+msgstr "Tiếng Trung giản thể"
+
+#: .\laowai_panda\settings\base.py:189
+msgid "Traditional Chinese"
+msgstr "Truyền thống Trung Quốc"
+
+#: .\laowai_panda\yandex_metrika.py:116
+msgid "Revoke access"
+msgstr "Thu hồi truy cập"
+
+#: .\laowai_panda\yandex_metrika.py:121
+msgid "Grant access"
+msgstr "Cấp phép truy cập"
+
+#: .\laowai_panda\yandex_metrika.py:131
+msgid "Access"
+msgstr "Truy cập"
+
+#: .\laowai_panda\yandex_metrika.py:132
+msgid "Counter"
+msgstr "Quầy tính tiền"
+
+#: .\laowai_panda\yandex_metrika.py:133
+msgid "Statistics period"
+msgstr "Thời gian thống kê"
+
+#: .\laowai_panda\yandex_metrika.py:134
+msgid "Today"
+msgstr "Hôm nay"
+
+#: .\laowai_panda\yandex_metrika.py:135
+msgid "Last week"
+msgstr "Tuần trước"
+
+#: .\laowai_panda\yandex_metrika.py:136
+msgid "Last month"
+msgstr "Tháng trước"
+
+#: .\laowai_panda\yandex_metrika.py:137
+msgid "Last quarter"
+msgstr "Quý trước"
+
+#: .\laowai_panda\yandex_metrika.py:138
+msgid "Last year"
+msgstr "Năm ngoái"
+
+#: .\laowai_panda\yandex_metrika.py:148
+msgid "none"
+msgstr "không ai"
+
+#: .\laowai_panda\yandex_metrika.py:151
+msgid "grant access first"
+msgstr "cấp quyền truy cập đầu tiên"
+
+#: .\laowai_panda\yandex_metrika.py:151
+msgid "counters loading failed"
+msgstr "tải không thành công"
+
+#: .\laowai_panda\yandex_metrika.py:156
+msgid "Show"
+msgstr "Chỉ"
+
+#: .\laowai_panda\yandex_metrika.py:157 .\laowai_panda\yandex_metrika.py:304
+msgid "visitors"
+msgstr "khách"
+
+#: .\laowai_panda\yandex_metrika.py:158 .\laowai_panda\yandex_metrika.py:305
+msgid "visits"
+msgstr "thăm"
+
+#: .\laowai_panda\yandex_metrika.py:159 .\laowai_panda\yandex_metrika.py:306
+msgid "views"
+msgstr "lượt xem"
+
+#: .\laowai_panda\yandex_metrika.py:161 .\laowai_panda\yandex_metrika.py:169
+msgid "Group"
+msgstr "Nhóm"
+
+#: .\laowai_panda\yandex_metrika.py:162 .\laowai_panda\yandex_metrika.py:170
+msgid "By day"
+msgstr "Ban ngày"
+
+#: .\laowai_panda\yandex_metrika.py:163 .\laowai_panda\yandex_metrika.py:171
+msgid "By week"
+msgstr "Theo tuần"
+
+#: .\laowai_panda\yandex_metrika.py:164 .\laowai_panda\yandex_metrika.py:172
+msgid "By month"
+msgstr "Theo tháng"
+
+#: .\laowai_panda\yandex_metrika.py:249 .\laowai_panda\yandex_metrika.py:265
+msgid "API request failed."
+msgstr "Yêu cầu API không thành công."
+
+#: .\laowai_panda\yandex_metrika.py:289
+msgid "Yandex Metrika visitors totals"
+msgstr "Tổng số khách truy cập Yandex Metrika"
+
+#: .\laowai_panda\yandex_metrika.py:308 .\laowai_panda\yandex_metrika.py:360
+#: .\laowai_panda\yandex_metrika.py:410
+msgid "Bad server response"
+msgstr "Phản hồi của máy chủ không tốt"
+
+#: .\laowai_panda\yandex_metrika.py:318
+msgid "Yandex Metrika visitors chart"
+msgstr "Biểu đồ khách truy cập Yandex Metrika"
+
+#: .\laowai_panda\yandex_metrika.py:370
+msgid "Yandex Metrika period visitors"
+msgstr "Du khách thời kỳ Yandex Metrika"
+
+#: .\notification\funcs.py:16
+msgid "user has no pushy token"
+msgstr "người dùng không có mã thông báo"
+
+#: .\notification\models.py:33
+msgid "No action"
+msgstr "Không có hành động"
+
+#: .\notification\models.py:34
+msgid "Question liked"
+msgstr "Câu hỏi thích"
+
+#: .\notification\models.py:35
+msgid "Question shared"
+msgstr "Câu hỏi được chia sẻ"
+
+#: .\notification\models.py:36
+msgid "Got a comment"
+msgstr "Có một bình luận"
+
+#: .\notification\models.py:37
+msgid "New comment on followed question"
+msgstr "Nhận xét mới về câu hỏi tiếp theo"
+
+#: .\notification\models.py:38
+msgid "Useful comment"
+msgstr "Nhận xét hữu ích"
+
+#: .\notification\models.py:39
+msgid "Got followed"
+msgstr "Đã theo dõi"
+
+#: .\notification\models.py:40
+msgid "Question favourite"
+msgstr "Câu hỏi yêu thích"
+
+#: .\notification\models.py:41
+msgid "Followed user added new question"
+msgstr "Theo dõi người dùng thêm câu hỏi mới"
+
+#: .\notification\models.py:42
+msgid "Got a reply to your comment"
+msgstr "Có một trả lời cho nhận xét của bạn"
+
+#: .\notification\models.py:62
+msgid "Created"
+msgstr "Tạo"
+
+#: .\notification\models.py:63
+msgid "Passed to pushy"
+msgstr "Đã qua"
+
+#: .\notification\models.py:64
+msgid "Delivered"
+msgstr "Đã giao hàng"
+
+#: .\notification\models.py:65
+msgid "Faild as user hasn't notification token"
+msgstr "Lỗi khi người dùng không thông báo mã thông báo"
+
+#: .\notification\models.py:66
+msgid "Pushy Faild"
+msgstr "Thất bại"
+
+#: .\notification\models.py:67
+msgid "Unknown Error"
+msgstr "Lỗi không thể nhận biết"
+
+#: .\notification\models.py:68
+msgid "Template action not exist please add one"
+msgstr "Hành động mẫu không tồn tại, vui lòng thêm một"
+
+#: .\notification\views.py:39 .\notification\views.py:41
+msgid "Notification updated successfully."
+msgstr "Thông báo cập nhật thành công."
+
+#: .\notification\views.py:47 .\notification\views.py:60
+msgid "pushy_token is required."
+msgstr "Pushy_token là bắt buộc."
+
+#: .\notification\views.py:54
+msgid "Pushy Token added successfully."
+msgstr "Mã thông báo Pushy được thêm thành công."
+
+#: .\notification\views.py:65 .\notification\views.py:67
+msgid "Pushy Token loged out successfully."
+msgstr "Mã thông báo Pushy đã đăng xuất thành công."
+
+#: .\revyoume_club\views.py:85
+msgid " channel_id is required"
+msgstr "id kênh là bắt buộc"
+
+#: .\revyoume_club\views.py:117
+msgid "Post does not exist."
+msgstr "Bài viết không tồn tại."

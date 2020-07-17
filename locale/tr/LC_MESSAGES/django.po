@@ -1,0 +1,533 @@
+# This file is distributed under the same license as the Django package.
+# 
+# Translators:
+# Ahmet Emre Aladağ <emre.aladag@isik.edu.tr>, 2014
+# BouRock, 2014
+# Caner Başaran <basaran.caner@protonmail.com>, 2013
+# Jannis Leidel <jannis@leidel.info>, 2011
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-02 15:47+0200\n"
+"PO-Revision-Date: 2017-09-23 18:54+0000\n"
+"Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
+"Language-Team: Turkish (http://www.transifex.com/django/django/language/"
+"tr/)\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\accounts\serializers.py:21
+msgid "Name can't be number"
+msgstr "İsim sayı olamaz"
+
+#: .\accounts\views.py:87
+msgid "Signup Succsesfuly"
+msgstr "Üye Olun"
+
+#: .\accounts\views.py:102
+msgid "Email already verified"
+msgstr "E-posta zaten doğrulandı"
+
+#: .\accounts\views.py:109
+msgid "Verification e-mail sent"
+msgstr "Doğrulama e-postası gönderildi"
+
+#: .\accounts\views.py:111
+msgid "Email doesn't exist."
+msgstr "E-posta mevcut değil."
+
+#: .\accounts\views.py:130
+msgid "Please enter the correct email and password."
+msgstr "Lütfen doğru e-postayı ve şifreyi girin."
+
+#: .\accounts\views.py:139
+msgid "Please verify your email."
+msgstr "Lütfen e-postanızı doğrulayın."
+
+#: .\accounts\views.py:164
+msgid "Social type not supported"
+msgstr "Sosyal tür desteklenmiyor"
+
+#: .\accounts\views.py:191
+msgid "Social Auth Failed"
+msgstr "Sosyal Kimlik Doğrulaması Başarısız Oldu"
+
+#: .\accounts\views.py:211 .\accounts\views.py:348 .\connect\views.py:150
+#: .\connect\views.py:170
+msgid "User doesn't exist"
+msgstr "Kullanıcı mevcut değil"
+
+#: .\accounts\views.py:214
+msgid "Check your {} to reset the password"
+msgstr "Şifreyi sıfırlamak için {} kontrol edin"
+
+#: .\accounts\views.py:233 .\accounts\views.py:284
+msgid "Too much trials, please generate new code."
+msgstr "Çok fazla deneme, lütfen yeni kod oluşturun."
+
+#: .\accounts\views.py:239
+msgid "Correct code"
+msgstr "Doğru kod"
+
+#: .\accounts\views.py:242 .\accounts\views.py:294
+msgid "Wrong code"
+msgstr "Yanlış kod"
+
+#: .\accounts\views.py:246 .\accounts\views.py:298
+msgid "Wrong email"
+msgstr "Yanlış email"
+
+#: .\accounts\views.py:266
+msgid "Wrong password"
+msgstr "Yanlış şifre"
+
+#: .\accounts\views.py:292
+msgid "password reseted successfuly"
+msgstr "şifre başarıyla sıfırlandı"
+
+#: .\accounts\views.py:366 .\connect\views.py:202 .\connect\views.py:228
+#: .\connect\views.py:255 .\connect\views.py:274 .\connect\views.py:306
+#: .\revyoume_club\views.py:105
+msgid "This field is required."
+msgstr "Bu alan gereklidir."
+
+#: .\accounts\views.py:372
+msgid "User removed from your block list successfully."
+msgstr "Kullanıcı engelleme listenizden başarıyla kaldırıldı."
+
+#: .\accounts\views.py:379
+msgid "User added to your block list successfully."
+msgstr "Kullanıcı engelleme listenize başarıyla eklendi."
+
+#: .\accounts\views.py:382 .\accounts\views.py:415
+msgid "User does not exist."
+msgstr "Kullanıcı yok."
+
+#: .\accounts\views.py:395
+msgid "Can't follow/unfollow yourself."
+msgstr "Kendinizi takip edemez / takip edemezsiniz."
+
+#: .\accounts\views.py:401
+msgid "User removed from your follow list successfully."
+msgstr "Kullanıcı takip listenizden başarıyla kaldırıldı."
+
+#: .\accounts\views.py:404
+msgid "Can't follow this user regarding the blocking."
+msgstr "Engelleme ile ilgili bu kullanıcıyı takip edemiyorum."
+
+#: .\accounts\views.py:410
+msgid "User added to your follow list successfully."
+msgstr "Kullanıcı takip listenize başarıyla eklendi."
+
+#: .\connect\models.py:56
+msgid "Order Number"
+msgstr "Sipariş numarası"
+
+#: .\connect\views.py:89
+msgid " is required"
+msgstr "gerekli"
+
+#: .\connect\views.py:209
+msgid "Question removed from your favourite list successfully."
+msgstr "Soru favori listenizden başarıyla kaldırıldı."
+
+#: .\connect\views.py:215
+msgid "Question added to your favourite list successfully."
+msgstr "Soru favori listenize başarıyla eklendi."
+
+#: .\connect\views.py:218 .\connect\views.py:245 .\connect\views.py:264
+#: .\connect\views.py:320 .\connect\views.py:376
+msgid "Question does not exist."
+msgstr "Soru mevcut değil."
+
+#: .\connect\views.py:235 .\revyoume_club\views.py:111
+msgid "Unlike successfully."
+msgstr "Başarının aksine."
+
+#: .\connect\views.py:241 .\revyoume_club\views.py:114
+msgid "Like successfully."
+msgstr "Başarıyla beğen."
+
+#: .\connect\views.py:261
+msgid "notify successfully."
+msgstr "başarıyla bildir."
+
+#: .\connect\views.py:281
+msgid "Unuseful successfully."
+msgstr "Başarısız."
+
+#: .\connect\views.py:292
+msgid "Useful successfully."
+msgstr "Başarıyla faydalı."
+
+#: .\connect\views.py:296
+msgid "QuestionReply does not exist."
+msgstr "QuestionReply mevcut değil."
+
+#: .\connect\views.py:311
+msgid "Question report is cancelled."
+msgstr "Soru raporu iptal edildi."
+
+# Quick GoogleTranslate by Kelwa
+#: .\connect\views.py:317
+msgid "Your report is submitted successfully."
+msgstr "Raporunuz başarıyla gönderildi."
+
+#: .\connect\views.py:340
+msgid "Question doesn't exist"
+msgstr "Soru mevcut değil"
+
+#: .\connect\views.py:427
+msgid "Reply removed successfully."
+msgstr "Yanıt başarıyla kaldırıldı."
+
+#: .\laowai_panda\dashboard.py:20
+msgid "Quick links"
+msgstr "Hızlı Linkler"
+
+#: .\laowai_panda\dashboard.py:26
+msgid "Return to site"
+msgstr "Siteye dön"
+
+#: .\laowai_panda\dashboard.py:27
+msgid "Change password"
+msgstr "Şifre değiştir"
+
+#: .\laowai_panda\dashboard.py:29
+msgid "Log out"
+msgstr "Çıkış Yap"
+
+#: .\laowai_panda\dashboard.py:37
+msgid "Applications"
+msgstr "Uygulamalar"
+
+#: .\laowai_panda\dashboard.py:45
+msgid "Administration"
+msgstr "yönetim"
+
+#: .\laowai_panda\dashboard.py:53
+msgid "Recent Actions"
+msgstr "Son İşlemler"
+
+#: .\laowai_panda\dashboard.py:61
+msgid "Latest Django News"
+msgstr "Son Django Haberleri"
+
+#: .\laowai_panda\dashboard.py:70
+msgid "Support"
+msgstr "Destek"
+
+#: .\laowai_panda\dashboard.py:73
+msgid "Django documentation"
+msgstr "Django belgeleri"
+
+#: .\laowai_panda\dashboard.py:78
+msgid "Django \"django-users\" mailing list"
+msgstr "Django \"django-users\" posta listesi"
+
+#: .\laowai_panda\dashboard.py:83
+msgid "Django irc channel"
+msgstr "Django irc kanalı"
+
+#: .\laowai_panda\settings\base.py:170
+msgid "Arabic"
+msgstr "Arapça"
+
+#: .\laowai_panda\settings\base.py:171
+msgid "German"
+msgstr "Almanca"
+
+#: .\laowai_panda\settings\base.py:172
+msgid "English"
+msgstr "ingilizce"
+
+#: .\laowai_panda\settings\base.py:173
+msgid "Spanish"
+msgstr "İspanyol"
+
+#: .\laowai_panda\settings\base.py:174
+msgid "Persian"
+msgstr "Farsça"
+
+#: .\laowai_panda\settings\base.py:175
+msgid "French"
+msgstr "Fransızca"
+
+#: .\laowai_panda\settings\base.py:176
+msgid "Hindi"
+msgstr "Hintçe"
+
+#: .\laowai_panda\settings\base.py:177
+msgid "Indonesian"
+msgstr "Endonezya"
+
+#: .\laowai_panda\settings\base.py:178
+msgid "Italian"
+msgstr "İtalyan"
+
+#: .\laowai_panda\settings\base.py:179
+msgid "Japanese"
+msgstr "Japonca"
+
+#: .\laowai_panda\settings\base.py:180
+msgid "Korean"
+msgstr "Koreli"
+
+#: .\laowai_panda\settings\base.py:181
+msgid "Malaysian"
+msgstr "Malezyalı"
+
+#: .\laowai_panda\settings\base.py:182
+msgid "Portuguese"
+msgstr "Portekizce"
+
+#: .\laowai_panda\settings\base.py:183
+msgid "Russian"
+msgstr "Rusça"
+
+#: .\laowai_panda\settings\base.py:184
+msgid "Thai"
+msgstr "Tayland"
+
+#: .\laowai_panda\settings\base.py:185
+msgid "Turkish"
+msgstr "Türk"
+
+#: .\laowai_panda\settings\base.py:186
+msgid "Urdu"
+msgstr "Urduca"
+
+#: .\laowai_panda\settings\base.py:187
+msgid "vietnam"
+msgstr "Vietnam"
+
+#: .\laowai_panda\settings\base.py:188
+msgid "Simplified Chinese"
+msgstr "Basitleştirilmiş Çince"
+
+#: .\laowai_panda\settings\base.py:189
+msgid "Traditional Chinese"
+msgstr "Geleneksel çince"
+
+#: .\laowai_panda\yandex_metrika.py:116
+msgid "Revoke access"
+msgstr "Erişimi iptal et"
+
+#: .\laowai_panda\yandex_metrika.py:121
+msgid "Grant access"
+msgstr "Erişim izni ver"
+
+#: .\laowai_panda\yandex_metrika.py:131
+msgid "Access"
+msgstr "Giriş"
+
+#: .\laowai_panda\yandex_metrika.py:132
+msgid "Counter"
+msgstr "sayaç"
+
+#: .\laowai_panda\yandex_metrika.py:133
+msgid "Statistics period"
+msgstr "İstatistik dönemi"
+
+#: .\laowai_panda\yandex_metrika.py:134
+msgid "Today"
+msgstr "Bugün"
+
+#: .\laowai_panda\yandex_metrika.py:135
+msgid "Last week"
+msgstr "Geçen hafta"
+
+#: .\laowai_panda\yandex_metrika.py:136
+msgid "Last month"
+msgstr "Geçen ay"
+
+#: .\laowai_panda\yandex_metrika.py:137
+msgid "Last quarter"
+msgstr "Son çeyrek"
+
+#: .\laowai_panda\yandex_metrika.py:138
+msgid "Last year"
+msgstr "Geçen yıl"
+
+#: .\laowai_panda\yandex_metrika.py:148
+msgid "none"
+msgstr "Yok"
+
+#: .\laowai_panda\yandex_metrika.py:151
+msgid "grant access first"
+msgstr "önce erişim izni ver"
+
+#: .\laowai_panda\yandex_metrika.py:151
+msgid "counters loading failed"
+msgstr "sayaç yükleme başarısız"
+
+#: .\laowai_panda\yandex_metrika.py:156
+msgid "Show"
+msgstr "Göstermek"
+
+#: .\laowai_panda\yandex_metrika.py:157 .\laowai_panda\yandex_metrika.py:304
+msgid "visitors"
+msgstr "Ziyaretçi"
+
+#: .\laowai_panda\yandex_metrika.py:158 .\laowai_panda\yandex_metrika.py:305
+msgid "visits"
+msgstr "ziyaret"
+
+#: .\laowai_panda\yandex_metrika.py:159 .\laowai_panda\yandex_metrika.py:306
+msgid "views"
+msgstr "Görüntüleme"
+
+#: .\laowai_panda\yandex_metrika.py:161 .\laowai_panda\yandex_metrika.py:169
+msgid "Group"
+msgstr "grup"
+
+#: .\laowai_panda\yandex_metrika.py:162 .\laowai_panda\yandex_metrika.py:170
+msgid "By day"
+msgstr "Güne göre"
+
+#: .\laowai_panda\yandex_metrika.py:163 .\laowai_panda\yandex_metrika.py:171
+msgid "By week"
+msgstr "Haftaya göre"
+
+#: .\laowai_panda\yandex_metrika.py:164 .\laowai_panda\yandex_metrika.py:172
+msgid "By month"
+msgstr "Ayda"
+
+#: .\laowai_panda\yandex_metrika.py:232
+#, python-format
+msgid ""
+"Please <a href=\"%s\">attach Yandex account and choose Yandex Metrika "
+"counter</a> to start using widget"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:235
+#, python-format
+msgid ""
+"Please <a href=\"%s\">select Yandex Metrika counter</a> to start using widget"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:249 .\laowai_panda\yandex_metrika.py:265
+msgid "API request failed."
+msgstr "API isteği başarısız oldu."
+
+#: .\laowai_panda\yandex_metrika.py:251 .\laowai_panda\yandex_metrika.py:267
+#, python-format
+msgid " Try to <a href=\"%s\">revoke and grant access</a> again"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:289
+msgid "Yandex Metrika visitors totals"
+msgstr "Yandex Metrika ziyaretçi toplamları"
+
+#: .\laowai_panda\yandex_metrika.py:308 .\laowai_panda\yandex_metrika.py:360
+#: .\laowai_panda\yandex_metrika.py:410
+msgid "Bad server response"
+msgstr "Kötü sunucu yanıtı"
+
+#: .\laowai_panda\yandex_metrika.py:318
+msgid "Yandex Metrika visitors chart"
+msgstr "Yandex Metrika ziyaretçi grafiği"
+
+#: .\laowai_panda\yandex_metrika.py:370
+msgid "Yandex Metrika period visitors"
+msgstr "Yandex Metrika dönemi ziyaretçileri"
+
+#: .\notification\funcs.py:16
+msgid "user has no pushy token"
+msgstr "kullanıcının pushy jetonu yok"
+
+#: .\notification\models.py:33
+msgid "No action"
+msgstr "Hiçbir eylem"
+
+#: .\notification\models.py:34
+msgid "Question liked"
+msgstr "Soru beğendi"
+
+#: .\notification\models.py:35
+msgid "Question shared"
+msgstr "Soru paylaşıldı"
+
+#: .\notification\models.py:36
+msgid "Got a comment"
+msgstr "Yorumunuz var"
+
+#: .\notification\models.py:37
+msgid "New comment on followed question"
+msgstr "Takip edilen soru üzerine yeni yorum"
+
+#: .\notification\models.py:38
+msgid "Useful comment"
+msgstr "Yararlı yorum"
+
+#: .\notification\models.py:39
+msgid "Got followed"
+msgstr "Takip ettim"
+
+#: .\notification\models.py:40
+msgid "Question favourite"
+msgstr "Soru favorisi"
+
+#: .\notification\models.py:41
+msgid "Followed user added new question"
+msgstr "Takip edilen kullanıcı yeni soru ekledi"
+
+#: .\notification\models.py:42
+msgid "Got a reply to your comment"
+msgstr "Yorumunuza bir cevap aldınız"
+
+#: .\notification\models.py:62
+msgid "Created"
+msgstr "düzenlendi"
+
+#: .\notification\models.py:63
+msgid "Passed to pushy"
+msgstr "Saldırgan geçti"
+
+#: .\notification\models.py:64
+msgid "Delivered"
+msgstr "teslim"
+
+#: .\notification\models.py:65
+msgid "Faild as user hasn't notification token"
+msgstr "Kullanıcı bildirim jetonu olmadığından başarısız oldu"
+
+#: .\notification\models.py:66
+msgid "Pushy Faild"
+msgstr "Saldırgan başarısız"
+
+#: .\notification\models.py:67
+msgid "Unknown Error"
+msgstr "Bilinmeyen hata"
+
+#: .\notification\models.py:68
+msgid "Template action not exist please add one"
+msgstr "Şablon işlemi mevcut değil, lütfen bir tane ekleyin"
+
+#: .\notification\views.py:39 .\notification\views.py:41
+msgid "Notification updated successfully."
+msgstr "Bildirim başarıyla güncellendi."
+
+#: .\notification\views.py:47 .\notification\views.py:60
+msgid "pushy_token is required."
+msgstr "pushy_token gerekli."
+
+#: .\notification\views.py:54
+msgid "Pushy Token added successfully."
+msgstr "Pushy Token başarıyla eklendi."
+
+#: .\notification\views.py:65 .\notification\views.py:67
+msgid "Pushy Token loged out successfully."
+msgstr "Pushy Token başarılı bir şekilde oturdu."
+
+#: .\revyoume_club\views.py:85
+msgid " channel_id is required"
+msgstr "kanal kimliği gerekli"
+
+#: .\revyoume_club\views.py:117
+msgid "Post does not exist."
+msgstr "Gönderi mevcut değil."

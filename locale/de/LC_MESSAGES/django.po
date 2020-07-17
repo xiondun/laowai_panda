@@ -1,0 +1,531 @@
+# This file is distributed under the same license as the Django package.
+# 
+# Translators:
+# Jannis Leidel <jannis@leidel.info>, 2011,2013-2014,2016
+# Markus Holtermann <inyoka@markusholtermann.eu>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-02 15:47+0200\n"
+"PO-Revision-Date: 2017-09-23 18:54+0000\n"
+"Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
+"Language-Team: German (http://www.transifex.com/django/django/language/de/)\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\accounts\serializers.py:21
+msgid "Name can't be number"
+msgstr "Name kann keine Nummer sein"
+
+#: .\accounts\views.py:87
+msgid "Signup Succsesfuly"
+msgstr "Anmeldung erfolgreich"
+
+#: .\accounts\views.py:102
+msgid "Email already verified"
+msgstr "E-Mail bereits verifiziert"
+
+#: .\accounts\views.py:109
+msgid "Verification e-mail sent"
+msgstr "Bestätigungs-E-Mail gesendet"
+
+#: .\accounts\views.py:111
+msgid "Email doesn't exist."
+msgstr "E-Mail existiert nicht."
+
+#: .\accounts\views.py:130
+msgid "Please enter the correct email and password."
+msgstr ""
+"Bitte geben Sie die richtige E-Mail-Adresse und das richtige Passwort ein."
+
+#: .\accounts\views.py:139
+msgid "Please verify your email."
+msgstr "Bitte überprüfen Sie Ihre E-Mail."
+
+#: .\accounts\views.py:164
+msgid "Social type not supported"
+msgstr "Sozialer Typ wird nicht unterstützt"
+
+#: .\accounts\views.py:191
+msgid "Social Auth Failed"
+msgstr "Social Auth fehlgeschlagen"
+
+#: .\accounts\views.py:211 .\accounts\views.py:348 .\connect\views.py:150
+#: .\connect\views.py:170
+msgid "User doesn't exist"
+msgstr "Benutzer existiert nicht"
+
+#: .\accounts\views.py:214
+msgid "Check your {} to reset the password"
+msgstr "Überprüfen Sie Ihr {}, um das Passwort zurückzusetzen"
+
+#: .\accounts\views.py:233 .\accounts\views.py:284
+msgid "Too much trials, please generate new code."
+msgstr "Zu viele Versuche, bitte generieren Sie neuen Code."
+
+#: .\accounts\views.py:239
+msgid "Correct code"
+msgstr "Richtiger Code"
+
+#: .\accounts\views.py:242 .\accounts\views.py:294
+msgid "Wrong code"
+msgstr "Falscher Code"
+
+#: .\accounts\views.py:246 .\accounts\views.py:298
+msgid "Wrong email"
+msgstr "Falsche E-mail"
+
+#: .\accounts\views.py:266
+msgid "Wrong password"
+msgstr "Falsches Passwort"
+
+#: .\accounts\views.py:292
+msgid "password reseted successfuly"
+msgstr "Passwort erfolgreich zurückgesetzt"
+
+#: .\accounts\views.py:366 .\connect\views.py:202 .\connect\views.py:228
+#: .\connect\views.py:255 .\connect\views.py:274 .\connect\views.py:306
+#: .\revyoume_club\views.py:105
+msgid "This field is required."
+msgstr "Dieses Feld wird benötigt."
+
+#: .\accounts\views.py:372
+msgid "User removed from your block list successfully."
+msgstr "Benutzer erfolgreich von Ihrer Sperrliste entfernt."
+
+#: .\accounts\views.py:379
+msgid "User added to your block list successfully."
+msgstr "Benutzer erfolgreich zu Ihrer Sperrliste hinzugefügt."
+
+#: .\accounts\views.py:382 .\accounts\views.py:415
+msgid "User does not exist."
+msgstr "Benutzer existiert nicht."
+
+#: .\accounts\views.py:395
+msgid "Can't follow/unfollow yourself."
+msgstr "Kann dir nicht folgen / nicht folgen."
+
+#: .\accounts\views.py:401
+msgid "User removed from your follow list successfully."
+msgstr "Benutzer erfolgreich von Ihrer Verfolgungsliste entfernt."
+
+#: .\accounts\views.py:404
+msgid "Can't follow this user regarding the blocking."
+msgstr "Ich kann diesem Benutzer hinsichtlich der Blockierung nicht folgen."
+
+#: .\accounts\views.py:410
+msgid "User added to your follow list successfully."
+msgstr "Benutzer erfolgreich zu Ihrer Verfolgungsliste hinzugefügt."
+
+#: .\connect\models.py:56
+msgid "Order Number"
+msgstr "Bestellnummer"
+
+#: .\connect\views.py:89
+msgid " is required"
+msgstr "ist nötig"
+
+#: .\connect\views.py:209
+msgid "Question removed from your favourite list successfully."
+msgstr "Frage erfolgreich von Ihrer Favoritenliste entfernt."
+
+#: .\connect\views.py:215
+msgid "Question added to your favourite list successfully."
+msgstr "Frage erfolgreich zu Ihrer Favoritenliste hinzugefügt."
+
+#: .\connect\views.py:218 .\connect\views.py:245 .\connect\views.py:264
+#: .\connect\views.py:320 .\connect\views.py:376
+msgid "Question does not exist."
+msgstr "Frage existiert nicht."
+
+#: .\connect\views.py:235 .\revyoume_club\views.py:111
+msgid "Unlike successfully."
+msgstr "Im Gegensatz zu erfolgreich."
+
+#: .\connect\views.py:241 .\revyoume_club\views.py:114
+msgid "Like successfully."
+msgstr "Wie erfolgreich."
+
+#: .\connect\views.py:261
+msgid "notify successfully."
+msgstr "erfolgreich benachrichtigen."
+
+#: .\connect\views.py:281
+msgid "Unuseful successfully."
+msgstr "Nicht erfolgreich."
+
+#: .\connect\views.py:292
+msgid "Useful successfully."
+msgstr "Nützlich erfolgreich."
+
+#: .\connect\views.py:296
+msgid "QuestionReply does not exist."
+msgstr "QuestionReply existiert nicht."
+
+#: .\connect\views.py:311
+msgid "Question report is cancelled."
+msgstr "Der Fragenbericht wird storniert."
+
+# Quick GoogleTranslate by Kelwa
+#: .\connect\views.py:317
+msgid "Your report is submitted successfully."
+msgstr "Ihr Bericht wurde erfolgreich übermittelt"
+
+#: .\connect\views.py:340
+msgid "Question doesn't exist"
+msgstr "Frage existiert nicht"
+
+#: .\connect\views.py:427
+msgid "Reply removed successfully."
+msgstr "Antwort erfolgreich entfernt."
+
+#: .\laowai_panda\dashboard.py:20
+msgid "Quick links"
+msgstr "Quicklinks"
+
+#: .\laowai_panda\dashboard.py:26
+msgid "Return to site"
+msgstr "Zurück zur Seite"
+
+#: .\laowai_panda\dashboard.py:27
+msgid "Change password"
+msgstr "Ändere das Passwort"
+
+#: .\laowai_panda\dashboard.py:29
+msgid "Log out"
+msgstr "Ausloggen"
+
+#: .\laowai_panda\dashboard.py:37
+msgid "Applications"
+msgstr "Anwendungen"
+
+#: .\laowai_panda\dashboard.py:45
+msgid "Administration"
+msgstr "Verwaltung"
+
+#: .\laowai_panda\dashboard.py:53
+msgid "Recent Actions"
+msgstr "Letzte Aktionen"
+
+#: .\laowai_panda\dashboard.py:61
+msgid "Latest Django News"
+msgstr "Neueste Django News"
+
+#: .\laowai_panda\dashboard.py:70
+msgid "Support"
+msgstr "Unterstützung"
+
+#: .\laowai_panda\dashboard.py:73
+msgid "Django documentation"
+msgstr "Django-Dokumentation"
+
+#: .\laowai_panda\dashboard.py:78
+msgid "Django \"django-users\" mailing list"
+msgstr "Django \"Django-Benutzer\" Mailingliste"
+
+#: .\laowai_panda\dashboard.py:83
+msgid "Django irc channel"
+msgstr "Django IRC-Kanal"
+
+#: .\laowai_panda\settings\base.py:170
+msgid "Arabic"
+msgstr "Arabisch"
+
+#: .\laowai_panda\settings\base.py:171
+msgid "German"
+msgstr "Deutsche"
+
+#: .\laowai_panda\settings\base.py:172
+msgid "English"
+msgstr "Englisch"
+
+#: .\laowai_panda\settings\base.py:173
+msgid "Spanish"
+msgstr "Spanisch"
+
+#: .\laowai_panda\settings\base.py:174
+msgid "Persian"
+msgstr "persisch"
+
+#: .\laowai_panda\settings\base.py:175
+msgid "French"
+msgstr "Französisch"
+
+#: .\laowai_panda\settings\base.py:176
+msgid "Hindi"
+msgstr "Hindi"
+
+#: .\laowai_panda\settings\base.py:177
+msgid "Indonesian"
+msgstr "Indonesisch"
+
+#: .\laowai_panda\settings\base.py:178
+msgid "Italian"
+msgstr "Italienisch"
+
+#: .\laowai_panda\settings\base.py:179
+msgid "Japanese"
+msgstr "japanisch"
+
+#: .\laowai_panda\settings\base.py:180
+msgid "Korean"
+msgstr "Koreanisch"
+
+#: .\laowai_panda\settings\base.py:181
+msgid "Malaysian"
+msgstr "malaysisch"
+
+#: .\laowai_panda\settings\base.py:182
+msgid "Portuguese"
+msgstr "Portugiesisch"
+
+#: .\laowai_panda\settings\base.py:183
+msgid "Russian"
+msgstr "Russisch"
+
+#: .\laowai_panda\settings\base.py:184
+msgid "Thai"
+msgstr "Thai"
+
+#: .\laowai_panda\settings\base.py:185
+msgid "Turkish"
+msgstr "Türkisch"
+
+#: .\laowai_panda\settings\base.py:186
+msgid "Urdu"
+msgstr "Urdu"
+
+#: .\laowai_panda\settings\base.py:187
+msgid "vietnam"
+msgstr "Vietnam"
+
+#: .\laowai_panda\settings\base.py:188
+msgid "Simplified Chinese"
+msgstr "Vereinfachtes Chinesisch"
+
+#: .\laowai_panda\settings\base.py:189
+msgid "Traditional Chinese"
+msgstr "Traditionelles Chinesisch"
+
+#: .\laowai_panda\yandex_metrika.py:116
+msgid "Revoke access"
+msgstr "Zugangsberechtigung aufheben"
+
+#: .\laowai_panda\yandex_metrika.py:121
+msgid "Grant access"
+msgstr "Zugriff gewähren"
+
+#: .\laowai_panda\yandex_metrika.py:131
+msgid "Access"
+msgstr "Zugriff"
+
+#: .\laowai_panda\yandex_metrika.py:132
+msgid "Counter"
+msgstr "Zähler"
+
+#: .\laowai_panda\yandex_metrika.py:133
+msgid "Statistics period"
+msgstr "Statistikzeitraum"
+
+#: .\laowai_panda\yandex_metrika.py:134
+msgid "Today"
+msgstr "Heute"
+
+#: .\laowai_panda\yandex_metrika.py:135
+msgid "Last week"
+msgstr "Letzte Woche"
+
+#: .\laowai_panda\yandex_metrika.py:136
+msgid "Last month"
+msgstr "Im vergangenen Monat"
+
+#: .\laowai_panda\yandex_metrika.py:137
+msgid "Last quarter"
+msgstr "Letztes Vierteljahr"
+
+#: .\laowai_panda\yandex_metrika.py:138
+msgid "Last year"
+msgstr "Letztes Jahr"
+
+#: .\laowai_panda\yandex_metrika.py:148
+msgid "none"
+msgstr "keiner"
+
+#: .\laowai_panda\yandex_metrika.py:151
+msgid "grant access first"
+msgstr "Gewähren Sie zuerst Zugriff"
+
+#: .\laowai_panda\yandex_metrika.py:151
+msgid "counters loading failed"
+msgstr "Das Laden der Zähler ist fehlgeschlagen"
+
+#: .\laowai_panda\yandex_metrika.py:156
+msgid "Show"
+msgstr "Show"
+
+#: .\laowai_panda\yandex_metrika.py:157 .\laowai_panda\yandex_metrika.py:304
+msgid "visitors"
+msgstr "Besucher"
+
+#: .\laowai_panda\yandex_metrika.py:158 .\laowai_panda\yandex_metrika.py:305
+msgid "visits"
+msgstr "Besuche"
+
+#: .\laowai_panda\yandex_metrika.py:159 .\laowai_panda\yandex_metrika.py:306
+msgid "views"
+msgstr "Ansichten"
+
+#: .\laowai_panda\yandex_metrika.py:161 .\laowai_panda\yandex_metrika.py:169
+msgid "Group"
+msgstr "Gruppe"
+
+#: .\laowai_panda\yandex_metrika.py:162 .\laowai_panda\yandex_metrika.py:170
+msgid "By day"
+msgstr "Tagsüber"
+
+#: .\laowai_panda\yandex_metrika.py:163 .\laowai_panda\yandex_metrika.py:171
+msgid "By week"
+msgstr "Bis Woche"
+
+#: .\laowai_panda\yandex_metrika.py:164 .\laowai_panda\yandex_metrika.py:172
+msgid "By month"
+msgstr "Nach Monaten"
+
+#: .\laowai_panda\yandex_metrika.py:232
+#, python-format
+msgid ""
+"Please <a href=\"%s\">attach Yandex account and choose Yandex Metrika "
+"counter</a> to start using widget"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:235
+#, python-format
+msgid ""
+"Please <a href=\"%s\">select Yandex Metrika counter</a> to start using widget"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:249 .\laowai_panda\yandex_metrika.py:265
+msgid "API request failed."
+msgstr "API-Anfrage fehlgeschlagen."
+
+#: .\laowai_panda\yandex_metrika.py:251 .\laowai_panda\yandex_metrika.py:267
+#, python-format
+msgid " Try to <a href=\"%s\">revoke and grant access</a> again"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:289
+msgid "Yandex Metrika visitors totals"
+msgstr "Yandex Metrika Besucherzahlen"
+
+#: .\laowai_panda\yandex_metrika.py:308 .\laowai_panda\yandex_metrika.py:360
+#: .\laowai_panda\yandex_metrika.py:410
+msgid "Bad server response"
+msgstr "Schlechte Serverantwort"
+
+#: .\laowai_panda\yandex_metrika.py:318
+msgid "Yandex Metrika visitors chart"
+msgstr "Yandex Metrika Besucherkarte"
+
+#: .\laowai_panda\yandex_metrika.py:370
+msgid "Yandex Metrika period visitors"
+msgstr "Besucher der Yandex Metrika-Zeit"
+
+#: .\notification\funcs.py:16
+msgid "user has no pushy token"
+msgstr "Benutzer hat kein aufdringliches Token"
+
+#: .\notification\models.py:33
+msgid "No action"
+msgstr "Keine Aktion"
+
+#: .\notification\models.py:34
+msgid "Question liked"
+msgstr "Frage gefallen"
+
+#: .\notification\models.py:35
+msgid "Question shared"
+msgstr "Frage geteilt"
+
+#: .\notification\models.py:36
+msgid "Got a comment"
+msgstr "Habe einen Kommentar bekommen"
+
+#: .\notification\models.py:37
+msgid "New comment on followed question"
+msgstr "Neuer Kommentar zur folgenden Frage"
+
+#: .\notification\models.py:38
+msgid "Useful comment"
+msgstr "Nützlicher Kommentar"
+
+#: .\notification\models.py:39
+msgid "Got followed"
+msgstr "Wurde verfolgt"
+
+#: .\notification\models.py:40
+msgid "Question favourite"
+msgstr "Frage Favorit"
+
+#: .\notification\models.py:41
+msgid "Followed user added new question"
+msgstr "Der folgende Benutzer hat eine neue Frage hinzugefügt"
+
+#: .\notification\models.py:42
+msgid "Got a reply to your comment"
+msgstr "Ich habe eine Antwort auf Ihren Kommentar erhalten"
+
+#: .\notification\models.py:62
+msgid "Created"
+msgstr "Erstellt"
+
+#: .\notification\models.py:63
+msgid "Passed to pushy"
+msgstr "Aufdringlich übergeben"
+
+#: .\notification\models.py:64
+msgid "Delivered"
+msgstr "Geliefert"
+
+#: .\notification\models.py:65
+msgid "Faild as user hasn't notification token"
+msgstr "Faild als Benutzer hat kein Benachrichtigungstoken"
+
+#: .\notification\models.py:66
+msgid "Pushy Faild"
+msgstr "Aufdringliches Faild"
+
+#: .\notification\models.py:67
+msgid "Unknown Error"
+msgstr "Unbekannter Fehler"
+
+#: .\notification\models.py:68
+msgid "Template action not exist please add one"
+msgstr "Vorlagenaktion nicht vorhanden Bitte fügen Sie eine hinzu"
+
+#: .\notification\views.py:39 .\notification\views.py:41
+msgid "Notification updated successfully."
+msgstr "Benachrichtigung erfolgreich aktualisiert."
+
+#: .\notification\views.py:47 .\notification\views.py:60
+msgid "pushy_token is required."
+msgstr "pushy_token ist erforderlich."
+
+#: .\notification\views.py:54
+msgid "Pushy Token added successfully."
+msgstr "Pushy Token erfolgreich hinzugefügt."
+
+#: .\notification\views.py:65 .\notification\views.py:67
+msgid "Pushy Token loged out successfully."
+msgstr "Pushy Token hat sich erfolgreich abgemeldet."
+
+#: .\revyoume_club\views.py:85
+msgid " channel_id is required"
+msgstr "Kanal-ID ist erforderlich"
+
+#: .\revyoume_club\views.py:117
+msgid "Post does not exist."
+msgstr "Post existiert nicht."

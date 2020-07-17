@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{% static 'landing/img/fav.png' %}">
+    <!-- Author Meta -->
+    <meta name="author" content="codepixer">
+    <!-- Meta Description -->
+    <meta name="description" content="{{post.text}}">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    {% if post.media %}
+    <meta property="og:image" content="{{post.media.url}}" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="500" />
+    {% endif %}
+    <!-- Site Title -->
+    <title>Laowai Panda</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto:400,400i,500" rel="stylesheet">
+    <!--
+			CSS
+			============================================= -->
+    <link rel="stylesheet" href="{% static 'landing/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/style.css' %}">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(56830834, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/56830834" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+
+    <main id="site-wrapper">
+        <div class="scroll-to-top">
+            <a href="#home"> <i class="fas fa-angle-double-up"></i> </a>
+        </div>
+        <!-- start header Area -->
+        <header id="header">
+            <nav class="navbar navbar-expand-lg navbar fixed-top ">
+                <div class="container">
+                    <a class="navbar-brand" href="/">
+                        <img src="{% static 'landing/img/logo.png' %}" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="fas fa-bars"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#download">Download</a>
+                            </li>
+                    </div>
+                </div>
+            </nav>
+            <!-- HTML5 VIDEO TAG -->
+                <section class="posts my-5">
+        <div class="container">
+            <div class="post-box p-4" style="background-color: #FAFAFA;">
+                <div class="post-header d-flex align-items-center">
+                    <div class="commenter-pic">
+                        <img src="{{post.channel.logo.url}}" class="img-fluid" alt="">
+                    </div>
+                    <div class="post-title">
+                        <div> {{post.channel.name}} </div>
+                        <span>Published {{post.created}}</span>
+                    </div>
+                </div>
+                <h3 class="main-title font-weight-bold mt-3 my-3">
+                    {{post.text}}
+                </h3>
+                {% if post.type == post.TXT_VIDEO %}
+                    {% if post.media %}
+                    <video width="700" height="400" controls>
+                    <source src="{{post.media.url}}" type="video/mp4">
+                    </video>
+                    {% else %}
+                    <iframe class="yoku-video" src='{{post.get_youko_link}}' frameborder=0 'allowfullscreen'></iframe>
+                    {% endif %}
+                
+                {% elif post.type == post.TXT_IMAGE %}
+                    {% if post.media %}
+                    <a href="{{post.media.url}}">
+                        <img src="{{post.media.url}}" class="img-fluid video-img" alt="">
+                    </a> 
+                    {% endif %}
+                {% endif %}
+                <div class="post-sharable">
+                    <div class="d-flex justify-content-end">
+                        <div class="post-likes">
+                            <span class="mr-1 font-weight-bold">({{post.likes}})</span>
+                            <i class="far fa-thumbs-up"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        </header>
+        <!-- end header Area -->
+
+    </main>
+    <!-- Start Footer Area -->
+    <footer class="footer-area pb-3 mt-5 pt-5" id="site-footer">
+        <div class="container">
+            <div class="row">
+            </div>
+            <div class="row align-items-center">
+                <p class="footer-text mt-5 col-lg-6 col-md-12 text-center">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | Laowai Panda
+                    <br> Powered by <i class="fa fa-heart-o" aria-hidden="true"></i> <a href=""
+                        target="_blank">MaroGlobal</a>
+                        <br> Contact us: <a href=""target="_blank">info@laowaipanda.com</a>
+                        <br> 浙ICP备<a href=""target="_blank"> 20001177 </a>号
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+                <div class="col-lg-6 col-md-6 social-link">
+                    <div class="download-button d-flex flex-row justify-content-end">
+                        <div class="buttons gray flex-row d-flex">
+                            <i class="fa fa-apple" aria-hidden="true"></i>
+                            <div class="desc">
+                                <a href="#">
+                                    <p>
+                                        <span>Available</span> <br>
+                                        For IOS
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="buttons gray flex-row d-flex">
+                            <i class="fa fa-android" aria-hidden="true"></i>
+                            <div class="desc">
+                                <a href="https://play.google.com/store/apps/details?id=com.LaowaiPanda">
+                                    <p>
+                                        <span>Available</span> <br>
+                                        For Android
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Area -->
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/video.popup.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'landing/js/tilt.jquery.min.js' %}"></script>
+    <script src="{% static 'landing/js/main.js' %}"></script>
+    
+</body>
+
+</html>

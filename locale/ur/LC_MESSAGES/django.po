@@ -1,0 +1,529 @@
+# This file is distributed under the same license as the Django package.
+# 
+# Translators:
+# Mansoorulhaq Mansoor <mnsrknp@gmail.com>, 2011
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-02 15:47+0200\n"
+"PO-Revision-Date: 2017-09-19 16:40+0000\n"
+"Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
+"Language-Team: Urdu (http://www.transifex.com/django/django/language/ur/)\n"
+"Language: ur\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\accounts\serializers.py:21
+msgid "Name can't be number"
+msgstr "نام نمبر نہیں ہوسکتا"
+
+#: .\accounts\views.py:87
+msgid "Signup Succsesfuly"
+msgstr "سائن اپ کامیابیاں"
+
+#: .\accounts\views.py:102
+msgid "Email already verified"
+msgstr "ای میل پہلے ہی تصدیق شدہ ہے"
+
+#: .\accounts\views.py:109
+msgid "Verification e-mail sent"
+msgstr "توثیقی ای میل بھیجا گیا"
+
+#: .\accounts\views.py:111
+msgid "Email doesn't exist."
+msgstr "ای میل موجود نہیں ہے۔"
+
+#: .\accounts\views.py:130
+msgid "Please enter the correct email and password."
+msgstr "براہ کرم صحیح ای میل اور پاس ورڈ درج کریں۔"
+
+#: .\accounts\views.py:139
+msgid "Please verify your email."
+msgstr "براہ کرم اپنے ای میل کی تصدیق کریں۔"
+
+#: .\accounts\views.py:164
+msgid "Social type not supported"
+msgstr "معاشرتی قسم کی سہولت نہیں ہے"
+
+#: .\accounts\views.py:191
+msgid "Social Auth Failed"
+msgstr "سماجی تصنیف ناکام"
+
+#: .\accounts\views.py:211 .\accounts\views.py:348 .\connect\views.py:150
+#: .\connect\views.py:170
+msgid "User doesn't exist"
+msgstr "صارف موجود نہیں ہے"
+
+#: .\accounts\views.py:214
+msgid "Check your {} to reset the password"
+msgstr "اپنا دیکھو {} پاس ورڈ کو دوبارہ ترتیب دینے کیلئے"
+
+#: .\accounts\views.py:233 .\accounts\views.py:284
+msgid "Too much trials, please generate new code."
+msgstr "بہت زیادہ آزمائشیں ، براہ کرم نیا کوڈ بنائیں۔"
+
+#: .\accounts\views.py:239
+msgid "Correct code"
+msgstr "درست کوڈ"
+
+#: .\accounts\views.py:242 .\accounts\views.py:294
+msgid "Wrong code"
+msgstr "غلط کوڈ"
+
+#: .\accounts\views.py:246 .\accounts\views.py:298
+msgid "Wrong email"
+msgstr "غلط ای میل"
+
+#: .\accounts\views.py:266
+msgid "Wrong password"
+msgstr "غلط پاس ورڈ"
+
+#: .\accounts\views.py:292
+msgid "password reseted successfuly"
+msgstr "پاس ورڈ دوبارہ کامیابی سے ملا"
+
+#: .\accounts\views.py:366 .\connect\views.py:202 .\connect\views.py:228
+#: .\connect\views.py:255 .\connect\views.py:274 .\connect\views.py:306
+#: .\revyoume_club\views.py:105
+msgid "This field is required."
+msgstr "اس کو پر کرنا ضروری ہے."
+
+#: .\accounts\views.py:372
+msgid "User removed from your block list successfully."
+msgstr "صارف کو آپ کی بلاک لسٹ سے کامیابی کے ساتھ ہٹا دیا گیا۔"
+
+#: .\accounts\views.py:379
+msgid "User added to your block list successfully."
+msgstr "صارف نے کامیابی کے ساتھ آپ کی بلاک لسٹ میں شامل کیا۔"
+
+#: .\accounts\views.py:382 .\accounts\views.py:415
+msgid "User does not exist."
+msgstr "صارف موجود نہیں."
+
+#: .\accounts\views.py:395
+msgid "Can't follow/unfollow yourself."
+msgstr "خود کی پیروی / پیروی نہیں کرسکتے ہیں۔"
+
+#: .\accounts\views.py:401
+msgid "User removed from your follow list successfully."
+msgstr "صارف کو آپ کی پیروی کی فہرست سے کامیابی کے ساتھ ہٹا دیا گیا۔"
+
+#: .\accounts\views.py:404
+msgid "Can't follow this user regarding the blocking."
+msgstr "اس صارف کو مسدود کرنے کے حوالے سے پیروی نہیں کرسکتے ہیں۔"
+
+#: .\accounts\views.py:410
+msgid "User added to your follow list successfully."
+msgstr "صارف نے کامیابی کے ساتھ آپ کی پیروی کی فہرست میں شامل کیا۔"
+
+#: .\connect\models.py:56
+msgid "Order Number"
+msgstr "آرڈر نمبر"
+
+#: .\connect\views.py:89
+msgid " is required"
+msgstr "ضروری ہے"
+
+#: .\connect\views.py:209
+msgid "Question removed from your favourite list successfully."
+msgstr "سوال آپ کی پسندیدہ فہرست سے کامیابی کے ساتھ ہٹا دیا گیا۔"
+
+#: .\connect\views.py:215
+msgid "Question added to your favourite list successfully."
+msgstr "سوال آپ کی پسندیدہ فہرست میں کامیابی کے ساتھ شامل ہوگیا۔"
+
+#: .\connect\views.py:218 .\connect\views.py:245 .\connect\views.py:264
+#: .\connect\views.py:320 .\connect\views.py:376
+msgid "Question does not exist."
+msgstr "سوال موجود نہیں ہے۔"
+
+#: .\connect\views.py:235 .\revyoume_club\views.py:111
+msgid "Unlike successfully."
+msgstr "کامیابی کے برعکس۔"
+
+#: .\connect\views.py:241 .\revyoume_club\views.py:114
+msgid "Like successfully."
+msgstr "کامیابی سے پسند ہے۔"
+
+#: .\connect\views.py:261
+msgid "notify successfully."
+msgstr "کامیابی کے ساتھ مطلع کریں۔"
+
+#: .\connect\views.py:281
+msgid "Unuseful successfully."
+msgstr "کامیابی کے ساتھ ناقابل استعمال۔"
+
+#: .\connect\views.py:292
+msgid "Useful successfully."
+msgstr "کامیابی کے ساتھ مفید ہے۔"
+
+#: .\connect\views.py:296
+msgid "QuestionReply does not exist."
+msgstr "سوالات جواب موجود نہیں ہے۔"
+
+#: .\connect\views.py:311
+msgid "Question report is cancelled."
+msgstr "سوالیہ رپورٹ منسوخ کردی گئی ہے۔"
+
+# Quick GoogleTranslate by Kelwa
+#: .\connect\views.py:317
+msgid "Your report is submitted successfully."
+msgstr "آپ کی رپورٹ کامیابی کے ساتھ پیش کی گئی ہے۔"
+
+#: .\connect\views.py:340
+msgid "Question doesn't exist"
+msgstr "سوال موجود نہیں ہے"
+
+#: .\connect\views.py:427
+msgid "Reply removed successfully."
+msgstr "جواب کامیابی کے ساتھ ہٹا دیا گیا۔"
+
+#: .\laowai_panda\dashboard.py:20
+msgid "Quick links"
+msgstr "فوری رابطے"
+
+#: .\laowai_panda\dashboard.py:26
+msgid "Return to site"
+msgstr "سائٹ پر واپس جائیں"
+
+#: .\laowai_panda\dashboard.py:27
+msgid "Change password"
+msgstr "پاس ورڈ تبدیل کریں"
+
+#: .\laowai_panda\dashboard.py:29
+msgid "Log out"
+msgstr "لاگ آوٹ"
+
+#: .\laowai_panda\dashboard.py:37
+msgid "Applications"
+msgstr "درخواستیں"
+
+#: .\laowai_panda\dashboard.py:45
+msgid "Administration"
+msgstr "انتظامیہ"
+
+#: .\laowai_panda\dashboard.py:53
+msgid "Recent Actions"
+msgstr "حالیہ کاروائیاں"
+
+#: .\laowai_panda\dashboard.py:61
+msgid "Latest Django News"
+msgstr "جیانگو کی تازہ ترین خبریں"
+
+#: .\laowai_panda\dashboard.py:70
+msgid "Support"
+msgstr "مدد کریں"
+
+#: .\laowai_panda\dashboard.py:73
+msgid "Django documentation"
+msgstr "جیانگو دستاویزات"
+
+#: .\laowai_panda\dashboard.py:78
+msgid "Django \"django-users\" mailing list"
+msgstr "ججنگو میلنگ لسٹ \"جینگو استعمال کنندہ\""
+
+#: .\laowai_panda\dashboard.py:83
+msgid "Django irc channel"
+msgstr "ججنگو irc چینل"
+
+#: .\laowai_panda\settings\base.py:170
+msgid "Arabic"
+msgstr "عربی"
+
+#: .\laowai_panda\settings\base.py:171
+msgid "German"
+msgstr "جرمن"
+
+#: .\laowai_panda\settings\base.py:172
+msgid "English"
+msgstr "انگریزی"
+
+#: .\laowai_panda\settings\base.py:173
+msgid "Spanish"
+msgstr "ہسپانوی"
+
+#: .\laowai_panda\settings\base.py:174
+msgid "Persian"
+msgstr "فارسی"
+
+#: .\laowai_panda\settings\base.py:175
+msgid "French"
+msgstr "فرانسیسی"
+
+#: .\laowai_panda\settings\base.py:176
+msgid "Hindi"
+msgstr "ہندی"
+
+#: .\laowai_panda\settings\base.py:177
+msgid "Indonesian"
+msgstr "انڈونیشی"
+
+#: .\laowai_panda\settings\base.py:178
+msgid "Italian"
+msgstr "اطالوی"
+
+#: .\laowai_panda\settings\base.py:179
+msgid "Japanese"
+msgstr "جاپانی"
+
+#: .\laowai_panda\settings\base.py:180
+msgid "Korean"
+msgstr "کورین"
+
+#: .\laowai_panda\settings\base.py:181
+msgid "Malaysian"
+msgstr "ویت نام"
+
+#: .\laowai_panda\settings\base.py:182
+msgid "Portuguese"
+msgstr "پرتگالی"
+
+#: .\laowai_panda\settings\base.py:183
+msgid "Russian"
+msgstr "روسی"
+
+#: .\laowai_panda\settings\base.py:184
+msgid "Thai"
+msgstr "تھائی"
+
+#: .\laowai_panda\settings\base.py:185
+msgid "Turkish"
+msgstr "ترکی"
+
+#: .\laowai_panda\settings\base.py:186
+msgid "Urdu"
+msgstr "اردو"
+
+#: .\laowai_panda\settings\base.py:187
+msgid "vietnam"
+msgstr "ویت نام"
+
+#: .\laowai_panda\settings\base.py:188
+msgid "Simplified Chinese"
+msgstr "آسان چینی"
+
+#: .\laowai_panda\settings\base.py:189
+msgid "Traditional Chinese"
+msgstr "روایتی چینی"
+
+#: .\laowai_panda\yandex_metrika.py:116
+msgid "Revoke access"
+msgstr "رسائی کالعدم"
+
+#: .\laowai_panda\yandex_metrika.py:121
+msgid "Grant access"
+msgstr "گرانٹ تک رسائی"
+
+#: .\laowai_panda\yandex_metrika.py:131
+msgid "Access"
+msgstr "رسائی"
+
+#: .\laowai_panda\yandex_metrika.py:132
+msgid "Counter"
+msgstr "کاؤنٹر"
+
+#: .\laowai_panda\yandex_metrika.py:133
+msgid "Statistics period"
+msgstr "اعداد و شمار کی مدت"
+
+#: .\laowai_panda\yandex_metrika.py:134
+msgid "Today"
+msgstr "آج"
+
+#: .\laowai_panda\yandex_metrika.py:135
+msgid "Last week"
+msgstr "پچھلا ہفتہ"
+
+#: .\laowai_panda\yandex_metrika.py:136
+msgid "Last month"
+msgstr "پچھلے مہینے"
+
+#: .\laowai_panda\yandex_metrika.py:137
+msgid "Last quarter"
+msgstr "آخری چوتھائی"
+
+#: .\laowai_panda\yandex_metrika.py:138
+msgid "Last year"
+msgstr "گزشتہ سال"
+
+#: .\laowai_panda\yandex_metrika.py:148
+msgid "none"
+msgstr "کوئی نہیں"
+
+#: .\laowai_panda\yandex_metrika.py:151
+msgid "grant access first"
+msgstr "پہلے رسائی دیں"
+
+#: .\laowai_panda\yandex_metrika.py:151
+msgid "counters loading failed"
+msgstr "کاؤنٹر لوڈنگ ناکام"
+
+#: .\laowai_panda\yandex_metrika.py:156
+msgid "Show"
+msgstr "دکھائیں"
+
+#: .\laowai_panda\yandex_metrika.py:157 .\laowai_panda\yandex_metrika.py:304
+msgid "visitors"
+msgstr "زائرین"
+
+#: .\laowai_panda\yandex_metrika.py:158 .\laowai_panda\yandex_metrika.py:305
+msgid "visits"
+msgstr "دورے"
+
+#: .\laowai_panda\yandex_metrika.py:159 .\laowai_panda\yandex_metrika.py:306
+msgid "views"
+msgstr "آراء"
+
+#: .\laowai_panda\yandex_metrika.py:161 .\laowai_panda\yandex_metrika.py:169
+msgid "Group"
+msgstr "گروپ"
+
+#: .\laowai_panda\yandex_metrika.py:162 .\laowai_panda\yandex_metrika.py:170
+msgid "By day"
+msgstr "دن میں"
+
+#: .\laowai_panda\yandex_metrika.py:163 .\laowai_panda\yandex_metrika.py:171
+msgid "By week"
+msgstr "ہفتہ تک"
+
+#: .\laowai_panda\yandex_metrika.py:164 .\laowai_panda\yandex_metrika.py:172
+msgid "By month"
+msgstr "مہینے تک"
+
+#: .\laowai_panda\yandex_metrika.py:232
+#, python-format
+msgid ""
+"Please <a href=\"%s\">attach Yandex account and choose Yandex Metrika "
+"counter</a> to start using widget"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:235
+#, python-format
+msgid ""
+"Please <a href=\"%s\">select Yandex Metrika counter</a> to start using widget"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:249 .\laowai_panda\yandex_metrika.py:265
+msgid "API request failed."
+msgstr "API درخواست ناکام ہوگئی۔"
+
+#: .\laowai_panda\yandex_metrika.py:251 .\laowai_panda\yandex_metrika.py:267
+#, python-format
+msgid " Try to <a href=\"%s\">revoke and grant access</a> again"
+msgstr ""
+
+#: .\laowai_panda\yandex_metrika.py:289
+msgid "Yandex Metrika visitors totals"
+msgstr "یاندیکس میٹریکا کے زائرین"
+
+#: .\laowai_panda\yandex_metrika.py:308 .\laowai_panda\yandex_metrika.py:360
+#: .\laowai_panda\yandex_metrika.py:410
+msgid "Bad server response"
+msgstr "سرور کا خراب ردعمل"
+
+#: .\laowai_panda\yandex_metrika.py:318
+msgid "Yandex Metrika visitors chart"
+msgstr "یاندیکس میٹریکا زائرین کا چارٹ"
+
+#: .\laowai_panda\yandex_metrika.py:370
+msgid "Yandex Metrika period visitors"
+msgstr "یاندیکس میٹریکا دورے کے زائرین"
+
+#: .\notification\funcs.py:16
+msgid "user has no pushy token"
+msgstr "صارف کے پاس کوئی دھکا دینے والا ٹوکن نہیں ہے"
+
+#: .\notification\models.py:33
+msgid "No action"
+msgstr "کوئی کارروائی نہیں"
+
+#: .\notification\models.py:34
+msgid "Question liked"
+msgstr "سوال پسند آیا"
+
+#: .\notification\models.py:35
+msgid "Question shared"
+msgstr "سوال مشترکہ ہے"
+
+#: .\notification\models.py:36
+msgid "Got a comment"
+msgstr "ایک تبصرہ ملا"
+
+#: .\notification\models.py:37
+msgid "New comment on followed question"
+msgstr "پیروی والے سوال پر نیا تبصرہ"
+
+#: .\notification\models.py:38
+msgid "Useful comment"
+msgstr "مفید تبصرہ"
+
+#: .\notification\models.py:39
+msgid "Got followed"
+msgstr "فالو ہوا"
+
+#: .\notification\models.py:40
+msgid "Question favourite"
+msgstr "سوال پسند ہے"
+
+#: .\notification\models.py:41
+msgid "Followed user added new question"
+msgstr "پیروکار صارف نے نیا سوال شامل کیا"
+
+#: .\notification\models.py:42
+msgid "Got a reply to your comment"
+msgstr "آپ کے تبصرے کا جواب ملا"
+
+#: .\notification\models.py:62
+msgid "Created"
+msgstr "بنائی گئی"
+
+#: .\notification\models.py:63
+msgid "Passed to pushy"
+msgstr "دھکا دینے میں گزر گیا"
+
+#: .\notification\models.py:64
+msgid "Delivered"
+msgstr "نجات"
+
+#: .\notification\models.py:65
+msgid "Faild as user hasn't notification token"
+msgstr "بطور صارف اطلاع نامہ نہیں ہے"
+
+#: .\notification\models.py:66
+msgid "Pushy Faild"
+msgstr "پوش فیلڈ"
+
+#: .\notification\models.py:67
+msgid "Unknown Error"
+msgstr "نامعلوم خامی"
+
+#: .\notification\models.py:68
+msgid "Template action not exist please add one"
+msgstr "ٹیمپلیٹ ایکشن موجود نہیں ہے براہ کرم ایک شامل کریں"
+
+#: .\notification\views.py:39 .\notification\views.py:41
+msgid "Notification updated successfully."
+msgstr "اطلاع کامیابی کے ساتھ اپ ڈیٹ ہوگئی۔"
+
+#: .\notification\views.py:47 .\notification\views.py:60
+msgid "pushy_token is required."
+msgstr "pushy_token ضروری ہے۔"
+
+#: .\notification\views.py:54
+msgid "Pushy Token added successfully."
+msgstr "Pushy Token کامیابی کے ساتھ شامل کیا گیا۔"
+
+#: .\notification\views.py:65 .\notification\views.py:67
+msgid "Pushy Token loged out successfully."
+msgstr "پشمی ٹوکن کامیابی سے باہر ہو گیا۔"
+
+#: .\revyoume_club\views.py:85
+msgid " channel_id is required"
+msgstr "چینل_ڈ ضروری ہے"
+
+#: .\revyoume_club\views.py:117
+msgid "Post does not exist."
+msgstr "پوسٹ موجود نہیں ہے۔"
