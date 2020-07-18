@@ -24,6 +24,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'laowai_panda_db_laowai_panda',
+        # 'USER': 'django',
         'USER': 'root',
         'PASSWORD': 'PandaPass!2',
         'HOST': 'localhost',
