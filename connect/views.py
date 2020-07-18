@@ -343,53 +343,53 @@ class Questions(APIView):
             context['detail'] = _("Question doesn't exist")
             return Response(context, status=status.HTTP_404_NOT_FOUND)
 
-    def post(self, request, format=None):
-        serializer = QuestionSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.validated_data['owner'] = request.user
-
-            question = serializer.save()
-            arr = []
-            try:
-                for image in request.data['images']:
-                    image["question_id"] = question.id
-                    arr.append(image)
-                request.data['images'] = arr
-                images_serializer = QuestionImageSerializer(
-                    data=request.data['images'], many=True)
-                if images_serializer.is_valid():
-                    images_serializer.save()
-                    serializer.data['images'] = images_serializer.data
-            except KeyError:
-                pass
-            create_and_push_notification(
-                question, NotificationTemplate.FOLLOWED_USER_ADDED_NEW_QUESTION, request.user, request.user.followers.all())
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
     # def post(self, request, format=None):
-    #     # print(request.META)
-    #     with open('/var/www/api/request_post_body.log', 'a', encoding='utf-8') as f:  # a是追加，w覆盖
-    #         f.write(str(request._request.body, encoding='utf-8') + "\n")
     #     serializer = QuestionSerializer(data=request.data)
     #     if serializer.is_valid():
     #         serializer.validated_data['owner'] = request.user
     #
     #         question = serializer.save()
+    #         arr = []
     #         try:
     #             for image in request.data['images']:
-    #                 QuestionImage.objects.create(image=image['image'], question_id=question.id)
-    #
-    #         except Exception as e:
-    #             print(e)
-    #
+    #                 image["question_id"] = question.id
+    #                 arr.append(image)
+    #             request.data['images'] = arr
+    #             images_serializer = QuestionImageSerializer(
+    #                 data=request.data['images'], many=True)
+    #             if images_serializer.is_valid():
+    #                 images_serializer.save()
+    #                 serializer.data['images'] = images_serializer.data
+    #         except KeyError:
+    #             pass
     #         create_and_push_notification(
-    #             question, NotificationTemplate.FOLLOWED_USER_ADDED_NEW_QUESTION, request.user,
-    #             request.user.followers.all())
+    #             question, NotificationTemplate.FOLLOWED_USER_ADDED_NEW_QUESTION, request.user, request.user.followers.all())
     #         return Response(serializer.data, status=status.HTTP_201_CREATED)
     #
     #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def post(self, request, format=None):
+        # print(request.META)
+        with open('/var/www/api/request_post_body.log', 'a', encoding='utf-8') as f:  # a是追加，w覆盖
+            f.write(str(request._request.body, encoding='utf-8') + "\n")
+        serializer = QuestionSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.validated_data['owner'] = request.user
+
+            question = serializer.save()
+            try:
+                for image in request.data['images']:
+                    QuestionImage.objects.create(image=image['image'], question_id=question.id)
+
+            except Exception as e:
+                print(e)
+
+            create_and_push_notification(
+                question, NotificationTemplate.FOLLOWED_USER_ADDED_NEW_QUESTION, request.user,
+                request.user.followers.all())
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, id, format=None):
         context = dict()
