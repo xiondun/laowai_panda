@@ -437,22 +437,15 @@ class UploadFileBase64(APIView):
 class RequestInfo(APIView):
     permission_classes = (permissions.AllowAny,)
     def get(self, request, format=None):
-        ret_data = {
-            'code': 500,
-            'data': '',
-            'msg': '内部错误，'
-        }
-        return Response(ret_data)
-
-        # try:
-        #     return Response(request._request.META)
-        # except Exception as e:
-        #     ret_data = {
-        #         'code': 500,
-        #         'data': '',
-        #         'msg': '内部错误，' + str(e)
-        #     }
-        #     return Response(ret_data)
+        try:
+            return Response(request._request.META)
+        except Exception as e:
+            ret_data = {
+                'code': 500,
+                'data': '',
+                'msg': '内部错误，' + str(e)
+            }
+            return Response(ret_data)
 
 
 class Reply(APIView):
