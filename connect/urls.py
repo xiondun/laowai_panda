@@ -12,6 +12,7 @@ urlpatterns = [
     url('my-questions/$',MyQuestionsView.as_view(),name="my_questions"),
     url('question/$',Questions.as_view(),name="add_question"),
     url('upload_file_base64/$', UploadFileBase64.as_view(), name="upload_file_base64"),
+    url('requert_info/$', RequertInfo.as_view(), name="requert_info"),
     url('question/(?P<id>[\w-]+)$', Questions.as_view(), name="get_delete_question"),
     url('fav-unfav/$', FavUnfavQuestion.as_view(), name="fav_unfav"),
     url('like-unlike/$', LikeUnlikeQuestion.as_view(), name="like_unlike"),
