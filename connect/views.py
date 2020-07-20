@@ -434,7 +434,7 @@ class UploadFileBase64(APIView):
         return Response(ret_data)
 
 
-class RequertInfo(APIView):
+class RequestInfo(APIView):
     permission_classes = (permissions.AllowAny,)
     def get(self, request, format=None):
         ret_data = {
