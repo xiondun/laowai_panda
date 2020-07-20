@@ -1,5 +1,5 @@
 try:
-    from .production1 import *
+    from .production import *
 except ImportError:
     try:
         from .local import *
