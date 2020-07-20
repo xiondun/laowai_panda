@@ -437,16 +437,19 @@ class UploadFileBase64(APIView):
 class RequestInfo(APIView):
     permission_classes = (permissions.AllowAny,)
     def get(self, request, format=None):
-        try:
-            return Response(request._request.META)
-        except Exception as e:
-            ret_data = {
-                'code': 500,
-                'data': '',
-                'msg': '内部错误，' + str(e)
-            }
-            return Response(ret_data)
+        if 'HTTP_X_FORWARDED_FOR' in request.META.keys():
+            ip = request.META['HTTP_X_FORWARDED_FOR']
+        else:
+            ip = request.META['REMOTE_ADDR']
+        print('用户的请求ip是', ip)
 
+        # 此处编写的代码会在每个请求处理视图之后被调用。
+        ret_data = {
+            'code': 200,
+            'data': ip,
+            'msg': ''
+        }
+        return Response(ret_data)
 
 class Reply(APIView):
     def get_object(self, request, id):
