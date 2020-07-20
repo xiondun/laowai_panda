@@ -436,7 +436,7 @@ class UploadFileBase64(APIView):
 
 class RequertInfo(APIView):
     permission_classes = (permissions.AllowAny,)
-    def post(self, request, format=None):
+    def get(self, request, format=None):
         try:
             return Response(request._request.META)
         except Exception as e:
