@@ -64,6 +64,7 @@ class Search(APIView):
             questions.distinct().order_by('-created'), page)
         serializer = QuestionSerializer(
             queryset, many=True, context={'user': request.user})
+
         return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
 
 
@@ -409,7 +410,6 @@ class Questions(APIView):
 
 class UploadFileBase64(APIView):
     permission_classes = (permissions.AllowAny,)
-
     def post(self, request, format=None):
         try:
             # with open('/var/www/api/request_body.log', 'a', encoding='utf-8') as f:  # a是追加，w覆盖
@@ -418,15 +418,16 @@ class UploadFileBase64(APIView):
             # file_strs = request._request.POST.get('file')
             ext = file_strs.split(',')[0].split('/')[-1].split(';')[0]
             img_strs = file_strs.split(',')[-1]
-            save_path = 'media/' + datetime.datetime.now().strftime("%Y%m%d")
+            folder = datetime.datetime.now().strftime("%Y%m%d")
+            save_path = 'media/' + folder
             self.mkdir = self.mkdir(save_path)
             # print('file_strs: ' + file_strs)
             file_name = str(int(time.time() * 1000)) + '.' + ext  # 构造文件名以及文件路径
-            with open(save_path + file_name, 'wb') as f:
+            with open(save_path + '/'+ file_name, 'wb') as f:
                 f.write(base64.b64decode(img_strs))
             ret_data = {
                 'code': 200,
-                'data': {'file_name': file_name},
+                'data': {'file_name': folder + '/'+ file_name},
                 'msg': 'success'
             }
         except Exception as e:
