@@ -1,6 +1,8 @@
 import datetime
 import os
+import threading
 
+import requests
 from django.shortcuts import render
 from django.db.models import Count
 from django.core.paginator import Paginator
@@ -36,6 +38,10 @@ class Search(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def get(self, request, format=None):
+        # aa = '/media/1595399798607.jpeg'
+        # imgUrl = 'http://121.40.208.210' + aa  # 杭州
+        # threading.Thread(target=self.down_load_img, args=(imgUrl, aa)).start()
+        # print(os.getcwd())
         request_query_string = (request.GET).dict()
         page = request.GET.get("page", 1)
         questions = Question.objects.all()
@@ -65,7 +71,53 @@ class Search(APIView):
         serializer = QuestionSerializer(
             queryset, many=True, context={'user': request.user})
 
+        threading.Thread(target=self.getRemoteImg,args=(serializer.data,)).start()
+
         return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
+        # return Response({"data": "", "pages_num": ""}, status=status.HTTP_200_OK)
+
+    def getRemoteImg(self, data):
+        for items in data:
+            for item in items['images']:
+                if (not os.path.exists(os.getcwd() + item['image'])):
+                    imgUrl = 'http://45.13.199.57' + item['image']  # 德國
+                    # self.down_load_img(imgUrl,item['image'])
+                    threading.Thread(target=self.down_load_img, args=(imgUrl, item['image'])).start()
+                    imgUrl = 'http://121.40.208.210' + item['image']  # 杭州
+                    threading.Thread(target=self.down_load_img, args=(imgUrl, item['image'])).start()
+
+    def mkdir(self, path):
+        path = path.strip()
+        path = path.rstrip("\\")
+        isExists = os.path.exists(path)
+        if not isExists:
+            os.makedirs(path)
+            return True
+        else:
+            return False
+
+    def down_load_img(self, imgUrl, imgName):
+        save_path = '/'.join(imgName.split('/')[1:-1])
+        imgName = imgName.split('/')[-1]
+        self.mkdir(save_path)
+        save_img_path = save_path + '/' + str(imgName)
+        # print(save_img_path)
+        try:
+            header = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+            }
+            img = requests.get(imgUrl, headers=header, timeout=120).content
+            with open(save_img_path, 'wb') as f:
+                f.write(img)
+            # print(imgUrl, '下载成功')
+            return save_img_path
+        except Exception as e:
+            # print(imgUrl, "下载图片错误XXXX", e)
+            try:
+                os.remove(save_img_path)
+            except Exception as e:
+                pass
+            return False
 
 
 class FollowedUsersQuestions(APIView):
@@ -410,6 +462,7 @@ class Questions(APIView):
 
 class UploadFileBase64(APIView):
     permission_classes = (permissions.AllowAny,)
+
     def post(self, request, format=None):
         try:
             # with open('/var/www/api/request_body.log', 'a', encoding='utf-8') as f:  # a是追加，w覆盖
@@ -423,11 +476,11 @@ class UploadFileBase64(APIView):
             self.mkdir = self.mkdir(save_path)
             # print('file_strs: ' + file_strs)
             file_name = str(int(time.time() * 1000)) + '.' + ext  # 构造文件名以及文件路径
-            with open(save_path + '/'+ file_name, 'wb') as f:
+            with open(save_path + '/' + file_name, 'wb') as f:
                 f.write(base64.b64decode(img_strs))
             ret_data = {
                 'code': 200,
-                'data': {'file_name': folder + '/'+ file_name},
+                'data': {'file_name': folder + '/' + file_name},
                 'msg': 'success'
             }
         except Exception as e:
