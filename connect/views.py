@@ -1,3 +1,6 @@
+import datetime
+import os
+
 from django.shortcuts import render
 from django.db.models import Count
 from django.core.paginator import Paginator
@@ -28,6 +31,7 @@ def queryset_paginator(queryset, page, num=10):
     queryset = paginator.page(page)
     return queryset, number
 
+
 class Search(APIView):
     permission_classes = (permissions.AllowAny,)
 
@@ -52,7 +56,7 @@ class Search(APIView):
                 questions = questions.filter(condition | condition1).distinct()
         except:
             pass
-        #exclude the blocked user data
+        # exclude the blocked user data
         if request.user.id:
             questions = questions.exclude(
                 owner__in=request.user.blocked_users.all())
@@ -70,7 +74,7 @@ class FollowedUsersQuestions(APIView):
         page = request.GET.get("page", 1)
         questions = Question.objects.filter(
             owner__in=request.user.following_users.all())
-        #exclude the blocked user data
+        # exclude the blocked user data
         if request.user.id:
             questions = questions.exclude(
                 owner__in=request.user.blocked_users.all())
@@ -106,7 +110,7 @@ class Filter(APIView):
         except:
             pass
 
-        #exclude the blocked user data
+        # exclude the blocked user data
         if request.user.id:
             questions = questions.exclude(
                 owner__in=request.user.blocked_users.all())
@@ -315,7 +319,7 @@ class ReportUnreportQuestion(APIView):
             else:
                 request.user.my_reported_questions.add(question_id)
                 question_url = request.build_absolute_uri(
-                    reverse('admin:%s_%s_change' % ('connect', 'question'),  args=(question_id,)))
+                    reverse('admin:%s_%s_change' % ('connect', 'question'), args=(question_id,)))
                 Mail.send_report_question(request.user, question_url)
                 context['detail'] = _("Your report is submitted successfully.")
             return Response(context, status=status.HTTP_200_OK)
@@ -408,15 +412,17 @@ class UploadFileBase64(APIView):
 
     def post(self, request, format=None):
         try:
-            with open('/var/www/api/request_body.log', 'a', encoding='utf-8') as f:  # a是追加，w覆盖
-                f.write(str(request._request.body, encoding='utf-8') + "\n")
+            # with open('/var/www/api/request_body.log', 'a', encoding='utf-8') as f:  # a是追加，w覆盖
+            #     f.write(str(request._request.body, encoding='utf-8') + "\n")
             file_strs = json.loads(request._request.body)['file']
             # file_strs = request._request.POST.get('file')
             ext = file_strs.split(',')[0].split('/')[-1].split(';')[0]
             img_strs = file_strs.split(',')[-1]
+            save_path = 'media/' + datetime.datetime.now().strftime("%Y%m%d")
+            self.mkdir = self.mkdir(save_path)
             # print('file_strs: ' + file_strs)
             file_name = str(int(time.time() * 1000)) + '.' + ext  # 构造文件名以及文件路径
-            with open('media/' + file_name, 'wb') as f:
+            with open(save_path + file_name, 'wb') as f:
                 f.write(base64.b64decode(img_strs))
             ret_data = {
                 'code': 200,
@@ -433,9 +439,19 @@ class UploadFileBase64(APIView):
             }
         return Response(ret_data)
 
+    def mkdir(self, path):
+        path = path.strip()
+        path = path.rstrip("\\")
+        isExists = os.path.exists(path)
+        if not isExists:
+            os.makedirs(path)
+            print(path + ' 创建成功')
+            return True
+
 
 class RequestInfo(APIView):
     permission_classes = (permissions.AllowAny,)
+
     def get(self, request, format=None):
         if 'HTTP_X_FORWARDED_FOR' in request.META.keys():
             ip = request.META['HTTP_X_FORWARDED_FOR']
@@ -450,6 +466,7 @@ class RequestInfo(APIView):
             'msg': ''
         }
         return Response(ret_data)
+
 
 class Reply(APIView):
     def get_object(self, request, id):

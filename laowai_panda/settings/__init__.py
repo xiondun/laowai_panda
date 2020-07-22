@@ -1,8 +1,8 @@
 try:
-    from .production import *
+    from .local import *
 except ImportError:
     try:
-        from .local import *
+        from .production import *
     except ImportError as e:
         e.args = tuple(
             ['%s (did you create a copy settings/production-example.py?)' % e.args[0]])

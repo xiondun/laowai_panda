@@ -3,3 +3,4 @@
 /accounts/__pycache__/*.pyc
 /laowai_panda/__pycache__/*.pyc
 *.pyc
+/laowai_panda/settings/local.py
