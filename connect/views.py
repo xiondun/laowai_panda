@@ -80,11 +80,12 @@ class Search(APIView):
         for items in data:
             for item in items['images']:
                 if (not os.path.exists(os.getcwd() + item['image'])):
-                    imgUrl = 'http://45.13.199.57' + item['image']  # 德國
-                    # self.down_load_img(imgUrl,item['image'])
-                    threading.Thread(target=self.down_load_img, args=(imgUrl, item['image'])).start()
-                    imgUrl = 'http://121.40.208.210' + item['image']  # 杭州
-                    threading.Thread(target=self.down_load_img, args=(imgUrl, item['image'])).start()
+                    downloadImgUrlList = [
+                        'http://45.13.199.57' + item['image'],  # 德國
+                        'http://121.40.208.210' + item['image'],  # 杭州
+                    ]
+                    for imgUrl in downloadImgUrlList:
+                        threading.Thread(target=self.down_load_img, args=(imgUrl, item['image'])).start()
 
     def mkdir(self, path):
         path = path.strip()
