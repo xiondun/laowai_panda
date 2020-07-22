@@ -107,13 +107,16 @@ class Search(APIView):
             header = {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
             }
-            img = requests.get(imgUrl, headers=header, timeout=120).content
+            res = requests.get(imgUrl, headers=header, timeout=120)
+            if res.status_code != 200:
+                print(imgUrl,'下载网络错误：',res.status_code)
+                return False
             with open(save_img_path, 'wb') as f:
-                f.write(img)
-            # print(imgUrl, '下载成功')
+                f.write(res.content)
+            print(imgUrl, '下载成功')
             return save_img_path
         except Exception as e:
-            # print(imgUrl, "下载图片错误XXXX", e)
+            print(imgUrl, "下载图片错误XXXX", e)
             try:
                 os.remove(save_img_path)
             except Exception as e:
