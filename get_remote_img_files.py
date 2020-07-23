@@ -7,13 +7,14 @@ from concurrent.futures.thread import ThreadPoolExecutor
 import pymysql
 import requests
 
-conn = pymysql.connect("localhost", "root", "PandaPass!2", "laowai_panda_db_laowai_panda")
+
 
 
 def get_unsynchronized_imgs():
     """
     获取未同步的图片
     """
+    conn = pymysql.connect("localhost", "root", "PandaPass!2", "laowai_panda_db_laowai_panda")
     cursor = conn.cursor()
     try:
         sql = 'select id,image from connect_questionimage where update_time = 0'
@@ -33,14 +34,15 @@ def get_unsynchronized_imgs():
 
 
 def update_unsynchronized_imgs(id):
+    conn = pymysql.connect("localhost", "root", "PandaPass!2", "laowai_panda_db_laowai_panda")
     cursor = conn.cursor()
     try:
-        sql = f'update connect_questionimage set update_time = {int(time.time())} where id = {id}'
+        sql = f"update connect_questionimage set update_time = {int(time.time())} where id = {id}"
         cursor.execute(sql)
         conn.commit()
     except Exception as e:
         conn.rollback()
-        print("查询数据库异常", e)
+        print("修改数据库异常", e)
 
 
 def mkdir(path):
