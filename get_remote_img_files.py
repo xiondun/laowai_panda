@@ -17,7 +17,7 @@ def get_account_photo_imgs():
     conn = pymysql.connect("localhost", "root", "PandaPass!2", "laowai_panda_db_laowai_panda")
     cursor = conn.cursor()
     try:
-        sql = "select photo from accounts_user where photo != '' and photo in not null "
+        sql = "select photo from accounts_user where photo != '' and photo is not null "
         cursor.execute(sql)
         results = cursor.fetchall()
         images = []
