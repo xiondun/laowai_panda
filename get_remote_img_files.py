@@ -36,7 +36,7 @@ def create_time(id):
     conn = pymysql.connect("localhost", "root", "PandaPass!2", "laowai_panda_db_laowai_panda")
     cursor = conn.cursor()
     try:
-        sql = f"update connect_questionimage set create_time = {int(time.time())} where id = {id}"
+        sql = f"update connect_questionimage set create_time = {int(time.time())} where id = {id} and create_time = 0"
         cursor.execute(sql)
         conn.commit()
     except Exception as e:
