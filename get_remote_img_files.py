@@ -10,6 +10,25 @@ import requests
 
 
 
+def get_account_photo_imgs():
+    """
+    获取未同步的图片
+    """
+    conn = pymysql.connect("localhost", "root", "PandaPass!2", "laowai_panda_db_laowai_panda")
+    cursor = conn.cursor()
+    try:
+        sql = "select photo from accounts_user where photo in not null and photo != ''"
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        images = []
+        for result in results:
+            images.append(result[0])
+        return images
+    except Exception as e:
+        print("查询数据库异常", e)
+        return None
+
+
 def get_unsynchronized_imgs():
     """
     获取未同步的图片
@@ -72,12 +91,13 @@ def mkdir(path):
 save_path = '/var/www/api/laowai_panda/media/'
 
 
-def down_load_img(imgUrl, imgName, id):
+def down_load_img(imgUrl, imgName, tid =''):
     save_img_path = save_path + str(imgName)
     if os.path.exists(save_img_path):
         print('图片已经存在：', imgName)
-        create_time(id)
-        update_unsynchronized_imgs(id)
+        if tid:
+            create_time(tid)
+            update_unsynchronized_imgs(tid)
         return
     img_path = imgName.split('/')
     if len(img_path) > 1:
@@ -94,7 +114,8 @@ def down_load_img(imgUrl, imgName, id):
         with open(save_img_path, 'wb') as f:
             f.write(res.content)
         print(imgUrl, '下载成功')
-        update_unsynchronized_imgs(id)
+        if tid:
+            update_unsynchronized_imgs(tid)
         return save_img_path
     except Exception as e:
         traceback.print_exc()
@@ -106,13 +127,13 @@ def down_load_img(imgUrl, imgName, id):
         return False
 
 
-def do_down_load_remote_img(imgName, id):
+def do_down_load_remote_img(imgName, tid):
     downloadImgUrlList = [
         'http://45.13.199.57/media/' + imgName,  # 德國
         'http://121.40.208.210/media/' + imgName,  # 杭州
     ]
     for imgUrl in downloadImgUrlList:
-        down_load_img(imgUrl, imgName, id)
+        down_load_img(imgUrl, imgName, tid)
 
 
 def main():
@@ -121,6 +142,12 @@ def main():
         for image in images:
             # do_down_load_remote_img(imgName)
             thread.submit(do_down_load_remote_img, image['imgName'], image['id'])
+
+    print('下载头像')
+    account_pgoto = get_account_photo_imgs()
+    with ThreadPoolExecutor(max_workers=30) as thread:
+        for image in account_pgoto:
+            thread.submit(do_down_load_remote_img, image, '')
 
 
 if __name__ == '__main__':
