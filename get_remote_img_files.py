@@ -17,7 +17,7 @@ def get_unsynchronized_imgs():
     conn = pymysql.connect("localhost", "root", "PandaPass!2", "laowai_panda_db_laowai_panda")
     cursor = conn.cursor()
     try:
-        sql = 'select id,image from connect_questionimage where update_time = 0'
+        sql = f'select id,image from connect_questionimage where create_time = 0 or create_time > {int(time.time())- 86400*5}'
         cursor.execute(sql)
         results = cursor.fetchall()
         images = []
@@ -26,11 +26,23 @@ def get_unsynchronized_imgs():
             temp['id'] = result[0]
             temp['imgName'] = result[1]
             images.append(temp)
-
         return images
     except Exception as e:
         print("查询数据库异常", e)
         return None
+
+
+def create_time(id):
+    conn = pymysql.connect("localhost", "root", "PandaPass!2", "laowai_panda_db_laowai_panda")
+    cursor = conn.cursor()
+    try:
+        sql = f"update connect_questionimage set create_time = {int(time.time())} where id = {id}"
+        cursor.execute(sql)
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+        print("修改数据库异常", e)
+
 
 
 def update_unsynchronized_imgs(id):
@@ -64,6 +76,7 @@ def down_load_img(imgUrl, imgName, id):
     save_img_path = save_path + str(imgName)
     if os.path.exists(save_img_path):
         print('图片已经存在：', imgName)
+        create_time(id)
         update_unsynchronized_imgs(id)
         return
     img_path = imgName.split('/')
