@@ -106,13 +106,13 @@ class Search(APIView):
         t_timezone = self.getIpTimeZone(ip)
         # t_timezone = 'Asia/Shanghai'
         for i, d in enumerate(data):
-            data[i]['timestamp'] = self.timestampToLocaltime(data[i]['timestamp'], t_timezone)
+            data[i]['timestamp'] = self.str_to_time(self.timestampToLocaltime(data[i]['timestamp'], t_timezone))
             # data[i]['timestamp'] = self.time_to_str(data[i]['timestamp'])
             data[i]['timezone'] = t_timezone
             data[i]['ip'] = ip
         return data
 
-    def timestampToLocaltime(self, timestamp, t_timezone = 'Asia/Shanghai'):
+    def timestampToLocaltime(self, timestamp, t_timezone='Asia/Shanghai'):
         dt_str = self.time_to_str(timestamp)
         return self.__datetime_to_utc_epoch(dt_str, 'UTC', t_timezone)
 
@@ -121,6 +121,22 @@ class Search(APIView):
             return time.strftime(r"%Y-%m-%d %H:%M:%S", time.localtime(shijian))
         except Exception:
             return '时间转换错误'
+
+    def str_to_time(self,a):
+        if str(a)=='0':
+            return 0
+        try:
+            timeArray = time.strptime(a, r"%Y-%m-%d %H:%M:%S")
+            timeStamp = int(time.mktime(timeArray))
+        except Exception as e:
+            print(e)
+            try:
+                timeArray = time.strptime(a, r"%Y-%m-%d")
+                timeStamp = int(time.mktime(timeArray))
+            except Exception as e:
+                print(e)
+                return a
+        return timeStamp
 
 
     def __datetime_to_utc_epoch(self, dt_str, l_timezone, t_timezone, time_format="%Y-%m-%d %H:%M:%S"):
@@ -137,7 +153,6 @@ class Search(APIView):
         # datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         return t_dt_str
 
-
     def getIpTimeZone(self, ip):
         try:
             ips = [ip]
@@ -150,6 +165,9 @@ class Search(APIView):
                 return False
         except Exception:
             return False
+
+    # def saveIpTimeZone(self, ip, timezone):
+
 
     def getRemoteImg(self, data):
         for items in data:
