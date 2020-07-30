@@ -106,6 +106,7 @@ class Search(APIView):
         for i, d in enumerate(data):
             # data[i]['timestamp'] = self.timestampToLocaltime(data[i]['timestamp'], ip)
             data[i]['timestamp'] = self.time_to_str(data[i]['timestamp'])
+            data[i]['timezone'] = self.getIpTimeZone(ip)
         return data
 
     def timestampToLocaltime(self, timestamp, ip):
