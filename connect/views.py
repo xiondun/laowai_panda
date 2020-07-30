@@ -107,8 +107,8 @@ class Search(APIView):
         # t_timezone = 'Asia/Shanghai'
         for i, d in enumerate(data):
             data[i]['timestamp_orgin'] = data[i]['timestamp']
-            data[i]['timestamp'] = self.str_to_time(self.timestampToLocaltime(data[i]['timestamp'], t_timezone))
-            # data[i]['timestamp'] = self.time_to_str(data[i]['timestamp'])
+            # data[i]['timestamp'] = self.str_to_time(self.timestampToLocaltime(data[i]['timestamp'], t_timezone))
+            data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
             data[i]['timezone'] = t_timezone
             data[i]['ip'] = ip
         return data
