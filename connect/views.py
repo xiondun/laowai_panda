@@ -34,14 +34,35 @@ def queryset_paginator(queryset, page, num=10):
     return queryset, number
 
 
+
+
+class GetTimeZoneInfo(APIView):
+    permission_classes = (permissions.AllowAny,)
+    def get(self, request, format=None):
+        if 'HTTP_X_FORWARDED_FOR' in request.META.keys():
+            ip = request.META['HTTP_X_FORWARDED_FOR']
+        else:
+            ip = request.META['REMOTE_ADDR']
+        time_zone_info = self.getIpTimeZone(ip)
+        return Response({"data": time_zone_info, "ip": ip}, status=status.HTTP_200_OK)
+
+    def getIpTimeZone(self,ip):
+        try:
+            ips = [ip]
+            url = 'http://ip-api.com/batch'
+            res = requests.post(url,json.dumps(ips))
+            if res.status_code == 200:
+                return res.text
+            else:
+                return False
+        except Exception:
+            return False
+
+
 class Search(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def get(self, request, format=None):
-        # aa = '/media/1595399798607.jpeg'
-        # imgUrl = 'http://121.40.208.210' + aa  # 杭州
-        # threading.Thread(target=self.down_load_img, args=(imgUrl, aa)).start()
-        # print(os.getcwd())
         request_query_string = (request.GET).dict()
         page = request.GET.get("page", 1)
         questions = Question.objects.all()
@@ -75,6 +96,18 @@ class Search(APIView):
 
         return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
         # return Response({"data": "", "pages_num": ""}, status=status.HTTP_200_OK)
+
+    def getIpTimeZone(self,ip):
+        try:
+            ips = [ip]
+            url = 'http://ip-api.com/batch'
+            res = requests.post(url,json.dumps(ips))
+            if res.status_code == 200:
+                return res.text
+            else:
+                return False
+        except Exception:
+            return False
 
     def getRemoteImg(self, data):
         for items in data:
