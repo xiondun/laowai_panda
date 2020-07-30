@@ -23,6 +23,8 @@ from .models import *
 import json
 import time
 import base64
+import pytz
+from datetime import datetime
 
 
 def queryset_paginator(queryset, page, num=10):
@@ -34,10 +36,9 @@ def queryset_paginator(queryset, page, num=10):
     return queryset, number
 
 
-
-
 class GetTimeZoneInfo(APIView):
     permission_classes = (permissions.AllowAny,)
+
     def get(self, request, format=None):
         if 'HTTP_X_FORWARDED_FOR' in request.META.keys():
             ip = request.META['HTTP_X_FORWARDED_FOR']
@@ -46,11 +47,11 @@ class GetTimeZoneInfo(APIView):
         time_zone_info = self.getIpTimeZone(ip)
         return Response({"data": json.loads(time_zone_info), "ip": ip}, status=status.HTTP_200_OK)
 
-    def getIpTimeZone(self,ip):
+    def getIpTimeZone(self, ip):
         try:
             ips = [ip]
             url = 'http://ip-api.com/batch'
-            res = requests.post(url,json.dumps(ips))
+            res = requests.post(url, json.dumps(ips))
             if res.status_code == 200:
                 return res.text
             else:
@@ -63,6 +64,10 @@ class Search(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def get(self, request, format=None):
+        if 'HTTP_X_FORWARDED_FOR' in request.META.keys():
+            ip = request.META['HTTP_X_FORWARDED_FOR']
+        else:
+            ip = request.META['REMOTE_ADDR']
         request_query_string = (request.GET).dict()
         page = request.GET.get("page", 1)
         questions = Question.objects.all()
@@ -92,18 +97,48 @@ class Search(APIView):
         serializer = QuestionSerializer(
             queryset, many=True, context={'user': request.user})
 
-        threading.Thread(target=self.getRemoteImg,args=(serializer.data,)).start()
-
-        return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
+        # threading.Thread(target=self.getRemoteImg,args=(serializer.data,)).start()
+        return Response({"data": self.changeToLocalTime(serializer.data, ip), "pages_num": number}, status=status.HTTP_200_OK)
+        # return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
         # return Response({"data": "", "pages_num": ""}, status=status.HTTP_200_OK)
 
-    def getIpTimeZone(self,ip):
+    def changeToLocalTime(self, data, ip):
+        for i, d in enumerate(data['data']):
+            data['data'][i]['timestamp'] = self.timestampToLocaltime(data['data'][i]['timestamp'], ip)
+        return data
+
+    def timestampToLocaltime(self, timestamp, ip):
+        dt_str = self.time_to_str(timestamp)
+        t_timezone = self.getIpTimeZone(ip)
+        return self.__datetime_to_utc_epoch(dt_str, 'UTC', t_timezone)
+
+    def time_to_str(self, shijian):
+        try:
+            return time.strftime(r"%Y-%m-%d %H:%M:%S", time.localtime(shijian))
+        except Exception:
+            return '时间转换错误'
+
+    def __datetime_to_utc_epoch(dt_str, l_timezone, t_timezone, time_format="%Y-%m-%d %H:%M:%S"):
+        """
+        __datetime_to_utc_epoch("2019-07-14 11:23:36", "UTC", "Asia/Tokyo", "%Y-%m-%d %H:%M:%S")
+        """
+        local_tz = pytz.timezone(l_timezone)
+        target_tz = pytz.timezone(t_timezone)
+        dt = datetime.strptime(dt_str, time_format)
+        dt = local_tz.localize(dt)
+        t_dt_str = str(dt.astimezone(tz=target_tz))[0:19]
+        # print("UTC 时间: {0}".format(t_dt_str))
+        epoch = time.strptime(t_dt_str, "%Y-%m-%d %H:%M:%S")
+        return epoch
+
+    def getIpTimeZone(self, ip):
         try:
             ips = [ip]
             url = 'http://ip-api.com/batch'
-            res = requests.post(url,json.dumps(ips))
+            res = requests.post(url, json.dumps(ips))
             if res.status_code == 200:
-                return res.text
+                time_zone_info = json.loads(res.text)
+                return time_zone_info['timezone']
             else:
                 return False
         except Exception:
@@ -142,7 +177,7 @@ class Search(APIView):
             }
             res = requests.get(imgUrl, headers=header, timeout=120)
             if res.status_code != 200:
-                print(imgUrl,'下载网络错误：',res.status_code)
+                print(imgUrl, '下载网络错误：', res.status_code)
                 return False
             with open(save_img_path, 'wb') as f:
                 f.write(res.content)
