@@ -141,7 +141,7 @@ class Search(APIView):
             res = requests.post(url, json.dumps(ips))
             if res.status_code == 200:
                 time_zone_info = json.loads(res.text)
-                return time_zone_info['timezone']
+                return time_zone_info
             else:
                 return False
         except Exception:
