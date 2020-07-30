@@ -118,7 +118,7 @@ class Search(APIView):
         except Exception:
             return '时间转换错误'
 
-    def __datetime_to_utc_epoch(dt_str, l_timezone, t_timezone, time_format="%Y-%m-%d %H:%M:%S"):
+    def __datetime_to_utc_epoch(self, dt_str, l_timezone, t_timezone, time_format="%Y-%m-%d %H:%M:%S"):
         """
         __datetime_to_utc_epoch("2019-07-14 11:23:36", "UTC", "Asia/Tokyo", "%Y-%m-%d %H:%M:%S")
         """
