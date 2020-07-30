@@ -104,8 +104,8 @@ class Search(APIView):
 
     def changeToLocalTime(self, data, ip):
         for i, d in enumerate(data):
-            # data[i]['timestamp'] = self.timestampToLocaltime(data[i]['timestamp'], ip)
-            data[i]['timestamp'] = self.time_to_str(data[i]['timestamp'])
+            data[i]['timestamp'] = self.timestampToLocaltime(data[i]['timestamp'], ip)
+            # data[i]['timestamp'] = self.time_to_str(data[i]['timestamp'])
             data[i]['timezone'] = self.getIpTimeZone(ip)
             data[i]['ip'] = ip
         return data
@@ -141,7 +141,7 @@ class Search(APIView):
             res = requests.post(url, json.dumps(ips))
             if res.status_code == 200:
                 time_zone_info = json.loads(res.text)
-                return time_zone_info
+                return time_zone_info[0]['timezone']
             else:
                 return False
         except Exception:
