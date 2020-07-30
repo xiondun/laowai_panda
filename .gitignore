@@ -5,3 +5,4 @@
 *.pyc
 /laowai_panda/settings/local.py
 media
+__pycache__
