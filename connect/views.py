@@ -103,16 +103,17 @@ class Search(APIView):
         # return Response({"data": "", "pages_num": ""}, status=status.HTTP_200_OK)
 
     def changeToLocalTime(self, data, ip):
+        # t_timezone = self.getIpTimeZone(ip)
         for i, d in enumerate(data):
-            # data[i]['timestamp'] = self.timestampToLocaltime(data[i]['timestamp'], ip)
-            data[i]['timestamp'] = self.time_to_str(data[i]['timestamp'])
+            # data[i]['timestamp'] = self.timestampToLocaltime(data[i]['timestamp'], t_timezone)
+            data[i]['timestamp'] = self.timestampToLocaltime(data[i]['timestamp'])
+            # data[i]['timestamp'] = self.time_to_str(data[i]['timestamp'])
             data[i]['timezone'] = self.getIpTimeZone(ip)
             data[i]['ip'] = ip
         return data
 
-    def timestampToLocaltime(self, timestamp, ip):
+    def timestampToLocaltime(self, timestamp, t_timezone = 'Asia/Shanghai'):
         dt_str = self.time_to_str(timestamp)
-        t_timezone = self.getIpTimeZone(ip)
         return self.__datetime_to_utc_epoch(dt_str, 'UTC', t_timezone)
 
     def time_to_str(self, shijian):
