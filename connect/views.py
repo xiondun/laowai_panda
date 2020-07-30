@@ -104,55 +104,21 @@ class Search(APIView):
 
     def changeToLocalTime(self, data, ip):
         t_timezone = self.getIpTimeZone(ip)
-        # t_timezone = 'Asia/Shanghai'
+        if t_timezone ==  'CN':
+            delta_time = 8*3600
+        elif t_timezone == 'EG':
+            delta_time = 2*3600
+        else:
+            delta_time = 0
+
         for i, d in enumerate(data):
             data[i]['timestamp_orgin'] = data[i]['timestamp']
-            # data[i]['timestamp'] = self.str_to_time(self.timestampToLocaltime(data[i]['timestamp'], t_timezone))
-            data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
+            data[i]['timestamp'] += delta_time
+            # data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
             data[i]['timezone'] = t_timezone
             data[i]['ip'] = ip
         return data
 
-    def timestampToLocaltime(self, timestamp, t_timezone='Asia/Shanghai'):
-        dt_str = self.time_to_str(timestamp)
-        return self.__datetime_to_utc_epoch(dt_str, 'UTC', t_timezone)
-
-    def time_to_str(self, shijian):
-        try:
-            return time.strftime(r"%Y-%m-%d %H:%M:%S", time.localtime(shijian))
-        except Exception:
-            return '时间转换错误'
-
-    def str_to_time(self,a):
-        if str(a)=='0':
-            return 0
-        try:
-            timeArray = time.strptime(a, r"%Y-%m-%d %H:%M:%S")
-            timeStamp = int(time.mktime(timeArray))
-        except Exception as e:
-            print(e)
-            try:
-                timeArray = time.strptime(a, r"%Y-%m-%d")
-                timeStamp = int(time.mktime(timeArray))
-            except Exception as e:
-                print(e)
-                return a
-        return timeStamp
-
-
-    def __datetime_to_utc_epoch(self, dt_str, l_timezone, t_timezone, time_format="%Y-%m-%d %H:%M:%S"):
-        """
-        __datetime_to_utc_epoch("2019-07-14 11:23:36", "UTC", "Asia/Tokyo", "%Y-%m-%d %H:%M:%S")
-        """
-        local_tz = pytz.timezone(l_timezone)
-        target_tz = pytz.timezone(t_timezone)
-        dt = datetime.strptime(dt_str, time_format)
-        dt = local_tz.localize(dt)
-        t_dt_str = str(dt.astimezone(tz=target_tz))[0:19]
-        # print("UTC 时间: {0}".format(t_dt_str))
-        # epoch = int(time.mktime(time.strptime(t_dt_str, "%Y-%m-%d %H:%M:%S")))
-        # datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        return t_dt_str
 
     def getIpTimeZone(self, ip):
         try:
@@ -161,7 +127,7 @@ class Search(APIView):
             res = requests.post(url, json.dumps(ips))
             if res.status_code == 200:
                 time_zone_info = json.loads(res.text)
-                return time_zone_info[0]['timezone']
+                return time_zone_info[0]['countryCode']
             else:
                 return False
         except Exception:
