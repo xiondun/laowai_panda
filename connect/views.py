@@ -104,7 +104,8 @@ class Search(APIView):
 
     def changeToLocalTime(self, data, ip):
         for i, d in enumerate(data):
-            data[i]['timestamp'] = self.timestampToLocaltime(data[i]['timestamp'], ip)
+            # data[i]['timestamp'] = self.timestampToLocaltime(data[i]['timestamp'], ip)
+            data[i]['timestamp'] = self.time_to_str(data[i]['timestamp'])
         return data
 
     def timestampToLocaltime(self, timestamp, ip):
