@@ -44,7 +44,7 @@ class GetTimeZoneInfo(APIView):
         else:
             ip = request.META['REMOTE_ADDR']
         time_zone_info = self.getIpTimeZone(ip)
-        return Response({"data": time_zone_info, "ip": ip}, status=status.HTTP_200_OK)
+        return Response({"data": json.loads(time_zone_info), "ip": ip}, status=status.HTTP_200_OK)
 
     def getIpTimeZone(self,ip):
         try:
