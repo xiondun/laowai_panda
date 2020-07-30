@@ -103,8 +103,8 @@ class Search(APIView):
         # return Response({"data": "", "pages_num": ""}, status=status.HTTP_200_OK)
 
     def changeToLocalTime(self, data, ip):
-        # t_timezone = self.getIpTimeZone(ip)
-        t_timezone = 'Asia/Shanghai'
+        t_timezone = self.getIpTimeZone(ip)
+        # t_timezone = 'Asia/Shanghai'
         for i, d in enumerate(data):
             data[i]['timestamp'] = self.timestampToLocaltime(data[i]['timestamp'], t_timezone)
             # data[i]['timestamp'] = self.time_to_str(data[i]['timestamp'])
