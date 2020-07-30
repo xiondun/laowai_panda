@@ -103,8 +103,8 @@ class Search(APIView):
         # return Response({"data": "", "pages_num": ""}, status=status.HTTP_200_OK)
 
     def changeToLocalTime(self, data, ip):
-        for i, d in enumerate(data['data']):
-            data['data'][i]['timestamp'] = self.timestampToLocaltime(data['data'][i]['timestamp'], ip)
+        for i, d in enumerate(data):
+            data[i]['timestamp'] = self.timestampToLocaltime(data[i]['timestamp'], ip)
         return data
 
     def timestampToLocaltime(self, timestamp, ip):
