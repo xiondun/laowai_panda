@@ -117,6 +117,7 @@ class Search(APIView):
             data[i]['created'] = "2020-07-30T09:00:00.635421Z"
             # data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
             data[i]['timezone'] = t_timezone
+            data[i]['text'] = data[i]['text'] + '范德萨发达十分大方的萨福大师傅的撒'
             data[i]['ip'] = ip
         return data
 
