@@ -98,8 +98,8 @@ class Search(APIView):
             queryset, many=True, context={'user': request.user})
 
         # threading.Thread(target=self.getRemoteImg,args=(serializer.data,)).start()
-        return Response({"data": self.changeToLocalTime(serializer.data, ip), "pages_num": number}, status=status.HTTP_200_OK)
-        # return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
+        # return Response({"data": self.changeToLocalTime(serializer.data, ip), "pages_num": number}, status=status.HTTP_200_OK)
+        return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
         # return Response({"data": "", "pages_num": ""}, status=status.HTTP_200_OK)
 
     def changeToLocalTime(self, data, ip):
@@ -114,10 +114,8 @@ class Search(APIView):
         for i, d in enumerate(data):
             data[i]['timestamp_orgin'] = data[i]['timestamp']
             data[i]['timestamp'] += delta_time
-            data[i]['created'] = "2020-07-30T09:00:00.635421Z"
             # data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
             data[i]['timezone'] = t_timezone
-            data[i]['text'] = data[i]['text'] + '范德萨发达十分大方的萨福大师傅的撒'
             data[i]['ip'] = ip
         return data
 
@@ -457,14 +455,48 @@ class Questions(APIView):
         return super(Questions, self).get_permissions()
 
     def get(self, request, id, *args, **kwargs):
+        if 'HTTP_X_FORWARDED_FOR' in request.META.keys():
+            ip = request.META['HTTP_X_FORWARDED_FOR']
+        else:
+            ip = request.META['REMOTE_ADDR']
         try:
             serializer = QuestionSerializer(Question.objects.get(
                 id=id), context={'user': request.user})
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            # return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response(self.changeToLocalTime(serializer.data,ip), status=status.HTTP_200_OK)
         except Question.DoesNotExist:
             context = dict()
             context['detail'] = _("Question doesn't exist")
             return Response(context, status=status.HTTP_404_NOT_FOUND)
+
+
+    def changeToLocalTime(self, data, ip):
+        t_timezone = self.getIpTimeZone(ip)
+        if t_timezone ==  'CN':
+            delta_time = 8*3600
+        elif t_timezone == 'EG':
+            delta_time = 2*3600
+        else:
+            delta_time = 0
+
+        data['timestamp_orgin'] = data['timestamp']
+        data['timestamp'] += delta_time
+        # data['timestamp'] = self.str_to_time(self.time_to_str(data['timestamp']))
+        data['timezone'] = t_timezone
+        data['ip'] = ip
+        return data
+
+    def getIpTimeZone(self, ip):
+        try:
+            ips = [ip]
+            url = 'http://ip-api.com/batch'
+            res = requests.post(url, json.dumps(ips))
+            if res.status_code == 200:
+                return res.text
+            else:
+                return False
+        except Exception:
+            return False
 
     # def post(self, request, format=None):
     #     serializer = QuestionSerializer(data=request.data)
