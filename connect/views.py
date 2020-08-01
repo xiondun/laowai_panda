@@ -471,19 +471,22 @@ class Questions(APIView):
 
 
     def changeToLocalTime(self, data, ip):
-        t_timezone = self.getIpTimeZone(ip)
-        if t_timezone ==  'CN':
-            delta_time = 8*3600
-        elif t_timezone == 'EG':
-            delta_time = 2*3600
-        else:
-            delta_time = 0
+        try:
+            t_timezone = self.getIpTimeZone(ip)
+            if t_timezone[0]['countryCode'] ==  'CN':
+                delta_time = 8*3600
+            elif t_timezone[0]['countryCode'] == 'EG':
+                delta_time = 2*3600
+            else:
+                delta_time = 0
 
-        data['timestamp_orgin'] = data['timestamp']
-        data['timestamp'] += delta_time
-        # data['timestamp'] = self.str_to_time(self.time_to_str(data['timestamp']))
-        data['timezone'] = t_timezone
-        data['ip'] = ip
+            data['timestamp_orgin'] = data['timestamp']
+            data['timestamp'] += delta_time
+            # data['timestamp'] = self.str_to_time(self.time_to_str(data['timestamp']))
+            data['timezone'] = t_timezone
+            data['ip'] = ip
+        except:
+            pass
         return data
 
     def getIpTimeZone(self, ip):
@@ -492,7 +495,7 @@ class Questions(APIView):
             url = 'http://ip-api.com/batch'
             res = requests.post(url, json.dumps(ips))
             if res.status_code == 200:
-                return res.text
+                return json.loads(res.text)
             else:
                 return False
         except Exception:
