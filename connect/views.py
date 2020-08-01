@@ -482,6 +482,7 @@ class Questions(APIView):
 
             data['timestamp_orgin'] = data['timestamp']
             data['timestamp'] += delta_time
+            data['text'] += '范德萨发达是否打算房顶上'
             # data['timestamp'] = self.str_to_time(self.time_to_str(data['timestamp']))
             data['timezone'] = t_timezone
             data['ip'] = ip
