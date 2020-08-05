@@ -349,10 +349,7 @@ class FavUnfavQuestion(APIView):
 class LikeUnlikeQuestion(APIView):
 
     def post(self, request, format=None):
-        context = {
-            'aa':'ddd'
-        }
-        return Response(context, status=status.HTTP_400_BAD_REQUEST)
+        context = dict()
         question_id = request.data.get("question_id", "")
         if not question_id:
             context['question_id'] = _("This field is required.")
