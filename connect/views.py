@@ -350,26 +350,30 @@ class LikeUnlikeQuestion(APIView):
 
     def post(self, request, format=None):
         context = dict()
-        question_id = request.data.get("question_id", "")
-        if not question_id:
-            context['question_id'] = _("This field is required.")
-            return Response(context, status=status.HTTP_400_BAD_REQUEST)
         try:
-            question = Question.objects.get(id=question_id)
-            if question.liked_by_users.filter(id=request.user.id).exists():
-                question.liked_by_users.remove(request.user.id)
-                question.owner.likes -= 1
-                context['detail'] = _("Unlike successfully.")
-            else:
-                question.liked_by_users.add(request.user.id)
-                create_and_push_notification(
-                    question, NotificationTemplate.QUESTION_LIKED, request.user, [question.owner])
-                question.owner.likes += 1
-                context['detail'] = _("Like successfully.")
-            question.owner.save()
-            return Response(context, status=status.HTTP_200_OK)
-        except Question.DoesNotExist:
-            context['question_id'] = _("Question does not exist.")
+            question_id = request.data.get("question_id", "")
+            if not question_id:
+                context['question_id'] = _("This field is required.")
+                return Response(context, status=status.HTTP_400_BAD_REQUEST)
+            try:
+                question = Question.objects.get(id=question_id)
+                if question.liked_by_users.filter(id=request.user.id).exists():
+                    question.liked_by_users.remove(request.user.id)
+                    question.owner.likes -= 1
+                    context['detail'] = _("Unlike successfully.")
+                else:
+                    question.liked_by_users.add(request.user.id)
+                    create_and_push_notification(
+                        question, NotificationTemplate.QUESTION_LIKED, request.user, [question.owner])
+                    question.owner.likes += 1
+                    context['detail'] = _("Like successfully.")
+                question.owner.save()
+                return Response(context, status=status.HTTP_200_OK)
+            except Question.DoesNotExist:
+                context['question_id'] = _("Question does not exist.")
+                return Response(context, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            context['exception'] = str(e)
             return Response(context, status=status.HTTP_400_BAD_REQUEST)
 
 
