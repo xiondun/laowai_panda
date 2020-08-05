@@ -72,6 +72,7 @@ class ChangeTime(object):
         for i, d in enumerate(data):
             data[i]['timestamp_orgin'] = data[i]['timestamp']
             data[i]['timestamp'] += delta_time
+            data[i]['text'] += delta_time
             # data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
             data[i]['timezone'] = t_timezone
             data[i]['ip'] = ip
@@ -348,7 +349,10 @@ class FavUnfavQuestion(APIView):
 class LikeUnlikeQuestion(APIView):
 
     def post(self, request, format=None):
-        context = dict()
+        context = {
+            'aa':'ddd'
+        }
+        return Response(context, status=status.HTTP_400_BAD_REQUEST)
         question_id = request.data.get("question_id", "")
         if not question_id:
             context['question_id'] = _("This field is required.")
@@ -464,8 +468,8 @@ class Questions(APIView):
         try:
             serializer = QuestionSerializer(Question.objects.get(
                 id=id), context={'user': request.user})
-            # return Response(serializer.data, status=status.HTTP_200_OK)
-            return Response(ChangeTime().changeToLocalTime(serializer.data,ip), status=status.HTTP_200_OK)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+            # return Response(ChangeTime().changeToLocalTime(serializer.data,ip), status=status.HTTP_200_OK)
         except Question.DoesNotExist:
             context = dict()
             context['detail'] = _("Question doesn't exist")
