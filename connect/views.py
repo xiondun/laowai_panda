@@ -59,6 +59,37 @@ class GetTimeZoneInfo(APIView):
         except Exception:
             return False
 
+class ChangeTime(object):
+    def changeToLocalTime(self, data, ip):
+        t_timezone = self.getIpTimeZone(ip)
+        if t_timezone ==  'CN':
+            delta_time = 8*3600
+        elif t_timezone == 'EG':
+            delta_time = 2*3600
+        else:
+            delta_time = 0
+
+        for i, d in enumerate(data):
+            data[i]['timestamp_orgin'] = data[i]['timestamp']
+            data[i]['timestamp'] += delta_time
+            # data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
+            data[i]['timezone'] = t_timezone
+            data[i]['ip'] = ip
+        return data
+
+
+    def getIpTimeZone(self, ip):
+        try:
+            ips = [ip]
+            url = 'http://ip-api.com/batch'
+            res = requests.post(url, json.dumps(ips))
+            if res.status_code == 200:
+                time_zone_info = json.loads(res.text)
+                return time_zone_info[0]['countryCode']
+            else:
+                return False
+        except Exception:
+            return False
 
 class Search(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -97,44 +128,10 @@ class Search(APIView):
         serializer = QuestionSerializer(
             queryset, many=True, context={'user': request.user})
 
-        # threading.Thread(target=self.getRemoteImg,args=(serializer.data,)).start()
-        # return Response({"data": self.changeToLocalTime(serializer.data, ip), "pages_num": number}, status=status.HTTP_200_OK)
-        return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
+        threading.Thread(target=self.getRemoteImg,args=(serializer.data,)).start()
+        return Response({"data": ChangeTime().changeToLocalTime(serializer.data, ip), "pages_num": number}, status=status.HTTP_200_OK)
+        # return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
         # return Response({"data": "", "pages_num": ""}, status=status.HTTP_200_OK)
-
-    def changeToLocalTime(self, data, ip):
-        t_timezone = self.getIpTimeZone(ip)
-        if t_timezone ==  'CN':
-            delta_time = 8*3600
-        elif t_timezone == 'EG':
-            delta_time = 2*3600
-        else:
-            delta_time = 0
-
-        for i, d in enumerate(data):
-            data[i]['timestamp_orgin'] = data[i]['timestamp']
-            data[i]['timestamp'] += delta_time
-            # data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
-            data[i]['timezone'] = t_timezone
-            data[i]['ip'] = ip
-        return data
-
-
-    def getIpTimeZone(self, ip):
-        try:
-            ips = [ip]
-            url = 'http://ip-api.com/batch'
-            res = requests.post(url, json.dumps(ips))
-            if res.status_code == 200:
-                time_zone_info = json.loads(res.text)
-                return time_zone_info[0]['countryCode']
-            else:
-                return False
-        except Exception:
-            return False
-
-    # def saveIpTimeZone(self, ip, timezone):
-
 
     def getRemoteImg(self, data):
         for items in data:
@@ -206,6 +203,10 @@ class Filter(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def get(self, request, format=None):
+        if 'HTTP_X_FORWARDED_FOR' in request.META.keys():
+            ip = request.META['HTTP_X_FORWARDED_FOR']
+        else:
+            ip = request.META['REMOTE_ADDR']
         required_key_list = ['lang_id', 'category_id']
         request_query_string = (request.GET).dict()
         for key in required_key_list:
@@ -243,7 +244,8 @@ class Filter(APIView):
             questions.distinct().order_by('-created'), page)
         serializer = QuestionSerializer(
             queryset, many=True, context={'user': request.user})
-        return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
+        # return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
+        return Response({"data": ChangeTime().changeToLocalTime(serializer.data,ip), "pages_num": number}, status=status.HTTP_200_OK)
 
 
 class CategoriesView(APIView):
@@ -463,44 +465,11 @@ class Questions(APIView):
             serializer = QuestionSerializer(Question.objects.get(
                 id=id), context={'user': request.user})
             # return Response(serializer.data, status=status.HTTP_200_OK)
-            return Response(self.changeToLocalTime(serializer.data,ip), status=status.HTTP_200_OK)
+            return Response(ChangeTime().changeToLocalTime(serializer.data,ip), status=status.HTTP_200_OK)
         except Question.DoesNotExist:
             context = dict()
             context['detail'] = _("Question doesn't exist")
             return Response(context, status=status.HTTP_404_NOT_FOUND)
-
-
-    def changeToLocalTime(self, data, ip):
-        try:
-            t_timezone = self.getIpTimeZone(ip)
-            if t_timezone[0]['countryCode'] ==  'CN':
-                delta_time = 8*3600
-            elif t_timezone[0]['countryCode'] == 'EG':
-                delta_time = 2*3600
-            else:
-                delta_time = 0
-
-            data['timestamp_orgin'] = data['timestamp']
-            data['timestamp'] += delta_time
-            data['text'] += '范德萨发达是否打算房顶上'
-            # data['timestamp'] = self.str_to_time(self.time_to_str(data['timestamp']))
-            data['timezone'] = t_timezone
-            data['ip'] = ip
-        except:
-            pass
-        return data
-
-    def getIpTimeZone(self, ip):
-        try:
-            ips = [ip]
-            url = 'http://ip-api.com/batch'
-            res = requests.post(url, json.dumps(ips))
-            if res.status_code == 200:
-                return json.loads(res.text)
-            else:
-                return False
-        except Exception:
-            return False
 
     # def post(self, request, format=None):
     #     serializer = QuestionSerializer(data=request.data)
