@@ -72,7 +72,7 @@ class ChangeTime(object):
         for i, d in enumerate(data):
             data[i]['timestamp_orgin'] = data[i]['timestamp']
             data[i]['timestamp'] += delta_time
-            data[i]['text'] += delta_time
+            data[i]['text'] += ' hellow word'
             # data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
             data[i]['timezone'] = t_timezone
             data[i]['ip'] = ip
