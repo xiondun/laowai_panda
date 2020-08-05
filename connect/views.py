@@ -458,7 +458,8 @@ class Questions(APIView):
         if self.request.method == 'GET':
             self.permission_classes = (permissions.AllowAny,)
         else:
-            self.permission_classes = (permissions.IsAuthenticated,)
+            # self.permission_classes = (permissions.IsAuthenticated,)
+            self.permission_classes = (permissions.AllowAny,)
         return super(Questions, self).get_permissions()
 
     def get(self, request, id, *args, **kwargs):
