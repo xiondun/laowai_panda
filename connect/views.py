@@ -347,7 +347,7 @@ class FavUnfavQuestion(APIView):
 
 
 class LikeUnlikeQuestion(APIView):
-
+    permission_classes = (permissions.AllowAny,)
     def post(self, request, format=None):
         context = dict()
         try:
