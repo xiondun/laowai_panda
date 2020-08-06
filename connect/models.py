@@ -14,6 +14,7 @@ from django.contrib.contenttypes.fields import GenericRelation
 
 class QuestionReply(TimeStampedModel):
     reply = models.TextField(null=True, blank=True)
+    permissions = None
     comment_image = models.ImageField(
         upload_to='comment_image/', null=True, blank=True)
     question = models.ForeignKey(
@@ -69,7 +70,7 @@ class Category(models.Model):
 
 class Question(TimeStampedModel):
     text = models.TextField()
-    permissions = models.CharField(max_length=255)
+    permissions = None
     owner = models.ForeignKey(
         User, related_name='my_questions', on_delete=models.CASCADE, null=True, blank=True)
     category = models.ForeignKey(
