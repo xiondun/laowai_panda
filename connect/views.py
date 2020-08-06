@@ -24,6 +24,8 @@ import json
 import time
 import base64
 import pytz
+
+
 # from datetime import datetime
 
 
@@ -59,25 +61,26 @@ class GetTimeZoneInfo(APIView):
         except Exception:
             return False
 
+
 class ChangeTime(object):
     def changeToLocalTime(self, data, ip):
         t_timezone = self.getIpTimeZone(ip)
-        if t_timezone ==  'CN':
-            delta_time = 8*3600
+        if t_timezone == 'CN':
+            delta_time = 8 * 3600
         elif t_timezone == 'EG':
-            delta_time = 2*3600
+            delta_time = 2 * 3600
         else:
             delta_time = 0
 
         for i, d in enumerate(data):
             data[i]['timestamp_orgin'] = data[i]['timestamp']
             data[i]['timestamp'] += delta_time
+            data[i]['time_str'] = time.strftime(r"%Y-%m-%d %H:%M:%S", time.localtime(data[i]['timestamp']))
             data[i]['text'] += ' hellow word'
             # data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
             data[i]['timezone'] = t_timezone
             data[i]['ip'] = ip
         return data
-
 
     def getIpTimeZone(self, ip):
         try:
@@ -91,6 +94,7 @@ class ChangeTime(object):
                 return False
         except Exception:
             return False
+
 
 class Search(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -129,7 +133,7 @@ class Search(APIView):
         serializer = QuestionSerializer(
             queryset, many=True, context={'user': request.user})
 
-        threading.Thread(target=self.getRemoteImg,args=(serializer.data,)).start()
+        threading.Thread(target=self.getRemoteImg, args=(serializer.data,)).start()
         return Response({"data": ChangeTime().changeToLocalTime(serializer.data, ip), "pages_num": number}, status=status.HTTP_200_OK)
         # return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
         # return Response({"data": "", "pages_num": ""}, status=status.HTTP_200_OK)
@@ -246,7 +250,7 @@ class Filter(APIView):
         serializer = QuestionSerializer(
             queryset, many=True, context={'user': request.user})
         # return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
-        return Response({"data": ChangeTime().changeToLocalTime(serializer.data,ip), "pages_num": number}, status=status.HTTP_200_OK)
+        return Response({"data": ChangeTime().changeToLocalTime(serializer.data, ip), "pages_num": number}, status=status.HTTP_200_OK)
 
 
 class CategoriesView(APIView):
@@ -347,7 +351,6 @@ class FavUnfavQuestion(APIView):
 
 
 class LikeUnlikeQuestion(APIView):
-    permission_classes = (permissions.AllowAny,)
     def post(self, request, format=None):
         context = dict()
         try:
@@ -357,6 +360,7 @@ class LikeUnlikeQuestion(APIView):
                 return Response(context, status=status.HTTP_400_BAD_REQUEST)
             try:
                 question = Question.objects.get(id=question_id)
+                # print(question)
                 if question.liked_by_users.filter(id=request.user.id).exists():
                     question.liked_by_users.remove(request.user.id)
                     question.owner.likes -= 1
@@ -367,7 +371,7 @@ class LikeUnlikeQuestion(APIView):
                         question, NotificationTemplate.QUESTION_LIKED, request.user, [question.owner])
                     question.owner.likes += 1
                     context['detail'] = _("Like successfully.")
-                question.owner.save()
+                # question.owner.save()
                 return Response(context, status=status.HTTP_200_OK)
             except Question.DoesNotExist:
                 context['question_id'] = _("Question does not exist.")
@@ -458,8 +462,7 @@ class Questions(APIView):
         if self.request.method == 'GET':
             self.permission_classes = (permissions.AllowAny,)
         else:
-            # self.permission_classes = (permissions.IsAuthenticated,)
-            self.permission_classes = (permissions.AllowAny,)
+            self.permission_classes = (permissions.IsAuthenticated,)
         return super(Questions, self).get_permissions()
 
     def get(self, request, id, *args, **kwargs):
