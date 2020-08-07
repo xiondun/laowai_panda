@@ -34,6 +34,7 @@ class PostSerializer(serializers.ModelSerializer):
 
     def get_youko_url(self, obj):
         return obj.get_youko_link
+
     def get_sina_url(self, obj):
         return obj.get_sina_link
 
