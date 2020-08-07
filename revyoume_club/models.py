@@ -57,11 +57,19 @@ class Post(TimeStampedModel):
         video_id = str(self.youko_link)[firstDelPos+3:secondDelPos]
         yoko_url = RevyoumeClubSetting.load().youko_link
         return "{0}{1}".format(yoko_url, video_id)
+    @property
+    def get_sina_link(self):
+        firstDelPos = str(self.sina_link).find("id_")
+        secondDelPos = str(self.sina_link).find(".html")
+        video_id = str(self.sina_link)[firstDelPos+3:secondDelPos]
+        yoko_url = RevyoumeClubSetting.load().sina_link
+        return "{0}{1}".format(yoko_url, video_id)
 
 
 class RevyoumeClubSetting(SingletonModel):
     revyoume_club_link = models.URLField("Revyoume Club Link", max_length=200, null=True)
     youko_link = models.URLField("youko url")
+    sina_link = models.URLField("sina url")
     revyoume_club_enabled = models.BooleanField("Enable Revyoume Club", default=True)
 
     def __str__(self):
