@@ -33,6 +33,7 @@ class User(AbstractUser):
 
     photo = models.ImageField(upload_to='images/', null=True, blank=True)
     email = models.EmailField('email address', unique=True)
+    permissions = None
     reset_pass_code = models.CharField(max_length=50, null=True, blank=True)
     social_type = models.IntegerField(
         choices=SOCIAL_TYPES, db_index=True, default=NO_SOCIAL)
