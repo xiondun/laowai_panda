@@ -57,9 +57,9 @@ class Post(TimeStampedModel):
         video_id = str(self.youko_link)[firstDelPos+3:secondDelPos]
         yoko_url = RevyoumeClubSetting.load().youko_link
         return "{0}{1}".format(yoko_url, video_id)
-    @property
-    def get_sina_link(self):
-        return str(self.sina_link)
+    # @property
+    # def get_sina_link(self):
+    #     return str(self.sina_link)
         # firstDelPos = str(self.sina_link).find("id_")
         # secondDelPos = str(self.sina_link).find(".html")
         # video_id = str(self.sina_link)[firstDelPos+3:secondDelPos]

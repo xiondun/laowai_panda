@@ -20,13 +20,13 @@ class PostSerializer(serializers.ModelSerializer):
     post_share_link = serializers.SerializerMethodField()
     media_link = serializers.SerializerMethodField()
     youko_url = serializers.SerializerMethodField()
-    sina_url = serializers.SerializerMethodField()
+    # sina_url = serializers.SerializerMethodField()
     channel = ChannelSerializer(read_only=True)
     like_count = serializers.SerializerMethodField()
 
     class Meta:
         model = Post
-        fields = ('id', 'text', 'media', 'youko_url','sina_url', 'channel', 'timestamp', 'like_count', 'show_in',
+        fields = ('id', 'text', 'media', 'youko_url',  'channel', 'timestamp', 'like_count', 'show_in',
                   'created', 'post_share_link', 'media_link', 'is_liked_by_user', 'type')
 
     def get_like_count(self, obj):
@@ -35,8 +35,8 @@ class PostSerializer(serializers.ModelSerializer):
     def get_youko_url(self, obj):
         return obj.get_youko_link
 
-    def get_sina_url(self, obj):
-        return obj.get_sina_link
+    # def get_sina_url(self, obj):
+    #     return obj.get_sina_link
 
     def get_timestamp(self, obj):
         return obj.modified.timestamp()
