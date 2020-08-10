@@ -32,7 +32,7 @@ class Post(TimeStampedModel):
     show_in = models.IntegerField(choices=SHOW_TYPES, db_index=True, default=ARTICLES)
     media = models.FileField(upload_to="posts/media/", null=True, blank=True)
     youko_link = models.URLField("youko url", null=True, blank=True)
-    sina_link = models.URLField("sina url", null=True, blank=True)
+    # sina_link = models.URLField("sina url", null=True, blank=True)
     channel = models.ForeignKey(
         Channel, on_delete=models.SET_NULL, null=True, blank=True, related_name="posts")
     liked_by_users = models.ManyToManyField(
