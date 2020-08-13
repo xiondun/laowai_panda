@@ -52,11 +52,14 @@ class Post(TimeStampedModel):
 
     @property
     def get_youko_link(self):
-        firstDelPos = str(self.youko_link).find("id_")
-        secondDelPos = str(self.youko_link).find(".html")
-        video_id = str(self.youko_link)[firstDelPos+3:secondDelPos]
-        yoko_url = RevyoumeClubSetting.load().youko_link
-        return "{0}{1}".format(yoko_url, video_id)
+        if 'youku.com' in str(self.youko_link):
+            firstDelPos = str(self.youko_link).find("id_")
+            secondDelPos = str(self.youko_link).find(".html")
+            video_id = str(self.youko_link)[firstDelPos+3:secondDelPos]
+            yoko_url = RevyoumeClubSetting.load().youko_link
+            return "{0}{1}".format(yoko_url, video_id)
+        else:
+            return str(self.youko_link)
     # @property
     # def get_sina_link(self):
     #     return str(self.sina_link)
