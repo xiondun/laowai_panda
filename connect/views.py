@@ -73,6 +73,10 @@ class ChangeTime(object):
             delta_time = 0
 
         for i, d in enumerate(data):
+            if data[i]['images']:
+                for datum in data[i]['images']:
+                    if not os.path.exists('/var/www/api/laowai_panda' + datum['image']):
+                        del data[i]
             data[i]['timestamp_orgin'] = data[i]['timestamp']
             data[i]['timestamp'] += delta_time
             data[i]['created'] = time.strftime(r"%Y-%m-%dT%H:%M:%S.000000Z", time.localtime(data[i]['timestamp']))
