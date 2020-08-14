@@ -49,7 +49,7 @@ class PostsView(APIView):
         for index,value  in enumerate(serializer.data):
             serializer.data[index]['media_link'] = serializer.data[index]['youko_url'] if str(serializer.data[index]['youko_url']).replace('https://player.youku.com/embed/','') != 'n' else serializer.data[index]['media_link']
 
-            if serializer.data[index]['media'] == None and 'player.youku.com' not in serializer.data[index]['media_link'] and 'weibo.com' not in serializer.data[index]['youko_url'] :
+            if serializer.data[index]['media'] == None and 'player.youku.com' not in serializer.data[index]['media_link'] and 'weibo.com' not in serializer.data[index]['youko_url'] and 'weibocdn.com' not in serializer.data[index]['youko_url'] :
                 serializer.data[index]['media_link'] = '/media/posts/media/loading6.jpg'
         return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
 
