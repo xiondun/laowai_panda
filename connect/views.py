@@ -79,7 +79,7 @@ class ChangeTime(object):
                         del data[i]
             data[i]['timestamp_orgin'] = data[i]['timestamp']
             data[i]['timestamp'] += delta_time
-            data[i]['created'] = time.strftime(r"%Y-%m-%dT%I:%M:%S.000000Z", time.localtime(data[i]['timestamp']))
+            data[i]['created'] = time.strftime(r"%Y-%m-%dT%H:%M:%S.000000Z", time.localtime(data[i]['timestamp']))
             # data[i]['text'] += ' hellow world'
             # data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
             data[i]['timezone'] = t_timezone
