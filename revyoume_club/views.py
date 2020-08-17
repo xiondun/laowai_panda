@@ -1,4 +1,8 @@
 import datetime
+import json
+import time
+
+import requests
 from django.shortcuts import render
 from django.views import generic, View
 from django.core.paginator import Paginator
@@ -35,11 +39,47 @@ class GetRevSettingView(APIView):
         context['revyoume_club_enabled'] = setting.revyoume_club_enabled
         return Response(context, status=status.HTTP_200_OK)
 
+class ChangeTime(object):
+    def changeToLocalTime(self, data, ip):
+        t_timezone = self.getIpTimeZone(ip)
+        if t_timezone == 'CN':
+            delta_time = 8 * 3600
+        elif t_timezone == 'EG':
+            delta_time = 2 * 3600
+        else:
+            delta_time = 0
+
+        for i, d in enumerate(data):
+            data[i]['timestamp_orgin'] = data[i]['timestamp']
+            data[i]['timestamp'] += delta_time
+            data[i]['created'] = time.strftime(r"%Y-%m-%dT%H:%M:%S.000000Z", time.localtime(data[i]['timestamp']))
+            # data[i]['text'] += ' hellow world'
+            # data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
+            data[i]['timezone'] = t_timezone
+            data[i]['ip'] = ip
+        return data
+
+    def getIpTimeZone(self, ip):
+        try:
+            ips = [ip]
+            url = 'http://ip-api.com/batch'
+            res = requests.post(url, json.dumps(ips))
+            if res.status_code == 200:
+                time_zone_info = json.loads(res.text)
+                return time_zone_info[0]['countryCode']
+            else:
+                return False
+        except Exception:
+            return False
 
 class PostsView(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def get(self, request, format=None):
+        if 'HTTP_X_FORWARDED_FOR' in request.META.keys():
+            ip = request.META['HTTP_X_FORWARDED_FOR']
+        else:
+            ip = request.META['REMOTE_ADDR']
         page = request.GET.get("page", 1)
         posts = Post.objects.all()
         queryset, number = queryset_paginator(
@@ -51,7 +91,8 @@ class PostsView(APIView):
 
             if serializer.data[index]['media'] == None and 'player.youku.com' not in serializer.data[index]['media_link'] and 'weibo.com' not in serializer.data[index]['youko_url'] and 'weibocdn.com' not in serializer.data[index]['youko_url'] :
                 serializer.data[index]['media_link'] = '/media/posts/media/loading6.jpg'
-        return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
+
+        return Response({"data": ChangeTime().changeToLocalTime(serializer.data,ip), "pages_num": number}, status=status.HTTP_200_OK)
 
 
 class PostsHaveUpdatesView(APIView):
