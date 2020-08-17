@@ -92,7 +92,8 @@ class PostsView(APIView):
             if serializer.data[index]['media'] == None and 'player.youku.com' not in serializer.data[index]['media_link'] and 'weibo.com' not in serializer.data[index]['youko_url'] and 'weibocdn.com' not in serializer.data[index]['youko_url'] :
                 serializer.data[index]['media_link'] = '/media/posts/media/loading6.jpg'
 
-        return Response({"data": ChangeTime().changeToLocalTime(serializer.data,ip), "pages_num": number}, status=status.HTTP_200_OK)
+        # return Response({"data": ChangeTime().changeToLocalTime(serializer.data,ip), "pages_num": number}, status=status.HTTP_200_OK)
+        return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
 
 
 class PostsHaveUpdatesView(APIView):
