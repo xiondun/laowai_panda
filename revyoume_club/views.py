@@ -1,5 +1,6 @@
 import datetime
 import json
+import os
 import time
 
 import requests
@@ -61,11 +62,16 @@ class ChangeTime(object):
 
     def getIpTimeZone(self, ip):
         try:
+            if os.path.exists('/tmp/' + str(ip) + '.txt'):
+                with open('/tmp/' + str(ip) + '.txt') as file_obj:
+                    return file_obj.read().strip()
             ips = [ip]
             url = 'http://ip-api.com/batch'
             res = requests.post(url, json.dumps(ips))
             if res.status_code == 200:
                 time_zone_info = json.loads(res.text)
+                with open('/tmp/' + str(ip) + '.txt','w',encoding='utf-8') as f: #a是追加，w覆盖
+                    f.write(time_zone_info[0]['countryCode'])
                 return time_zone_info[0]['countryCode']
             else:
                 return False
