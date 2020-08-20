@@ -336,12 +336,17 @@ class MyFavQuestionsView(APIView):
 class MyQuestionsView(APIView):
 
     def get(self, request, format=None):
+        if 'HTTP_X_FORWARDED_FOR' in request.META.keys():
+            ip = request.META['HTTP_X_FORWARDED_FOR']
+        else:
+            ip = request.META['REMOTE_ADDR']
         page = request.GET.get("page", 1)
         queryset, number = queryset_paginator(
             request.user.my_questions.order_by('-id').all(), page)
         serializer = QuestionSerializer(
             queryset, many=True, context={'user': request.user})
-        return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
+
+        return Response({"data": ChangeTime().changeToLocalTime(serializer.data,ip), "pages_num": number}, status=status.HTTP_200_OK)
 
 
 class FavUnfavQuestion(APIView):
