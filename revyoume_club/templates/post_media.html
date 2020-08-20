@@ -29,7 +29,7 @@
 <body>
     {% if post.type == post.TXT_VIDEO %}
     {% if post.media %}
-    <video width="700" height="400" controls>
+    <video controls>
         <source src="{{post.media.url}}" type="video/mp4">
     </video>
     {% else %}

@@ -23,7 +23,7 @@ from django.utils.translation import ugettext_lazy as _
 SECRET_KEY = '9@005@qwlq@g&)4d+3gxssl@-cd*8zu!df!-vu8y=1+8$$=@6f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
