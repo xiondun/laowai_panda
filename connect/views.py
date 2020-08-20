@@ -221,7 +221,12 @@ class FollowedUsersQuestions(APIView):
             questions.distinct().order_by('-created'), page)
         serializer = QuestionSerializer(
             queryset, many=True, context={'user': request.user})
-        return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
+
+        if 'HTTP_X_FORWARDED_FOR' in request.META.keys():
+            ip = request.META['HTTP_X_FORWARDED_FOR']
+        else:
+            ip = request.META['REMOTE_ADDR']
+        return Response({"data": ChangeTime().changeToLocalTime(serializer.data,ip), "pages_num": number}, status=status.HTTP_200_OK)
 
 
 class Filter(APIView):
@@ -295,7 +300,11 @@ class OtherUserFavQuestionsView(APIView):
                 user.my_fav_questions.order_by('-id').all(), page)
             serializer = QuestionSerializer(
                 queryset, many=True, context={'user': user})
-            return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
+            if 'HTTP_X_FORWARDED_FOR' in request.META.keys():
+                ip = request.META['HTTP_X_FORWARDED_FOR']
+            else:
+                ip = request.META['REMOTE_ADDR']
+            return Response({"data": ChangeTime().changeToLocalTime(serializer.data,ip), "pages_num": number}, status=status.HTTP_200_OK)
         except User.DoesNotExist:
             context = dict()
             context['detail'] = _("User doesn't exist")
@@ -315,7 +324,13 @@ class OtherUserQuestionsView(APIView):
                 user.my_questions.order_by('-id').all(), page)
             serializer = QuestionSerializer(
                 queryset, many=True, context={'user': user})
-            return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
+
+            if 'HTTP_X_FORWARDED_FOR' in request.META.keys():
+                ip = request.META['HTTP_X_FORWARDED_FOR']
+            else:
+                ip = request.META['REMOTE_ADDR']
+
+            return Response({"data": ChangeTime().changeToLocalTime(serializer.data,ip), "pages_num": number}, status=status.HTTP_200_OK)
         except User.DoesNotExist:
             context = dict()
             context['detail'] = _("User doesn't exist")
@@ -330,7 +345,11 @@ class MyFavQuestionsView(APIView):
             request.user.my_fav_questions.exclude(owner__in=request.user.blockers.all()).exclude(owner__in=request.user.blocked_users.all()).order_by('-id').all(), page)
         serializer = QuestionSerializer(
             queryset, many=True, context={'user': request.user})
-        return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
+        if 'HTTP_X_FORWARDED_FOR' in request.META.keys():
+            ip = request.META['HTTP_X_FORWARDED_FOR']
+        else:
+            ip = request.META['REMOTE_ADDR']
+        return Response({"data": ChangeTime().changeToLocalTime(serializer.data,ip), "pages_num": number}, status=status.HTTP_200_OK)
 
 
 class MyQuestionsView(APIView):
