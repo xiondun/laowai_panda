@@ -77,13 +77,13 @@ class ChangeTime(object):
             delta_time = 2 * 3600
         else:
             delta_time = 2 * 3600
-        ret_data = []
+
         for i, d in enumerate(data):
             flag = False
             if data[i]['images']:
                 for datum in data[i]['images']:
                     if not os.path.exists('/var/www/api/laowai_panda' + datum['image']):
-                        # del data[i]
+                        del data[i]
                         flag = True
                         break
             if flag:
@@ -95,9 +95,7 @@ class ChangeTime(object):
             # data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
             data[i]['timezone'] = t_timezone
             data[i]['ip'] = ip
-            ret_data.append(data)
-
-        return ret_data
+        return data
 
     def getIpTimeZone(self, ip):
         try:
