@@ -76,7 +76,7 @@ class ChangeTime(object):
         elif t_timezone == 'EG':
             delta_time = 2 * 3600
         else:
-            delta_time = 0
+            delta_time = 2 * 3600
 
         for i, d in enumerate(data):
             flag = False
@@ -95,6 +95,7 @@ class ChangeTime(object):
             # data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
             data[i]['timezone'] = t_timezone
             data[i]['ip'] = ip
+
         return data
 
     def getIpTimeZone(self, ip):
