@@ -1,6 +1,8 @@
 from django.utils.translation import ugettext_lazy as _
 from rest_framework.views import APIView
 from rest_framework.response import Response
+
+from .funcs import push_new_notification
 from .models import Notification, PushyToken
 from .serializers import NotificationSerializer
 from rest_framework import status
@@ -39,6 +41,7 @@ class SetNotificationSeen(APIView):
             notification = Notification.objects.get(id=notification_id)
             notification.seen = True
             notification.save()
+            push_new_notification(notification)
             return Response({"detail": _("Notification updated successfully.")}, status=status.HTTP_200_OK)
         except Notification.DoesNotExist:
             return Response({"detail": _("Notification updated successfully.")}, status=status.HTTP_200_OK)
