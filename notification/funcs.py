@@ -12,7 +12,7 @@ def push_new_notification(notification):
         tokens = PushyToken.objects.filter(
             user=notification.to_user, active=True)
         with open('/root/PushyAPI.log','a',encoding='utf-8') as f: #a是追加，w覆盖
-            f.write(json.dumps(tokens))
+            f.write(str(tokens))
         if len(tokens) == 0:
             notification.status = Notification.FALIED_User_Has_No_Token
             notification.fb_response = _("user has no pushy token")
