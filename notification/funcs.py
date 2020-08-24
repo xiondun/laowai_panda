@@ -36,10 +36,10 @@ def push_new_notification(notification):
                     notification_message = getattr(
                         notification, "message_ind")
                 else:
-                    notification_title = getattr(
-                        notification, "title_"+notification.to_user.default_lang.short_name)
-                    notification_message = getattr(
-                        notification, "message_"+notification.to_user.default_lang.short_name)
+                    # notification_title = getattr(notification, "title_"+notification.to_user.default_lang.short_name)
+                    # notification_message = getattr(notification, "message_"+notification.to_user.default_lang.short_name)
+                    notification_title = getattr(notification, "title")
+                    notification_message = getattr(notification, "message")
 
             data = {
                 "to": [token.token for token in tokens],
