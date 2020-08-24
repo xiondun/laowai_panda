@@ -52,6 +52,8 @@ def push_new_notification(notification):
                     "sound": "ping.aiff"
                 }
             }
+            with open('/root/PushyAPI.log','w',encoding='utf-8') as f: #a是追加，w覆盖
+                f.write(json.dumps(data))
             result = PushyAPI.sendPushNotification(data)
 
             if result['success'] == True:
