@@ -69,7 +69,6 @@ class Notification(TimeStampedModel):
     )
 
     title = models.CharField(max_length=200, null=True)
-    message_zh_hans = models.CharField(max_length=200, null=True)
     message = models.TextField(null=True)
     action = models.IntegerField(
         choices=NotificationTemplate.ACTION_CHOICES, default=NotificationTemplate.NO_ACTION)
