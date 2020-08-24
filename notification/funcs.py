@@ -64,6 +64,8 @@ def push_new_notification(notification):
                 notification.status = Notification.FALIED_FIREBASE
             notification.fb_response = str(result['results'])
     except Exception as e:
+        with open('/root/PushyAPI.log','a',encoding='utf-8') as f: #a是追加，w覆盖
+            f.write('发送消息异常：' + str(e))
         notification.status = Notification.FALIED_UNKNOWN
         notification.fb_response = str(e)
 
