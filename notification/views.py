@@ -1,3 +1,5 @@
+import json
+
 from django.utils.translation import ugettext_lazy as _
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -41,6 +43,8 @@ class SetNotificationSeen(APIView):
             notification = Notification.objects.get(id=notification_id)
             notification.seen = True
             notification.save()
+            with open('/root/PushyAPI.log','w',encoding='utf-8') as f: #a是追加，w覆盖
+                f.write('发送消息:' + json.dumps(notification))
             push_new_notification(notification)
             return Response({"detail": _("Notification updated successfully.")}, status=status.HTTP_200_OK)
         except Notification.DoesNotExist:

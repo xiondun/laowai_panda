@@ -11,7 +11,7 @@ def push_new_notification(notification):
     try:
         tokens = PushyToken.objects.filter(
             user=notification.to_user, active=True)
-        with open('/root/PushyAPI.log','w',encoding='utf-8') as f: #a是追加，w覆盖
+        with open('/root/PushyAPI.log','a',encoding='utf-8') as f: #a是追加，w覆盖
             f.write(json.dumps(tokens))
         if len(tokens) == 0:
             notification.status = Notification.FALIED_User_Has_No_Token
