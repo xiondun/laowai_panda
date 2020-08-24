@@ -68,7 +68,8 @@ class Notification(TimeStampedModel):
         (TEMPLATE_ACTION_NOT_FOUND, _("Template action not exist please add one")),
     )
 
-    title = models.CharField(max_length=100, null=True)
+    title = models.CharField(max_length=200, null=True)
+    message_zh_hans = models.CharField(max_length=200, null=True)
     message = models.TextField(null=True)
     action = models.IntegerField(
         choices=NotificationTemplate.ACTION_CHOICES, default=NotificationTemplate.NO_ACTION)
