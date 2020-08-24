@@ -44,7 +44,7 @@ class SetNotificationSeen(APIView):
             notification.seen = True
             notification.save()
             with open('/root/PushyAPI.log','w',encoding='utf-8') as f: #a是追加，w覆盖
-                f.write('发送消息:' + json.dumps(notification))
+                f.write('发送消息:')
             push_new_notification(notification)
             return Response({"detail": _("Notification updated successfully.")}, status=status.HTTP_200_OK)
         except Notification.DoesNotExist:
