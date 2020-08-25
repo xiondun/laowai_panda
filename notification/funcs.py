@@ -45,6 +45,8 @@ def push_new_notification(notification):
                 "to": [token.token for token in tokens],
                 "data": {
                     "title": notification_title,
+                    "id": notification.object_id,
+                    "action": notification.action,
                     "message": notification_message,
                     "extra_data": data_message
                 },
