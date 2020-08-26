@@ -51,6 +51,27 @@ def get_unsynchronized_imgs():
         return None
 
 
+def get_reply_imgs():
+    """
+    获取回复的图片
+    """
+    conn = pymysql.connect("localhost", "root", "PandaPass!2", "laowai_panda_db_laowai_panda")
+    cursor = conn.cursor()
+    try:
+        sql = f'select id,comment_image from connect_questionreply where comment_image != ""'
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        images = []
+        for result in results:
+            temp = {}
+            temp['id'] = result[0]
+            temp['imgName'] = result[1]
+            images.append(temp)
+        return images
+    except Exception as e:
+        print("查询数据库异常", e)
+        return None
+
 def create_time(id):
     conn = pymysql.connect("localhost", "root", "PandaPass!2", "laowai_panda_db_laowai_panda")
     cursor = conn.cursor()
@@ -94,7 +115,7 @@ save_path = '/var/www/api/laowai_panda/media/'
 def down_load_img(imgUrl, imgName, tid =''):
     save_img_path = save_path + str(imgName)
     if os.path.exists(save_img_path):
-        print('图片已经存在：', imgName)
+        print('图片已经存在,不下载：', imgName)
         if tid:
             create_time(tid)
             update_unsynchronized_imgs(tid)
@@ -128,6 +149,12 @@ def down_load_img(imgUrl, imgName, tid =''):
 
 
 def do_down_load_remote_img(imgName, tid):
+    '''
+    下载图片
+    :param imgName:
+    :param tid:  帖子ID，用于修改某个帖子图片同步时间
+    :return:
+    '''
     downloadImgUrlList = [
         'http://45.13.199.57/media/' + imgName,  # 德國
         'http://121.40.208.210/media/' + imgName,  # 杭州
@@ -137,17 +164,27 @@ def do_down_load_remote_img(imgName, tid):
 
 
 def main():
+    #同步帖子的图片
     images = get_unsynchronized_imgs()
     with ThreadPoolExecutor(max_workers=30) as thread:
         for image in images:
             # do_down_load_remote_img(imgName)
             thread.submit(do_down_load_remote_img, image['imgName'], image['id'])
 
+    #同步回复里的图片
+    images = get_reply_imgs()
+    with ThreadPoolExecutor(max_workers=30) as thread:
+        for image in images:
+            # do_down_load_remote_img(imgName)
+            thread.submit(do_down_load_remote_img, image['imgName'], '')
+
     print('下载头像')
     account_pgoto = get_account_photo_imgs()
     with ThreadPoolExecutor(max_workers=30) as thread:
         for image in account_pgoto:
             thread.submit(do_down_load_remote_img, image, '')
+
+
 
 
 if __name__ == '__main__':
