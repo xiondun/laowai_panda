@@ -722,7 +722,7 @@ class QuestionReplies(APIView):
         queryset, number = queryset_paginator(replies, page)
         serializer = QuestionReplySerializer(
             queryset, many=True, context={'user': request.user})
-        return Response({"data": questionReplieDataFilte(serializer.data), "pages_num": number}, status=status.HTTP_200_OK)
+        return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
 
 
 class ReplyReplies(APIView):
