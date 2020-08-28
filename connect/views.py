@@ -79,22 +79,22 @@ class ChangeTime(object):
             delta_time = 2 * 3600
 
         ret_data = []
-        for i, d in enumerate(data):
+        for item in data:
             not_exists_img = False
-            if data[i]['images']:
-                for datum in data[i]['images']:
+            if item['images']:
+                for datum in item['images']:
                     if not os.path.exists('/var/www/api/laowai_panda' + datum['image']):
                         not_exists_img = True
                         break
             if not not_exists_img:
-                data[i]['timestamp_orgin'] = data[i]['timestamp']
-                data[i]['timestamp'] += delta_time
-                data[i]['created'] = time.strftime(r"%Y-%m-%dT%H:%M:%S.000000Z", time.localtime(data[i]['timestamp']))
-                # data[i]['text'] += ' hellow world'
-                # data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
-                data[i]['timezone'] = t_timezone
-                data[i]['ip'] = ip
-                ret_data.append(data[i])
+                item['timestamp_orgin'] = item['timestamp']
+                item['timestamp'] += delta_time
+                item['created'] = time.strftime(r"%Y-%m-%dT%H:%M:%S.000000Z", time.localtime(item['timestamp']))
+                # item['text'] += ' hellow world'
+                # item['timestamp'] = self.str_to_time(self.time_to_str(item['timestamp']))
+                item['timezone'] = t_timezone
+                item['ip'] = ip
+                ret_data.append(item)
         return ret_data
 
     def getIpTimeZone(self, ip):
@@ -698,12 +698,12 @@ class Reply(APIView):
 
 def questionReplieDataFilte(replies):
     ret_data = []
-    for i, data in enumerate(replies):
+    for item in replies:
         exists_img = True
-        if data['comment_image'] and not os.path.exists('/var/www/api/laowai_panda' + data['comment_image']):
+        if item['comment_image'] and not os.path.exists('/var/www/api/laowai_panda' + item['comment_image']):
             exists_img = False
         if exists_img:
-            ret_data.append(data)
+            ret_data.append(item)
     return ret_data
 
 class QuestionReplies(APIView):
