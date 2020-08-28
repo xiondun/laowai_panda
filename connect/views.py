@@ -316,13 +316,17 @@ class OtherUserQuestionsView(APIView):
 
     def get(self, request, user_id, *args, **kwargs):
         try:
-            user = User.objects.get(id=request.user.id)
+            visitor = User.objects.get(id=request.user.id)
+            user = User.objects.get(id=user_id)
             if not user.show_my_questions:
                 return Response({}, status=status.HTTP_404_NOT_FOUND)
             page = request.GET.get("page", 1)
             queryset, number = queryset_paginator(
                 user.my_questions.order_by('-id').all(), page)
-            serializer = QuestionSerializer(queryset, many=True, context={'user': user})
+            serializer = QuestionSerializer(queryset, many=True, context={
+                'user': user,
+                'visitor': visitor,
+            })
 
             if 'HTTP_X_FORWARDED_FOR' in request.META.keys():
                 ip = request.META['HTTP_X_FORWARDED_FOR']
