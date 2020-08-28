@@ -123,7 +123,10 @@ class QuestionSerializer(serializers.ModelSerializer):
 
     def get_is_favourite_by_user(self, obj):
         try:
-            user = self.context['user']
+            try:
+                user = self.context['visitor']
+            except:
+                user = self.context['user']
             return obj.is_favourite(user=user)
         except:
             return False
