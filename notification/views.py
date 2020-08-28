@@ -41,9 +41,9 @@ class SetNotificationSeen(APIView):
         notification_id = request.data.get("notification_id", "")
         try:
             notification = Notification.objects.get(id=notification_id)
-            with open('/root/PushyAPI.log','w',encoding='utf-8') as f: #a是追加，w覆盖
-                f.write('发送消息:' + str(notification.title))
-            push_new_notification(notification)
+            # with open('/root/PushyAPI.log','w',encoding='utf-8') as f: #a是追加，w覆盖
+            #     f.write('发送消息:' + str(notification.title))
+            # push_new_notification(notification)
 
             notification.seen = True
             notification.save()
