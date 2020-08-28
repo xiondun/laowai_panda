@@ -697,14 +697,19 @@ class Reply(APIView):
         return Response(context, status=status.HTTP_200_OK)
 
 def questionReplieDataFilte(replies):
-    ret_data = []
-    for i, data in enumerate(replies):
+    ret_data = {
+        'pages_num':replies['pages_num']
+    }
+    filter_data = []
+    for i, data in enumerate(replies['data']):
         exists_img = True
         if data[i]['comment_image'] and not os.path.exists('/var/www/api/laowai_panda' + data[i]['comment_image']):
             exists_img = False
 
         if exists_img:
-            ret_data.append(data[i])
+            filter_data.append(data[i])
+
+    ret_data['data'] = filter_data
     return ret_data
 
 class QuestionReplies(APIView):
@@ -720,9 +725,9 @@ class QuestionReplies(APIView):
                 user_id__in=request.user.blocked_users.all())
             replies = replies.exclude(user_id__in=request.user.blockers.all())
         queryset, number = queryset_paginator(replies, page)
-        serializer = QuestionReplySerializer(
-            queryset, many=True, context={'user': request.user})
-        return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
+        serializer = QuestionReplySerializer(queryset, many=True, context={'user': request.user})
+
+        return Response({"data": questionReplieDataFilte(serializer.data), "pages_num": number}, status=status.HTTP_200_OK)
 
 
 class ReplyReplies(APIView):
