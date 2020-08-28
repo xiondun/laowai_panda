@@ -322,8 +322,7 @@ class OtherUserQuestionsView(APIView):
             page = request.GET.get("page", 1)
             queryset, number = queryset_paginator(
                 user.my_questions.order_by('-id').all(), page)
-            serializer = QuestionSerializer(
-                queryset, many=True, context={'user': user})
+            serializer = QuestionSerializer(queryset, many=True, context={'user': user})
 
             if 'HTTP_X_FORWARDED_FOR' in request.META.keys():
                 ip = request.META['HTTP_X_FORWARDED_FOR']
