@@ -78,24 +78,24 @@ class ChangeTime(object):
         else:
             delta_time = 2 * 3600
 
+        ret_data = []
         for i, d in enumerate(data):
-            flag = False
+            not_exists_img = False
             if data[i]['images']:
                 for datum in data[i]['images']:
                     if not os.path.exists('/var/www/api/laowai_panda' + datum['image']):
-                        del data[i]
-                        flag = True
+                        not_exists_img = True
                         break
-            if flag:
-                continue
-            data[i]['timestamp_orgin'] = data[i]['timestamp']
-            data[i]['timestamp'] += delta_time
-            data[i]['created'] = time.strftime(r"%Y-%m-%dT%H:%M:%S.000000Z", time.localtime(data[i]['timestamp']))
-            # data[i]['text'] += ' hellow world'
-            # data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
-            data[i]['timezone'] = t_timezone
-            data[i]['ip'] = ip
-        return data
+            if not not_exists_img:
+                data[i]['timestamp_orgin'] = data[i]['timestamp']
+                data[i]['timestamp'] += delta_time
+                data[i]['created'] = time.strftime(r"%Y-%m-%dT%H:%M:%S.000000Z", time.localtime(data[i]['timestamp']))
+                # data[i]['text'] += ' hellow world'
+                # data[i]['timestamp'] = self.str_to_time(self.time_to_str(data[i]['timestamp']))
+                data[i]['timezone'] = t_timezone
+                data[i]['ip'] = ip
+                ret_data.append(data[i])
+        return ret_data
 
     def getIpTimeZone(self, ip):
         try:
