@@ -316,13 +316,7 @@ class OtherUserQuestionsView(APIView):
 
     def get(self, request, user_id, *args, **kwargs):
         try:
-            try:
-                with open('/home/request_user_id.txt','w',encoding='utf-8') as f: #a是追加，w覆盖
-                    f.write(str(request.user.id))
-            except Exception as e:
-                with open('/home/request_user_id.txt','w',encoding='utf-8') as f: #a是追加，w覆盖
-                    f.write(str(e))
-            user = User.objects.get(id=user_id)
+            user = User.objects.get(id=request.user.id)
             if not user.show_my_questions:
                 return Response({}, status=status.HTTP_404_NOT_FOUND)
             page = request.GET.get("page", 1)
