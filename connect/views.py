@@ -697,19 +697,13 @@ class Reply(APIView):
         return Response(context, status=status.HTTP_200_OK)
 
 def questionReplieDataFilte(replies):
-    ret_data = {
-        'pages_num':replies['pages_num']
-    }
-    filter_data = []
-    for i, data in enumerate(replies['data']):
+    ret_data = []
+    for i, data in enumerate(replies):
         exists_img = True
-        if data[i]['comment_image'] and not os.path.exists('/var/www/api/laowai_panda' + data[i]['comment_image']):
+        if data['comment_image'] and not os.path.exists('/var/www/api/laowai_panda' + data['comment_image']):
             exists_img = False
-
         if exists_img:
-            filter_data.append(data[i])
-
-    ret_data['data'] = filter_data
+            ret_data.append(data)
     return ret_data
 
 class QuestionReplies(APIView):
