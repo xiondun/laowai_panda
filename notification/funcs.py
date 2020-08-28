@@ -47,6 +47,9 @@ def push_new_notification(notification):
                     "title": notification_title,
                     "id": notification.object_id,
                     "action": notification.action,
+                    "to_user_id": notification.to_user_id,
+                    "from_user_id": notification.from_user_id,
+                    "content_type_id": notification.content_type_id,
                     "message": notification_message,
                     "extra_data": data_message
                 },
