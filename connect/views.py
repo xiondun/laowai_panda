@@ -696,6 +696,16 @@ class Reply(APIView):
         context['detail'] = _("Reply removed successfully.")
         return Response(context, status=status.HTTP_200_OK)
 
+def questionReplieDataFilte(replies):
+    ret_data = []
+    for i, data in enumerate(replies):
+        exists_img = True
+        if data[i]['comment_image'] and not os.path.exists('/var/www/api/laowai_panda' + data[i]['comment_image']):
+            exists_img = False
+
+        if exists_img:
+            ret_data.append(data[i])
+    return ret_data
 
 class QuestionReplies(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -712,7 +722,7 @@ class QuestionReplies(APIView):
         queryset, number = queryset_paginator(replies, page)
         serializer = QuestionReplySerializer(
             queryset, many=True, context={'user': request.user})
-        return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
+        return Response({"data": questionReplieDataFilte(serializer.data), "pages_num": number}, status=status.HTTP_200_OK)
 
 
 class ReplyReplies(APIView):
