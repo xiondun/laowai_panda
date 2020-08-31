@@ -82,9 +82,9 @@ class ChangeTime(object):
                 for j, datum in enumerate(data['images']):
                     if not os.path.exists('/var/www/api/laowai_panda' + datum['image']):
                         if t_timezone == 'CN':
-                            data[j]['images'] = 'http://45.13.199.57' + datum['image']  # 德國
+                            data['images'][j]['image'] = 'http://45.13.199.57' + datum['image']  # 德國
                         elif t_timezone == 'EG':
-                            data[j]['images'] = 'http://121.40.208.210' + datum['image']  # 杭州
+                            data['images'][j]['image'] = 'http://121.40.208.210' + datum['image']  # 杭州
             data['timestamp_orgin'] = data['timestamp']
             data['timestamp'] += delta_time
             data['created'] = time.strftime(r"%Y-%m-%dT%H:%M:%S.000000Z", time.localtime(data['timestamp']))
@@ -97,9 +97,9 @@ class ChangeTime(object):
                     for j, datum in enumerate(data[i]['images']):
                         if not os.path.exists('/var/www/api/laowai_panda' + datum['image']):
                             if t_timezone == 'CN':
-                                data[i][j]['images'] = 'http://45.13.199.57/' + datum['image']  # 德國
+                                data[i]['images'][j]['image'] = 'http://45.13.199.57/' + datum['image']  # 德國
                             elif t_timezone == 'EG':
-                                data[i][j]['images'] = 'http://121.40.208.210/' + datum['image']  # 杭州
+                                data[i]['images'][j]['image'] = 'http://121.40.208.210/' + datum['image']  # 杭州
 
                 data[i]['timestamp_orgin'] = data[i]['timestamp']
                 data[i]['timestamp'] += delta_time
