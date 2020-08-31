@@ -97,9 +97,9 @@ class ChangeTime(object):
                     for j, datum in enumerate(data[i]['images']):
                         if not os.path.exists('/var/www/api/laowai_panda' + datum['image']):
                             if t_timezone == 'CN':
-                                data[i]['images'][j]['image'] = 'http://45.13.199.57/' + datum['image']  # 德國
+                                data[i]['images'][j]['image'] = 'http://45.13.199.57' + datum['image']  # 德國
                             elif t_timezone == 'EG':
-                                data[i]['images'][j]['image'] = 'http://121.40.208.210/' + datum['image']  # 杭州
+                                data[i]['images'][j]['image'] = 'http://121.40.208.210' + datum['image']  # 杭州
 
                 data[i]['timestamp_orgin'] = data[i]['timestamp']
                 data[i]['timestamp'] += delta_time
