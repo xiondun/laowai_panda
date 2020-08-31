@@ -48,7 +48,12 @@
 <body style="overflow: hidden;">
     {% if post.type == post.TXT_VIDEO %}
     {% if post.media %}
-        <div style="height: 680px" id="video_div">
+        <div style=" position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            outline: none;" id="video_div">
             <video webkit-playsinline
                    playsinline
                    x5-video-player-type="h5"
