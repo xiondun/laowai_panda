@@ -48,15 +48,14 @@
 <body>
     {% if post.type == post.TXT_VIDEO %}
     {% if post.media %}
-        <div style="height:680px;" id="video_div">
-            <video webkit-playsinline
-                   playsinline
-                   x5-video-player-type="h5"
-                   x5-video-player-fullscreen="true"
-                   x5-video-orientation="portraint" style="width: 100%;object-fill:cover;" height="330" id="example_video_1" class="video-js vjs-fill vjs-big-play-centered my-vjs" controls preload="auto" data-setup='{fill: true, responsive:true}'>
-                <source src="{{post.media.url}}" type="video/mp4">
-            </video>
-        </div>
+        <video webkit-playsinline
+               playsinline
+               x5-video-player-type="h5"
+               x5-video-player-fullscreen="true"
+               x5-video-orientation="portraint" style="width: 100%;object-fill:cover;" height="680" id="example_video_1" class="video-js vjs-fill vjs-big-play-centered my-vjs" controls preload="auto"
+               data-setup='{fill: true, responsive:true}'>
+            <source src="{{post.media.url}}" type="video/mp4">
+        </video>
     {% else %}
     <div class="iframe-container">
         <iframe class="yoku-video" src='{{post.get_youko_link}}' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
