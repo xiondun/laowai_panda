@@ -59,7 +59,7 @@ class GetTimeZoneInfo(APIView):
             res = requests.post(url, json.dumps(ips))
             if res.status_code == 200:
                 time_zone_info = json.loads(res.text)
-                with open('/tmp/' + str(ip) + '.txt','w',encoding='utf-8') as f: #a是追加，w覆盖
+                with open('/tmp/' + str(ip) + '.txt', 'w', encoding='utf-8') as f:  # a是追加，w覆盖
                     f.write(time_zone_info[0]['countryCode'])
                 return time_zone_info[0]['countryCode']
             else:
@@ -69,7 +69,7 @@ class GetTimeZoneInfo(APIView):
 
 
 class ChangeTime(object):
-    def changeToLocalTime(self, data, ip):
+    def changeToLocalTime(self, data, ip, onlyone=False):
         t_timezone = self.getIpTimeZone(ip)
         if t_timezone == 'CN':
             delta_time = 8 * 3600
@@ -77,25 +77,36 @@ class ChangeTime(object):
             delta_time = 2 * 3600
         else:
             delta_time = 2 * 3600
-
-        ret_data = []
-        for item in data:
-            not_exists_img = False
-            if item['images']:
-                for datum in item['images']:
+        if onlyone:
+            if data['images']:
+                for j, datum in enumerate(data['images']):
                     if not os.path.exists('/var/www/api/laowai_panda' + datum['image']):
-                        not_exists_img = True
-                        break
-            if not not_exists_img:
-                item['timestamp_orgin'] = item['timestamp']
-                item['timestamp'] += delta_time
-                item['created'] = time.strftime(r"%Y-%m-%dT%H:%M:%S.000000Z", time.localtime(item['timestamp']))
-                # item['text'] += ' hellow world'
-                # item['timestamp'] = self.str_to_time(self.time_to_str(item['timestamp']))
-                item['timezone'] = t_timezone
-                item['ip'] = ip
-                ret_data.append(item)
-        return ret_data
+                        if t_timezone == 'CN':
+                            data['images'][j] = 'http://45.13.199.57/' + datum['image']  # 德國
+                        elif t_timezone == 'EG':
+                            data['images'][j] = 'http://121.40.208.210/' + datum['image']  # 杭州
+            data['timestamp_orgin'] = data['timestamp']
+            data['timestamp'] += delta_time
+            data['created'] = time.strftime(r"%Y-%m-%dT%H:%M:%S.000000Z", time.localtime(data['timestamp']))
+            data['timezone'] = t_timezone
+            data['ip'] = ip
+            return data
+        else:
+            for i, item in enumerate(data):
+                if data[i]['images']:
+                    for j, datum in enumerate(data[i]['images']):
+                        if not os.path.exists('/var/www/api/laowai_panda' + datum['image']):
+                            if t_timezone == 'CN':
+                                data[i]['images'][j] = 'http://45.13.199.57/' + datum['image']  # 德國
+                            elif t_timezone == 'EG':
+                                data[i]['images'][j] = 'http://121.40.208.210/' + datum['image']  # 杭州
+
+                data[i]['timestamp_orgin'] = data[i]['timestamp']
+                data[i]['timestamp'] += delta_time
+                data[i]['created'] = time.strftime(r"%Y-%m-%dT%H:%M:%S.000000Z", time.localtime(data[i]['timestamp']))
+                data[i]['timezone'] = t_timezone
+                data[i]['ip'] = ip
+            return data
 
     def getIpTimeZone(self, ip):
         try:
@@ -107,7 +118,7 @@ class ChangeTime(object):
             res = requests.post(url, json.dumps(ips))
             if res.status_code == 200:
                 time_zone_info = json.loads(res.text)
-                with open('/tmp/' + str(ip) + '.txt','w',encoding='utf-8') as f: #a是追加，w覆盖
+                with open('/tmp/' + str(ip) + '.txt', 'w', encoding='utf-8') as f:  # a是追加，w覆盖
                     f.write(time_zone_info[0]['countryCode'])
                 return time_zone_info[0]['countryCode']
             else:
@@ -226,7 +237,7 @@ class FollowedUsersQuestions(APIView):
             ip = request.META['HTTP_X_FORWARDED_FOR']
         else:
             ip = request.META['REMOTE_ADDR']
-        return Response({"data": ChangeTime().changeToLocalTime(serializer.data,ip), "pages_num": number}, status=status.HTTP_200_OK)
+        return Response({"data": ChangeTime().changeToLocalTime(serializer.data, ip), "pages_num": number}, status=status.HTTP_200_OK)
 
 
 class Filter(APIView):
@@ -304,7 +315,7 @@ class OtherUserFavQuestionsView(APIView):
                 ip = request.META['HTTP_X_FORWARDED_FOR']
             else:
                 ip = request.META['REMOTE_ADDR']
-            return Response({"data": ChangeTime().changeToLocalTime(serializer.data,ip), "pages_num": number}, status=status.HTTP_200_OK)
+            return Response({"data": ChangeTime().changeToLocalTime(serializer.data, ip), "pages_num": number}, status=status.HTTP_200_OK)
         except User.DoesNotExist:
             context = dict()
             context['detail'] = _("User doesn't exist")
@@ -333,7 +344,7 @@ class OtherUserQuestionsView(APIView):
             else:
                 ip = request.META['REMOTE_ADDR']
 
-            return Response({"data": ChangeTime().changeToLocalTime(serializer.data,ip), "pages_num": number}, status=status.HTTP_200_OK)
+            return Response({"data": ChangeTime().changeToLocalTime(serializer.data, ip), "pages_num": number}, status=status.HTTP_200_OK)
         except User.DoesNotExist:
             context = dict()
             context['detail'] = _("User doesn't exist")
@@ -352,7 +363,7 @@ class MyFavQuestionsView(APIView):
             ip = request.META['HTTP_X_FORWARDED_FOR']
         else:
             ip = request.META['REMOTE_ADDR']
-        return Response({"data": ChangeTime().changeToLocalTime(serializer.data,ip), "pages_num": number}, status=status.HTTP_200_OK)
+        return Response({"data": ChangeTime().changeToLocalTime(serializer.data, ip), "pages_num": number}, status=status.HTTP_200_OK)
 
 
 class MyQuestionsView(APIView):
@@ -368,7 +379,7 @@ class MyQuestionsView(APIView):
         serializer = QuestionSerializer(
             queryset, many=True, context={'user': request.user})
 
-        return Response({"data": ChangeTime().changeToLocalTime(serializer.data,ip), "pages_num": number}, status=status.HTTP_200_OK)
+        return Response({"data": ChangeTime().changeToLocalTime(serializer.data, ip), "pages_num": number}, status=status.HTTP_200_OK)
 
 
 class FavUnfavQuestion(APIView):
@@ -518,10 +529,9 @@ class Questions(APIView):
         else:
             ip = request.META['REMOTE_ADDR']
         try:
-            serializer = QuestionSerializer(Question.objects.get(
-                id=id), context={'user': request.user})
-            return Response(serializer.data, status=status.HTTP_200_OK)
-            # return Response(ChangeTime().changeToLocalTime(serializer.data,ip), status=status.HTTP_200_OK)
+            serializer = QuestionSerializer(Question.objects.get(id=id), context={'user': request.user})
+            # return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response(ChangeTime().changeToLocalTime(serializer.data, ip, True), status=status.HTTP_200_OK)
         except Question.DoesNotExist:
             context = dict()
             context['detail'] = _("Question doesn't exist")
@@ -699,6 +709,7 @@ class Reply(APIView):
         context['detail'] = _("Reply removed successfully.")
         return Response(context, status=status.HTTP_200_OK)
 
+
 def questionReplieDataFilte(replies):
     ret_data = []
     for item in replies:
@@ -708,6 +719,7 @@ def questionReplieDataFilte(replies):
         if exists_img:
             ret_data.append(item)
     return ret_data
+
 
 class QuestionReplies(APIView):
     permission_classes = (permissions.AllowAny,)

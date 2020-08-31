@@ -115,8 +115,6 @@ class QuestionSerializer(serializers.ModelSerializer):
                 user = self.context['visitor']
             except:
                 user = self.context['user']
-            with open('/home/get_is_liked_by_user.log','w',encoding='utf-8') as f: #a是追加，w覆盖
-                f.write(user.name)
             return obj.is_liked(user=user)
         except:
             return False
