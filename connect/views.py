@@ -710,14 +710,16 @@ class Reply(APIView):
         return Response(context, status=status.HTTP_200_OK)
 
 
-def questionReplieDataFilte(replies):
+def questionReplieDataFilte(replies, ip):
+    t_timezone = ChangeTime().getIpTimeZone(ip)
     ret_data = []
     for item in replies:
-        exists_img = True
         if item['comment_image'] and not os.path.exists('/var/www/api/laowai_panda' + item['comment_image']):
-            exists_img = False
-        if exists_img:
-            ret_data.append(item)
+            if t_timezone == 'CN':
+                item['comment_image'] = 'http://45.13.199.57' + item['comment_image']  # 德國
+            elif t_timezone == 'EG':
+                item['comment_image'] = 'http://121.40.208.210' + item['comment_image']  # 杭州
+        ret_data.append(item)
     return ret_data
 
 
@@ -735,8 +737,12 @@ class QuestionReplies(APIView):
             replies = replies.exclude(user_id__in=request.user.blockers.all())
         queryset, number = queryset_paginator(replies, page)
         serializer = QuestionReplySerializer(queryset, many=True, context={'user': request.user})
+        if 'HTTP_X_FORWARDED_FOR' in request.META.keys():
+            ip = request.META['HTTP_X_FORWARDED_FOR']
+        else:
+            ip = request.META['REMOTE_ADDR']
 
-        return Response({"data": questionReplieDataFilte(serializer.data), "pages_num": number}, status=status.HTTP_200_OK)
+        return Response({"data": questionReplieDataFilte(serializer.data, ip), "pages_num": number}, status=status.HTTP_200_OK)
 
 
 class ReplyReplies(APIView):
