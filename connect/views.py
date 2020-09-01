@@ -714,6 +714,8 @@ def questionReplieDataFilte(replies, ip):
     t_timezone = ChangeTime().getIpTimeZone(ip)
     ret_data = []
     for item in replies:
+        item['ip'] = ip
+        item['t_timezone'] = t_timezone
         if item['comment_image'] and not os.path.exists('/var/www/api/laowai_panda' + item['comment_image']):
             if t_timezone == 'CN':
                 item['comment_image'] = 'http://45.13.199.57' + item['comment_image']  # 德國
