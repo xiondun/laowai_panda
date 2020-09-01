@@ -667,6 +667,8 @@ class Reply(APIView):
             raise Http404
 
     def post(self, request, format=None):
+        with open('/home/Reply_post_body.log', 'a', encoding='utf-8') as f:  # a是追加，w覆盖
+            f.write(str(request._request.body, encoding='utf-8') + "\n")
         serializer = QuestionReplySerializer(data=request.data)
         if serializer.is_valid():
             serializer.validated_data['user'] = request.user
