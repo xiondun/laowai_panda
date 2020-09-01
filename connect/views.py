@@ -564,8 +564,8 @@ class Questions(APIView):
 
     def post(self, request, format=None):
         # print(request.META)
-        with open('/var/www/api/request_post_body.log', 'a', encoding='utf-8') as f:  # a是追加，w覆盖
-            f.write(str(request._request.body, encoding='utf-8') + "\n")
+        # with open('/home/request_post_body.log', 'a', encoding='utf-8') as f:  # a是追加，w覆盖
+        #     f.write(str(request._request.body, encoding='utf-8') + "\n")
         serializer = QuestionSerializer(data=request.data)
         if serializer.is_valid():
             serializer.validated_data['owner'] = request.user
@@ -602,7 +602,7 @@ class UploadFileBase64(APIView):
 
     def post(self, request, format=None):
         try:
-            # with open('/var/www/api/request_body.log', 'a', encoding='utf-8') as f:  # a是追加，w覆盖
+            # with open('/home/request_body.log', 'a', encoding='utf-8') as f:  # a是追加，w覆盖
             #     f.write(str(request._request.body, encoding='utf-8') + "\n")
             file_strs = json.loads(request._request.body)['file']
             # file_strs = request._request.POST.get('file')
@@ -667,8 +667,8 @@ class Reply(APIView):
             raise Http404
 
     def post(self, request, format=None):
-        with open('/home/Reply_post_body.log', 'a', encoding='utf-8') as f:  # a是追加，w覆盖
-            f.write(str(request._request.body, encoding='utf-8') + "\n")
+        # with open('/home/Reply_post_body.log', 'a', encoding='utf-8') as f:
+        #     f.write(str(request._request.body, encoding='utf-8') + "\n")
         serializer = QuestionReplySerializer(data=request.data)
         if serializer.is_valid():
             serializer.validated_data['user'] = request.user
