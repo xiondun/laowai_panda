@@ -26,7 +26,7 @@ class Post(TimeStampedModel):
     MEDIA = 1
     ARTICLES = 2
     SHOW_TYPES = ((MEDIA, "Media"), (ARTICLES, "Articles"))
-
+    permissions = None
     text = models.TextField()
     type = models.IntegerField(choices=TYPES, db_index=True, default=ONLY_TEXT)
     show_in = models.IntegerField(choices=SHOW_TYPES, db_index=True, default=ARTICLES)
