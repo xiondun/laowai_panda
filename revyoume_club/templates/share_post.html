@@ -121,7 +121,8 @@
                 </h3>
                 {% if post.type == post.TXT_VIDEO %}
                     {% if post.media %}
-                    <video width="100%" height="400" controls webkit-playsinline
+                        <div style="height: 400px;">
+                    <video width="100%" height="680" controls webkit-playsinline
                            playsinline
                            x5-video-player-type="h5"
                            x5-video-player-fullscreen="true"
@@ -130,6 +131,7 @@
                            data-setup='{fill: true, responsive:true}'>
                     <source src="{{post.media.url}}#t=1" type="video/mp4">
                     </video>
+                        </div>
                     {% else %}
                     <iframe class="yoku-video" src='{{post.get_youko_link}}' frameborder=0 'allowfullscreen'></iframe>
                     {% endif %}
