@@ -154,8 +154,7 @@ class GetProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'email', 'name', 'username', 'social_type', 'photo', 'likes', 'usefuls',
-                  'show_my_questions', 'show_my_followup_questions', 'is_following', 'default_lang', 'followers_count', 'following_count', 'account_verified')
+        fields = ('id', 'email', 'name', 'username', 'social_type', 'photo', 'likes', 'usefuls','show_my_questions', 'show_my_followup_questions', 'is_following', 'default_lang', 'followers_count', 'following_count', 'account_verified')
 
         extra_kwargs = {
             'password': {'write_only': True},
@@ -163,7 +162,7 @@ class GetProfileSerializer(serializers.ModelSerializer):
         }
 
     def get_likes(self, obj):
-        return obj.likes
+        return 3
 
     def get_usefuls(self, obj):
         return obj.usefuls
