@@ -149,6 +149,8 @@ class GetProfileSerializer(serializers.ModelSerializer):
     default_lang = DefaultLanguageSerializer(read_only=True)
     followers_count = serializers.SerializerMethodField()
     following_count = serializers.SerializerMethodField()
+    likes = serializers.SerializerMethodField()
+    usefuls = serializers.SerializerMethodField()
 
     class Meta:
         model = User
@@ -159,6 +161,12 @@ class GetProfileSerializer(serializers.ModelSerializer):
             'password': {'write_only': True},
             'email': {'read_only': True},
         }
+
+    def get_likes(self, obj):
+        return obj.likes
+
+    def get_usefuls(self, obj):
+        return obj.usefuls
 
     def get_followers_count(self, obj):
         return obj.followers_count
