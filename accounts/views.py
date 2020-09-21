@@ -320,7 +320,8 @@ class Profile(generics.RetrieveUpdateAPIView):
 
     def retrieve(self, request):
         serializer = GetProfileSerializer(request.user)
-        return Response({"profile": serializer.data}, status=status.HTTP_200_OK)
+        # return Response({"profile": serializer.data}, status=status.HTTP_200_OK)
+        return Response({"profile": 1}, status=status.HTTP_200_OK)
 
     def update(self, request, pk=None):
         serializer = UpdateProfileSerializer(
