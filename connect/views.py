@@ -422,15 +422,13 @@ class LikeUnlikeQuestion(APIView):
                 if question.liked_by_users.filter(id=request.user.id).exists():
                     question.liked_by_users.remove(request.user.id)
                     question.owner.likes -= 1
-                    question.owner.save()
                     context['detail'] = _("Unlike successfully.")
                 else:
                     question.liked_by_users.add(request.user.id)
                     create_and_push_notification(question, NotificationTemplate.QUESTION_LIKED, request.user, [question.owner])
                     question.owner.likes += 1
-                    question.owner.save()
                     context['detail'] = _("Like successfully.")
-                # question.owner.save()
+                question.owner.save()
                 return Response(context, status=status.HTTP_200_OK)
             except Question.DoesNotExist:
                 context['question_id'] = _("Question does not exist.")
