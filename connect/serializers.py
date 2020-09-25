@@ -27,13 +27,14 @@ class QuestionReplySerializer(serializers.ModelSerializer):
     parent_reply_id = serializers.PrimaryKeyRelatedField(required=False,
                                                          source='parent_reply', queryset=QuestionReply.objects.filter(parent_reply__isnull=True))
     is_useful_by_user = serializers.SerializerMethodField()
+    is_useful_by_user_flag = serializers.SerializerMethodField()
     useful_count = serializers.SerializerMethodField()
     reply_count = serializers.SerializerMethodField()
 
     class Meta:
         model = QuestionReply
         fields = ('id', 'reply', 'created', 'user', 'question_id', 'parent_reply_id', 'comment_image',
-                  'is_useful_by_user', 'useful_count', 'reply_count')
+                  'is_useful_by_user','is_useful_by_user_flag', 'useful_count', 'reply_count')
 
     def get_is_useful_by_user(self, obj):
         try:
@@ -41,6 +42,13 @@ class QuestionReplySerializer(serializers.ModelSerializer):
             return obj.is_useful_by_user(user=user)
         except:
             return False
+
+    def get_is_useful_by_user_flag(self, obj):
+        try:
+            user = self.context['user']
+            return  1 if obj.is_useful_by_user(user=user) else 0
+        except:
+            return 0
 
     def get_useful_count(self, obj):
         return obj.usefuls
