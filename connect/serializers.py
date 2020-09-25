@@ -46,9 +46,9 @@ class QuestionReplySerializer(serializers.ModelSerializer):
     def get_is_useful_by_user_flag(self, obj):
         try:
             user = self.context['user']
-            return  1 if obj.is_useful_by_user(user=user) else 0
+            return  2 if obj.is_useful_by_user(user=user) else 3
         except:
-            return 0
+            return 3
 
     def get_useful_count(self, obj):
         return obj.usefuls
