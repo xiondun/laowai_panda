@@ -159,10 +159,9 @@ class Search(APIView):
         if request.user.id:
             questions = questions.exclude(
                 owner__in=request.user.blocked_users.all())
-        queryset, number = queryset_paginator(
-            questions.distinct().order_by('-created'), page)
-        serializer = QuestionSerializer(
-            queryset, many=True, context={'user': request.user})
+        # queryset, number = queryset_paginator(questions.distinct().order_by('-created'), page)
+        queryset, number = queryset_paginator(questions.order_by('-created'), page)
+        serializer = QuestionSerializer(queryset, many=True, context={'user': request.user})
 
         threading.Thread(target=self.getRemoteImg, args=(serializer.data,)).start()
         return Response({"data": ChangeTime().changeToLocalTime(serializer.data, ip), "pages_num": number}, status=status.HTTP_200_OK)
@@ -281,10 +280,10 @@ class Filter(APIView):
                 else:
                     return Response({"detail": 'Enter vaild format'}, status=status.HTTP_400_BAD_REQUEST)
 
-        queryset, number = queryset_paginator(
-            questions.distinct().order_by('-created'), page)
-        serializer = QuestionSerializer(
-            queryset, many=True, context={'user': request.user})
+        # queryset, number = queryset_paginator(questions.distinct().order_by('-created'), page)
+        queryset, number = queryset_paginator(questions.order_by('-created'), page)
+
+        serializer = QuestionSerializer(queryset, many=True, context={'user': request.user})
         # return Response({"data": serializer.data, "pages_num": number}, status=status.HTTP_200_OK)
         return Response({"data": ChangeTime().changeToLocalTime(serializer.data, ip), "pages_num": number}, status=status.HTTP_200_OK)
 
