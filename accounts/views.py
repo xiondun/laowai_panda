@@ -133,6 +133,10 @@ class Login(APIView):
         # context['detail']="Login Succsesfuly"
         #if user.email_verified:
         context['token'] = token.key
+        try:
+            context['id'] = user.id
+        except:
+            pass
         #context['email_verified'] = user.email_verified
         update_last_login(None, user)
         return Response(context, status=status.HTTP_200_OK)
