@@ -24,7 +24,7 @@ django-nvd3==0.9.7
 django-object-tool==0.0.9
 django-qsstats-magic==1.1.0
 django-solo==1.1.3
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 djcacheutils==3.0.0
 idna==2.8
 Jinja2==2.10.3
