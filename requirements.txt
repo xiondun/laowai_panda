@@ -35,7 +35,7 @@ optionaldict==0.1.1
 Pillow==6.2.0
 pycodestyle==2.5.0
 pycparser==2.19
-PyJWT==1.7.1
+PyJWT==2.4.0
 python-dateutil==2.8.0
 python-memcached==1.59
 python-nvd3==0.14.2
